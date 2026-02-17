@@ -47,19 +47,19 @@ interface SectionHeadingProps {
 }
 
 const SectionHeading = ({ tag, title, subtitle, className = "", large = false }: SectionHeadingProps) => (
-  <div className={`mb-12 md:mb-16 ${className}`}>
-    {tag && <span className="tag-label mb-4 block">{tag}</span>}
+  <div className={`mb-14 md:mb-20 ${className}`}>
+    {tag && <span className="tag-label mb-5 block">{tag}</span>}
     <h2
-      className={`font-heading font-bold leading-[1.05] tracking-tight ${
+      className={`font-heading font-bold leading-[1.05] tracking-tighter ${
         large
-          ? "text-4xl md:text-6xl lg:text-7xl"
-          : "text-3xl md:text-4xl lg:text-5xl"
+          ? "text-[clamp(2.5rem,6vw,5.5rem)]"
+          : "text-[clamp(2rem,5vw,4rem)]"
       }`}
     >
       {title}
     </h2>
     {subtitle && (
-      <p className="mt-5 max-w-2xl text-base md:text-lg text-muted-foreground leading-relaxed font-body">
+      <p className="mt-5 max-w-2xl text-lg md:text-xl text-muted-foreground leading-relaxed font-body">
         {subtitle}
       </p>
     )}

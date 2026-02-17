@@ -8,7 +8,7 @@ const CasosDeExito = () => (
       <div className="container-wide">
         <FadeIn>
           <span className="tag-label mb-6 block">Casos</span>
-          <h1 className="text-[clamp(2rem,5vw,4.5rem)] font-heading font-bold leading-[0.95] tracking-tighter max-w-4xl">
+          <h1 className="text-[clamp(2.5rem,6vw,5.5rem)] font-heading font-bold leading-[0.95] tracking-tighter max-w-4xl">
             Medir<span className="text-accent">.</span> Ajustar<span className="text-accent">.</span> Repetir<span className="text-accent">.</span>
           </h1>
           <p className="mt-6 max-w-lg text-base text-muted-foreground leading-relaxed">
@@ -44,7 +44,7 @@ const CasosDeExito = () => (
     <Section dark>
       <FadeIn>
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-heading font-bold tracking-tighter">
+            <h2 className="text-[clamp(2rem,5vw,4rem)] font-heading font-bold tracking-tighter">
             ¿Quieres ser el próximo<span className="text-accent">?</span>
           </h2>
           <div className="mt-8 max-w-md mx-auto">

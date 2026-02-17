@@ -10,7 +10,7 @@ const Servicios = () => (
       <div className="container-wide">
         <FadeIn>
           <span className="tag-label mb-6 block">Servicios</span>
-          <h1 className="text-[clamp(2rem,5vw,4.5rem)] font-heading font-bold leading-[0.95] tracking-tighter max-w-4xl">
+          <h1 className="text-[clamp(2.5rem,6vw,5.5rem)] font-heading font-bold leading-[0.95] tracking-tighter max-w-4xl">
             Tu departamento financiero<span className="text-accent">.</span>
             <br />
             <span className="text-muted-foreground">El de verdad.</span>
@@ -164,7 +164,7 @@ const Servicios = () => (
     <Section dark>
       <FadeIn>
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold tracking-tighter">
+          <h2 className="text-[clamp(2rem,5vw,4rem)] font-heading font-bold tracking-tighter">
             ¿Hablamos<span className="text-accent">?</span>
           </h2>
           <p className="mt-4 text-sm text-surface-dark-foreground/50">Deja tu email o agenda 15 minutos.</p>

@@ -36,15 +36,15 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           </Link>
 
           {/* Desktop nav */}
-          <ul className="hidden lg:flex items-center gap-8">
+          <ul className="hidden lg:flex items-center gap-1">
             {navItems.map((item) => (
               <li key={item.path}>
                 <Link
                   to={item.path}
-                  className={`text-[13px] font-mono uppercase tracking-[0.08em] transition-colors hover:text-foreground ${
+                  className={`text-[13px] font-mono uppercase tracking-[0.08em] transition-all px-3 py-1.5 ${
                     location.pathname === item.path
-                      ? "text-foreground"
-                      : "text-muted-foreground"
+                      ? "text-foreground bg-foreground/[0.06] font-bold"
+                      : "text-muted-foreground hover:text-foreground hover:bg-foreground/[0.03]"
                   }`}
                 >
                   {item.label}
