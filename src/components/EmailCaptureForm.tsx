@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { supabase } from "@/integrations/supabase/client";
 
 interface EmailCaptureFormProps {
   buttonText?: string;
@@ -7,6 +8,7 @@ interface EmailCaptureFormProps {
   className?: string;
   variant?: "inline" | "stacked" | "compact";
   dark?: boolean;
+  source?: string;
 }
 
 const EmailCaptureForm = ({
@@ -15,18 +17,35 @@ const EmailCaptureForm = ({
   className = "",
   variant = "inline",
   dark = false,
+  source = "web",
 }: EmailCaptureFormProps) => {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email || !email.includes("@")) {
       setError("Oye, aquí falta un email válido.");
       return;
     }
     setError("");
+    setLoading(true);
+
+    try {
+      const { error: fnError } = await supabase.functions.invoke("capture-lead", {
+        body: { email, source },
+      });
+
+      if (fnError) {
+        console.error("capture-lead error:", fnError);
+      }
+    } catch (err) {
+      console.error("Network error:", err);
+    }
+
+    setLoading(false);
     setSubmitted(true);
   };
 
@@ -66,11 +85,12 @@ const EmailCaptureForm = ({
                        : "border-foreground/20 focus:border-accent text-foreground"
                      }`}
           required
+          disabled={loading}
         />
         {error && <p className="mt-1 text-xs text-destructive font-mono">{error}</p>}
       </div>
-      <Button type="submit" variant="accent" size="lg" className="w-full sm:w-auto whitespace-nowrap text-sm">
-        {buttonText}
+      <Button type="submit" variant="accent" size="lg" className="w-full sm:w-auto whitespace-nowrap text-sm" disabled={loading}>
+        {loading ? "Enviando..." : buttonText}
       </Button>
       {microcopy && (
         <p className={`text-[11px] w-full font-mono ${dark ? "text-surface-dark-foreground/40" : "text-muted-foreground"}`}>
