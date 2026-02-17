@@ -58,6 +58,8 @@ const DiagnosticoFinanciero = () => {
                       buttonText="Empezar diagnóstico"
                       microcopy="Te mando el diagnóstico y 3 mejoras rápidas."
                       variant="stacked"
+                      source="diagnostico"
+                      onSuccess={() => setEmailGiven(true)}
                     />
                   </div>
                   <button onClick={() => setEmailGiven(true)} className="mt-4 text-[10px] font-mono text-muted-foreground underline">
