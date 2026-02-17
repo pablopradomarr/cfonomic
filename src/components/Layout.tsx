@@ -29,10 +29,10 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="flex min-h-screen flex-col">
       {/* ═══ NAV ═══ */}
-      <header className="sticky top-0 z-50 border-b border-foreground/5 bg-background/90 backdrop-blur-md">
+      <header className={`sticky top-0 z-50 border-b border-foreground/5 backdrop-blur-md ${mobileOpen ? 'bg-[hsl(var(--surface-dark))]' : 'bg-background/90'}`}>
         <nav className="container-wide flex items-center justify-between h-16">
-          <Link to="/" className="font-heading text-xl font-bold tracking-tight">
-            CFO<span className="font-display italic font-normal text-accent">nomic</span>
+          <Link to="/" className={`font-heading text-xl font-bold tracking-tight ${mobileOpen ? 'text-white' : ''}`}>
+            CFO<span className={`font-display italic font-normal ${mobileOpen ? 'text-accent' : 'text-accent'}`}>nomic</span>
           </Link>
 
           {/* Desktop nav */}
@@ -67,62 +67,63 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             aria-label="Menú"
           >
             <span
-              className={`block w-6 h-[1.5px] bg-foreground transition-all duration-300 ${
-                mobileOpen ? "rotate-45 translate-y-[4px]" : ""
+              className={`block w-6 h-[1.5px] transition-all duration-300 ${
+                mobileOpen ? "rotate-45 translate-y-[4px] bg-white" : "bg-foreground"
               }`}
             />
             <span
-              className={`block w-6 h-[1.5px] bg-foreground transition-all duration-300 ${
-                mobileOpen ? "-rotate-45 -translate-y-[3px]" : ""
+              className={`block w-6 h-[1.5px] transition-all duration-300 ${
+                mobileOpen ? "-rotate-45 -translate-y-[3px] bg-white" : "bg-foreground"
               }`}
             />
           </button>
         </nav>
 
-        {/* Mobile fullscreen menu */}
-        <AnimatePresence>
-          {mobileOpen && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="lg:hidden fixed inset-0 top-16 z-40 flex flex-col"
-              style={{ backgroundColor: "hsl(var(--surface-dark))" }}
-            >
-              <div className="flex-1 flex flex-col justify-center px-8">
-                {navItems.map((item, i) => (
-                  <motion.div
-                    key={item.path}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.05 }}
-                  >
-                    <Link
-                      to={item.path}
-                      className={`block py-4 font-heading text-3xl font-bold border-b border-white/10 transition-colors ${
-                        location.pathname === item.path
-                          ? "text-accent"
-                          : "text-white/60 hover:text-white"
-                      }`}
-                    >
-                      {item.label}
-                    </Link>
-                  </motion.div>
-                ))}
-              </div>
-              <div className="px-8 pb-12">
-                <Link
-                  to="/diagnostico-financiero"
-                  className="block w-full bg-accent text-accent-foreground py-4 text-center text-sm font-mono uppercase tracking-[0.1em] font-bold"
-                >
-                  Diagnóstico gratis
-                </Link>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </header>
+
+      {/* Mobile fullscreen menu — OUTSIDE header for proper z-stacking */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="lg:hidden fixed inset-0 top-16 z-[60] flex flex-col overflow-y-auto"
+            style={{ backgroundColor: "hsl(0 0% 4%)" }}
+          >
+            <div className="flex-1 flex flex-col justify-center px-8">
+              {navItems.map((item, i) => (
+                <motion.div
+                  key={item.path}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.05 }}
+                >
+                  <Link
+                    to={item.path}
+                    className={`block py-4 font-heading text-3xl font-bold border-b border-white/10 transition-colors ${
+                      location.pathname === item.path
+                        ? "text-accent"
+                        : "text-white/60 hover:text-white"
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+            <div className="px-8 pb-12">
+              <Link
+                to="/diagnostico-financiero"
+                className="block w-full bg-accent text-accent-foreground py-4 text-center text-sm font-mono uppercase tracking-[0.1em] font-bold"
+              >
+                Diagnóstico gratis
+              </Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* ═══ MAIN ═══ */}
       <main className="flex-1">{children}</main>
