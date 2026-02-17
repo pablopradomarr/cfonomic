@@ -52,7 +52,7 @@ const Contacto = () => {
           <FadeIn>
             <span className="tag-label mb-6 block">Contacto</span>
             <h1 className="text-[clamp(2.5rem,6vw,5rem)] font-heading font-bold leading-[0.95] tracking-tighter max-w-3xl">
-              Cuéntame qué te preocupa<span className="text-accent">.</span>
+              Cuéntame qué te <span className="font-display italic font-normal">preocupa</span><span className="text-accent">.</span>
             </h1>
             <p className="mt-4 text-sm text-muted-foreground">Sin formularios de 20 campos ni respuestas automáticas.</p>
           </FadeIn>

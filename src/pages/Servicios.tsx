@@ -11,9 +11,9 @@ const Servicios = () => (
         <FadeIn>
           <span className="tag-label mb-6 block">Servicios</span>
           <h1 className="text-[clamp(2.5rem,6vw,5.5rem)] font-heading font-bold leading-[0.95] tracking-tighter max-w-4xl">
-            Tu departamento financiero<span className="text-accent">.</span>
+            Tu departamento <span className="font-display italic font-normal">financiero</span><span className="text-accent">.</span>
             <br />
-            <span className="text-muted-foreground">El de verdad.</span>
+            <span className="text-muted-foreground">El de <span className="font-display italic">verdad</span>.</span>
           </h1>
           <p className="mt-6 max-w-xl text-base text-muted-foreground leading-relaxed">
             Lo que una multinacional tiene con un equipo de 10, tú lo tienes con uno.
@@ -165,7 +165,7 @@ const Servicios = () => (
       <FadeIn>
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-[clamp(2rem,5vw,4rem)] font-heading font-bold tracking-tighter">
-            ¿Hablamos<span className="text-accent">?</span>
+            ¿<span className="font-display italic font-normal">Hablamos</span><span className="text-accent">?</span>
           </h2>
           <p className="mt-4 text-sm text-surface-dark-foreground/50">Deja tu email o agenda 15 minutos.</p>
           <div className="mt-8 max-w-md mx-auto">

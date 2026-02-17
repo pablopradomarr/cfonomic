@@ -35,7 +35,7 @@ const Glosario = () => {
           <FadeIn>
             <span className="tag-label mb-6 block">Glosario</span>
             <h1 className="text-[clamp(2.5rem,6vw,5.5rem)] font-heading font-bold leading-[0.95] tracking-tighter max-w-4xl">
-              Términos que necesitas<span className="text-accent">.</span>
+              Términos que <span className="font-display italic font-normal">necesitas</span><span className="text-accent">.</span>
               <br />
               <span className="text-muted-foreground">Sin jerga.</span>
             </h1>

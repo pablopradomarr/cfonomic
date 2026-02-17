@@ -20,6 +20,7 @@ export default {
     extend: {
       fontFamily: {
         heading: ['"League Spartan"', "sans-serif"],
+        display: ['"Playfair Display"', "Georgia", "serif"],
         body: ['"Open Sans"', "sans-serif"],
         mono: ['"JetBrains Mono"', '"SF Mono"', '"Fira Code"', "monospace"],
       },
