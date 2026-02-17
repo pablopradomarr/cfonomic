@@ -2,9 +2,27 @@ import { Section, FadeIn, SectionHeading, BulletList, Divider } from "@/componen
 import EmailCaptureForm from "@/components/EmailCaptureForm";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import SEO from "@/components/SEO";
+
+const serviciosFaq = [
+  { q: "¿Es lo mismo que una gestoría?", a: "No. Tu gestoría hace impuestos. Nosotros: dirección financiera. Son complementarios." },
+  { q: "¿Cuánto cuesta?", a: "Depende del alcance. Lo hablamos en 15 minutos. Sin compromiso." },
+  { q: "¿Cuánto tarda en verse resultados?", a: "En 30–60 días el primer cierre. En 3–6 meses, sistema completo." },
+  { q: "¿Necesito cambiar de gestoría?", a: "No. Trabajamos con la tuya." },
+  { q: "¿Qué herramientas usáis?", a: "Las que ya tengas. No te obligamos a cambiar." },
+  { q: "¿Solo para empresas grandes?", a: "No. Desde 500K de facturación tiene sentido." },
+  { q: "¿Puedo contratar un mes?", a: "Sí, pero el valor está en la continuidad." },
+  { q: "¿Hacéis auditorías?", a: "No. Somos tu copiloto financiero operativo." },
+];
 
 const Servicios = () => (
   <>
+    <SEO
+      title="Asesoría financiera para empresas — Servicios CFOnomic"
+      description="Departamento financiero externalizado para PYMEs: cierres mensuales, PyG analítica, control de caja, presupuesto y KPIs. Sin contratar equipo."
+      canonical="/servicios"
+      faq={serviciosFaq}
+    />
     {/* HERO */}
     <section className="py-24 md:py-36">
       <div className="container-wide">
@@ -141,16 +159,7 @@ const Servicios = () => (
       <FadeIn>
         <SectionHeading tag="FAQ" title="Preguntas frecuentes" />
         <div className="max-w-3xl">
-          {[
-            { q: "¿Es lo mismo que una gestoría?", a: "No. Tu gestoría hace impuestos. Nosotros: dirección financiera. Son complementarios." },
-            { q: "¿Cuánto cuesta?", a: "Depende del alcance. Lo hablamos en 15 minutos. Sin compromiso." },
-            { q: "¿Cuánto tarda en verse resultados?", a: "En 30–60 días el primer cierre. En 3–6 meses, sistema completo." },
-            { q: "¿Necesito cambiar de gestoría?", a: "No. Trabajamos con la tuya." },
-            { q: "¿Qué herramientas usáis?", a: "Las que ya tengas. No te obligamos a cambiar." },
-            { q: "¿Solo para empresas grandes?", a: "No. Desde 500K de facturación tiene sentido." },
-            { q: "¿Puedo contratar un mes?", a: "Sí, pero el valor está en la continuidad." },
-            { q: "¿Hacéis auditorías?", a: "No. Somos tu copiloto financiero operativo." },
-          ].map((faq) => (
+          {serviciosFaq.map((faq) => (
             <div key={faq.q} className="border-b border-foreground/5 py-6">
               <h3 className="font-heading font-bold text-sm tracking-tight">{faq.q}</h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{faq.a}</p>

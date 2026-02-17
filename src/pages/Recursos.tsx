@@ -1,5 +1,6 @@
 import { Section, FadeIn } from "@/components/Editorial";
 import { Link } from "react-router-dom";
+import SEO from "@/components/SEO";
 
 const recursos = [
   { category: "Valoración", items: [
@@ -25,6 +26,11 @@ const recursos = [
 
 const Recursos = () => (
   <>
+    <SEO
+      title="Recursos financieros para PYMEs — Calculadoras y guías | CFOnomic"
+      description="Calculadoras, guías y recursos para entender tus números: valoración, CAC, caja, rentabilidad, unit economics y EBITDA. Sin jerga."
+      canonical="/recursos"
+    />
     <section className="py-24 md:py-36">
       <div className="container-wide">
         <FadeIn>

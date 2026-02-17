@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Section, FadeIn, SectionHeading } from "@/components/Editorial";
 import EmailCaptureForm from "@/components/EmailCaptureForm";
 import { Link } from "react-router-dom";
+import SEO from "@/components/SEO";
 
 const glossaryTerms = [
   { term: "EBITDA", def: "Beneficio antes de intereses, impuestos, depreciación y amortización.", example: "Si tu PYME factura 1M € y gasta 800K € en costes operativos, tu EBITDA es 200K €.", error: "Pensar que EBITDA = caja. No lo es.", indicator: "Margen EBITDA (% sobre ventas).", link: "/como-calcular-ebitda-pyme" },
@@ -30,6 +31,11 @@ const Glosario = () => {
 
   return (
     <>
+      <SEO
+        title="Glosario financiero para empresas — CFOnomic"
+        description="EBITDA, cashflow, NOF, CAC, margen bruto y más. Términos financieros explicados sin jerga para CEOs y dueños de PYME."
+        canonical="/glosario"
+      />
       <section className="py-24 md:py-36">
         <div className="container-wide">
           <FadeIn>

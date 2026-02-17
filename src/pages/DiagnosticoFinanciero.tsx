@@ -2,12 +2,18 @@ import { useState } from "react";
 import { Section, FadeIn, SectionHeading } from "@/components/Editorial";
 import EmailCaptureForm from "@/components/EmailCaptureForm";
 import { Link } from "react-router-dom";
+import SEO from "@/components/SEO";
 
 const DiagnosticoFinanciero = () => {
   const [emailGiven, setEmailGiven] = useState(false);
 
   return (
     <>
+      <SEO
+        title="Diagnóstico financiero gratis para empresas — CFOnomic"
+        description="Descubre en 5 minutos dónde se escapa la caja de tu empresa. Diagnóstico financiero gratuito con mejoras concretas. Sin compromiso."
+        canonical="/diagnostico-financiero"
+      />
       <section className="py-24 md:py-36">
         <div className="container-wide">
           <FadeIn>

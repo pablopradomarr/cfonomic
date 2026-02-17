@@ -1,9 +1,15 @@
 import { Section, FadeIn, SectionHeading, BulletList } from "@/components/Editorial";
 import EmailCaptureForm from "@/components/EmailCaptureForm";
 import { Link } from "react-router-dom";
+import SEO from "@/components/SEO";
 
 const CasoTuricleta = () => (
   <>
+    <SEO
+      title="Caso Turicleta: control financiero para crecer sin caos — CFOnomic"
+      description="Cómo una empresa de turismo activo pasó de crecer sin control a tener reporting mensual, cashflow y KPIs. Caso real de gestión financiera."
+      canonical="/casos-de-exito/turicleta"
+    />
     <section className="py-24 md:py-36">
       <div className="container-wide">
         <FadeIn>
@@ -82,6 +88,11 @@ const CasoTuricleta = () => (
 
 const CasoImpasto = () => (
   <>
+    <SEO
+      title="Caso Impasto: rentabilidad real por canal y menú — CFOnomic"
+      description="Cómo un restaurante descubrió qué canal ganaba y cuál perdía. Caso real de asesoría financiera en restauración."
+      canonical="/casos-de-exito/impasto"
+    />
     <section className="py-24 md:py-36">
       <div className="container-wide">
         <FadeIn>

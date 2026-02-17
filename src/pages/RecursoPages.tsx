@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { Section, FadeIn, SectionHeading, BulletList } from "@/components/Editorial";
 import EmailCaptureForm from "@/components/EmailCaptureForm";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import SEO from "@/components/SEO";
 
 interface RecursoPageProps {
   title: string;
   metaDescription: string;
+  canonical?: string;
   intro: string;
   content: React.ReactNode;
   embedUrl: string;
@@ -16,6 +18,8 @@ interface RecursoPageProps {
 
 const RecursoPage = ({
   title,
+  metaDescription,
+  canonical,
   intro,
   content,
   embedUrl,
@@ -24,9 +28,16 @@ const RecursoPage = ({
   faq,
 }: RecursoPageProps) => {
   const [emailGiven, setEmailGiven] = useState(false);
+  const location = useLocation();
 
   return (
     <>
+      <SEO
+        title={`${title} — CFOnomic`}
+        description={metaDescription}
+        canonical={canonical || location.pathname}
+        faq={faq}
+      />
       <section className="py-24 md:py-36">
         <div className="container-wide">
           <FadeIn>
@@ -146,6 +157,7 @@ const RecursoPage = ({
 export const ValoracionPyme = () => (
   <RecursoPage
     title="¿Cuánto vale mi PYME?"
+    canonical="/cuanto-vale-mi-pyme"
     metaDescription="Aprende a valorar tu PYME con múltiplos, EBITDA y caja. Calculadora gratuita incluida."
     intro="La valoración de una empresa no es ciencia exacta. Pero hay métodos probados que te dan un rango realista. Aquí te los explico sin jerga y con una calculadora para que hagas tus números."
     embedUrl="https://valoracion-pyme.lovable.app/"
@@ -198,6 +210,7 @@ export const ValoracionPyme = () => (
 export const CalcularCAC = () => (
   <RecursoPage
     title="¿Cuánto me cuesta conseguir un cliente? (CAC)"
+    canonical="/calcular-cac-cuanto-me-cuesta-conseguir-un-cliente"
     metaDescription="Calcula tu CAC, payback y su relación con el margen. Calculadora gratis."
     intro="El CAC (Coste de Adquisición de Cliente) es uno de los números más importantes de tu negocio. Si no lo conoces, estás vendiendo a ciegas."
     embedUrl="https://cfo-calculadora-es.lovable.app/"
@@ -249,6 +262,7 @@ export const CalcularCAC = () => (
 export const CajaNegogio = () => (
   <RecursoPage
     title="¿Cuánta caja genera (o pierde) mi negocio?"
+    canonical="/cuanta-caja-genera-o-pierde-mi-negocio"
     metaDescription="Entiende tu cashflow operativo, inversión y NOF. Con calculadora gratuita."
     intro="La caja es la sangre de tu empresa. Puedes tener beneficio y estar seco. Aquí entiendes por qué y cómo controlarlo."
     embedUrl="https://cash-love-calc.lovable.app/"
@@ -297,6 +311,7 @@ export const CajaNegogio = () => (
 export const RentabilidadEmpresa = () => (
   <RecursoPage
     title="¿Es rentable mi empresa?"
+    canonical="/calcular-rentabilidad-mi-empresa"
     metaDescription="Calcula la rentabilidad real de tu empresa con ejemplos y calculadora."
     intro="Rentabilidad no es facturación. Muchas empresas venden mucho y ganan poco. Aquí aprendes a medir lo que importa."
     embedUrl="https://cfonomic-rentabilidadporunidadadenegocio-56.lovable.app/"
@@ -345,6 +360,7 @@ export const RentabilidadEmpresa = () => (
 export const UnitEconomics = () => (
   <RecursoPage
     title="Unit Economics para PYMEs"
+    canonical="/unit-economics"
     metaDescription="Cuánto ganas o pierdes por unidad de negocio. Con calculadora."
     intro="¿Cuánto ganas (o pierdes) cada vez que vendes algo? Los unit economics te dan la respuesta. Imprescindible antes de escalar."
     embedUrl="https://cfonomic-rentabilidadporunidadadenegocio-56.lovable.app/"
@@ -392,6 +408,7 @@ export const UnitEconomics = () => (
 export const CuantoDineroGano = () => (
   <RecursoPage
     title="¿Cuánto dinero gano con mi empresa?"
+    canonical="/cuanto-dinero-gano-con-mi-empresa"
     metaDescription="La diferencia entre ganar y tener caja. Con calculadora."
     intro="Ganar dinero y tener dinero no es lo mismo. Aquí te explico la diferencia con ejemplos reales y una calculadora para que lo veas con tus números."
     embedUrl="https://cfonomic-rentabilidadporunidadadenegocio-56.lovable.app/"
@@ -442,6 +459,7 @@ export const CuantoDineroGano = () => (
 export const ComoCalcularEBITDA = () => (
   <RecursoPage
     title="Cómo calcular el EBITDA de tu PYME"
+    canonical="/como-calcular-ebitda-pyme"
     metaDescription="Qué es el EBITDA, qué no es y para qué sirve. Explicado para CEOs de PYME."
     intro="El EBITDA es el indicador financiero más usado y más mal interpretado. Aquí te explico qué es, qué no es y cuándo fiarte (y cuándo no)."
     embedUrl="https://valoracion-pyme.lovable.app/"

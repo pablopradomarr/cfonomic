@@ -3,10 +3,16 @@ import { motion } from "framer-motion";
 import { Section, FadeIn, SectionHeading, PullQuote, BulletList, Divider } from "@/components/Editorial";
 import EmailCaptureForm from "@/components/EmailCaptureForm";
 import { Button } from "@/components/ui/button";
+import SEO from "@/components/SEO";
 
 const Index = () => {
   return (
     <>
+      <SEO
+        title="Asesoría financiera para PYMEs — CFOnomic"
+        description="Tu departamento financiero sin contratar a un equipo entero. Control financiero, caja, márgenes y decisiones con datos para PYMEs y Startups."
+        canonical="/"
+      />
       {/* ═══ A) HERO — MASSIVE TYPOGRAPHY ═══ */}
       <section className="relative min-h-[90vh] flex items-center py-24 md:py-32">
         <div className="container-wide">

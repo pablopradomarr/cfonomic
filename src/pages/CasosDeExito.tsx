@@ -1,9 +1,15 @@
 import { Section, FadeIn, SectionHeading } from "@/components/Editorial";
 import EmailCaptureForm from "@/components/EmailCaptureForm";
 import { Link } from "react-router-dom";
+import SEO from "@/components/SEO";
 
 const CasosDeExito = () => (
   <>
+    <SEO
+      title="Casos prácticos de gestión financiera — CFOnomic"
+      description="Empresas reales que pasaron de decidir por intuición a decidir con datos. Resultados de asesoría financiera para PYMEs."
+      canonical="/casos-de-exito"
+    />
     <section className="py-24 md:py-36">
       <div className="container-wide">
         <FadeIn>

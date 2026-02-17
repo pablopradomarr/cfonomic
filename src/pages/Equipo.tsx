@@ -1,9 +1,15 @@
 import { Section, FadeIn, SectionHeading, BulletList } from "@/components/Editorial";
 import EmailCaptureForm from "@/components/EmailCaptureForm";
 import { Link } from "react-router-dom";
+import SEO from "@/components/SEO";
 
 const Equipo = () => (
   <>
+    <SEO
+      title="Pablo Prado Marrón — Asesor financiero para PYMEs"
+      description="Dirijo las finanzas de PYMEs y Startups que quieren dejar de improvisar. Departamento financiero sin contratar equipo."
+      canonical="/equipo"
+    />
     <section className="py-24 md:py-36">
       <div className="container-wide">
         <FadeIn>
