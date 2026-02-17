@@ -21,7 +21,7 @@ const Index = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
           >
-            <h1 className="tag-label mb-8 block">Asesoría financiera para PYMEs</h1>
+            <span className="tag-label mb-8 block">CFOnomic</span>
           </motion.div>
 
           <motion.p
@@ -44,10 +44,9 @@ const Index = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="mt-8 max-w-lg"
           >
-            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-              Muchas PYMEs facturan, pero no saben si ganan. La contabilidad llega
-              tarde, la caja no cuadra y cada decisión se toma por intuición.
-            </p>
+            <h1 className="text-base md:text-lg text-muted-foreground leading-relaxed font-body font-normal">
+              Asesoría financiera para PYMEs que quieren dejar de improvisar. Control de caja, márgenes reales y decisiones con datos — sin contratar un equipo entero.
+            </h1>
           </motion.div>
 
           <motion.div
@@ -155,12 +154,14 @@ const Index = () => {
               <span className="tag-label border-surface-dark-foreground/20 text-surface-dark-foreground/40">
                 Historia prestada
               </span>
-              <h2 className="sr-only">Control financiero para PYMEs: lo que hacen las grandes empresas</h2>
               <p className="mt-6 text-[clamp(2rem,5vw,4.5rem)] font-heading font-bold leading-[1.05] tracking-tighter" role="presentation">
                 Lo que hace <span className="font-display italic font-normal">Mercadona</span><span className="text-accent">.</span>
                 <br />
                 <span className="text-surface-dark-foreground/40">Y tú <span className="font-display italic">no</span>.</span>
               </p>
+              <h2 className="mt-4 text-sm text-surface-dark-foreground/50 leading-relaxed max-w-md">
+                El control financiero que aplican las grandes empresas, adaptado a tu PYME.
+              </h2>
             </div>
             <div className="md:col-span-7 space-y-6 text-surface-dark-foreground/70 text-base md:text-lg leading-relaxed">
               <p>
@@ -194,13 +195,12 @@ const Index = () => {
           <div className="grid md:grid-cols-12 gap-12">
             <div className="md:col-span-5">
               <span className="number-display">03</span>
-              <h2 className="sr-only">Indicadores financieros clave para tu PYME</h2>
               <p className="mt-4 text-[clamp(1.8rem,4vw,3rem)] font-heading font-bold leading-tight tracking-tighter" role="presentation">
                 La servilleta que te cambia la cabeza<span className="text-accent">.</span>
               </p>
-              <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
-                No necesitas un MBA. Necesitas estos 5 números cada mes.
-              </p>
+              <h2 className="mt-4 text-sm text-muted-foreground leading-relaxed">
+                Los 5 indicadores financieros que toda PYME debería revisar cada mes. Sin MBA, sin complicaciones.
+              </h2>
             </div>
             <div className="md:col-span-7">
               <div className="border border-foreground/10 p-6 md:p-10">
@@ -273,15 +273,14 @@ const Index = () => {
         <div className="grid md:grid-cols-12 gap-12 md:gap-16">
           <FadeIn className="md:col-span-6">
             <span className="tag-label mb-6 block">Quién soy</span>
-            <h2 className="sr-only">Asesor financiero para PYMEs y Startups</h2>
             <p className="text-[clamp(2.5rem,6vw,5rem)] font-heading font-bold leading-[1] tracking-tighter" role="presentation">
               Pablo <span className="font-display italic font-normal">Prado</span>
               <br />
               Marrón<span className="text-accent">.</span>
             </p>
-            <p className="mt-2 text-sm font-mono text-muted-foreground uppercase tracking-[0.15em]">
-              Pablo CFOnomic
-            </p>
+            <h2 className="mt-2 text-sm font-mono text-muted-foreground uppercase tracking-[0.15em]">
+              Asesor financiero para PYMEs · CFOnomic
+            </h2>
             <Divider accent />
             <div className="space-y-4 text-sm text-foreground/80 leading-relaxed">
               <p>→ Te monto el departamento financiero sin contratar a 3 personas.</p>
@@ -332,10 +331,12 @@ const Index = () => {
             <div className="md:col-span-4">
               <span className="number-display text-foreground/5">04</span>
               <span className="tag-label block mt-4">Dolor</span>
-              <h2 className="sr-only">Problemas financieros comunes en PYMEs</h2>
               <p className="mt-4 text-[clamp(2rem,4vw,3.5rem)] font-heading font-bold leading-tight tracking-tighter" role="presentation">
                 ¿Te suena?
               </p>
+              <h2 className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                Problemas financieros que vemos en 9 de cada 10 PYMEs sin control financiero.
+              </h2>
             </div>
             <div className="md:col-span-8">
               <div className="grid sm:grid-cols-2 gap-x-8 gap-y-4 text-sm text-foreground/70 leading-relaxed">
@@ -621,14 +622,14 @@ const Index = () => {
       <Section dark>
         <FadeIn>
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="sr-only">Solicita tu diagnóstico financiero gratuito</h2>
+            <h2 className="sr-only">Diagnóstico financiero gratuito para tu empresa</h2>
             <p className="text-[clamp(2.5rem,6vw,5.5rem)] font-heading font-bold leading-[1.02] tracking-tighter" role="presentation">
               Si quieres seguir
               <br />
               a <span className="font-display italic font-normal">ciegas</span>, no hagas nada<span className="text-accent">.</span>
             </p>
             <p className="mt-8 text-lg md:text-xl text-surface-dark-foreground/50">
-              Si quieres control y dormir mejor, deja tu email.
+              Si quieres control financiero de verdad y dormir mejor, deja tu email.
             </p>
             <div className="mt-10 max-w-md mx-auto">
               <EmailCaptureForm

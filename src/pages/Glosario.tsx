@@ -39,12 +39,15 @@ const Glosario = () => {
       <section className="py-24 md:py-36">
         <div className="container-wide">
           <FadeIn>
-            <h1 className="tag-label mb-4 block">Glosario financiero para empresas</h1>
+            <span className="tag-label mb-6 block">Glosario</span>
             <p className="text-[clamp(2.5rem,6vw,5.5rem)] font-heading font-bold leading-[0.95] tracking-tighter max-w-4xl" role="presentation">
               Términos que <span className="font-display italic font-normal">necesitas</span><span className="text-accent">.</span>
               <br />
               <span className="text-muted-foreground">Sin jerga.</span>
             </p>
+            <h1 className="mt-6 max-w-lg text-base text-muted-foreground leading-relaxed font-body font-normal">
+              Glosario financiero para empresas: EBITDA, cashflow, NOF, CAC, margen bruto y todos los términos que necesitas para dirigir tu PYME con datos.
+            </h1>
             <div className="mt-8 max-w-sm">
               <input
                 type="text"
@@ -93,11 +96,25 @@ const Glosario = () => {
       <Section dark>
         <FadeIn>
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-[clamp(2rem,5vw,4rem)] font-heading font-bold tracking-tighter">
+            <p className="text-[clamp(2rem,5vw,4rem)] font-heading font-bold tracking-tighter" role="presentation">
               ¿Quieres que estos números sean los tuyos<span className="text-accent">?</span>
+            </p>
+            <h2 className="mt-4 text-sm text-surface-dark-foreground/50">
+              Pide tu diagnóstico financiero gratuito y analiza tus indicadores con un asesor financiero.
             </h2>
             <div className="mt-8 max-w-md mx-auto">
               <EmailCaptureForm buttonText="Quiero mi diagnóstico" microcopy="Sin humo. Con números." variant="stacked" dark />
+            </div>
+            <div className="mt-6 flex flex-wrap gap-4 justify-center">
+              {[
+                { label: "Servicios", path: "/servicios" },
+                { label: "Recursos y calculadoras", path: "/recursos" },
+                { label: "Diagnóstico gratis", path: "/diagnostico-financiero" },
+              ].map((l) => (
+                <Link key={l.path} to={l.path} className="text-[11px] font-mono uppercase tracking-[0.1em] text-surface-dark-foreground/30 hover:text-accent transition-colors border-b border-surface-dark-foreground/10 pb-0.5">
+                  {l.label} →
+                </Link>
+              ))}
             </div>
           </div>
         </FadeIn>

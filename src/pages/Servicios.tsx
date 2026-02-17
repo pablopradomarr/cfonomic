@@ -27,16 +27,15 @@ const Servicios = () => (
     <section className="py-24 md:py-36">
       <div className="container-wide">
         <FadeIn>
-          <h1 className="tag-label mb-4 block">Asesoría financiera para empresas</h1>
+          <span className="tag-label mb-6 block">Servicios</span>
           <p className="text-[clamp(2.5rem,6vw,5.5rem)] font-heading font-bold leading-[0.95] tracking-tighter max-w-4xl" role="presentation">
             Tu departamento <span className="font-display italic font-normal">financiero</span><span className="text-accent">.</span>
             <br />
             <span className="text-muted-foreground">El de <span className="font-display italic">verdad</span>.</span>
           </p>
-          <p className="mt-6 max-w-xl text-base text-muted-foreground leading-relaxed">
-            Lo que una multinacional tiene con un equipo de 10, tú lo tienes con uno.
-            Sin contratar, sin complicaciones, sin humo.
-          </p>
+          <h1 className="mt-6 max-w-xl text-base text-muted-foreground leading-relaxed font-body font-normal">
+            Asesoría financiera para empresas que quieren dejar de improvisar. Lo que una multinacional tiene con un equipo de 10, tú lo tienes con uno. Sin contratar, sin complicaciones.
+          </h1>
         </FadeIn>
       </div>
     </section>
@@ -173,11 +172,12 @@ const Servicios = () => (
     <Section dark>
       <FadeIn>
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="sr-only">Contacta para asesoría financiera</h2>
           <p className="text-[clamp(2rem,5vw,4rem)] font-heading font-bold tracking-tighter" role="presentation">
             ¿<span className="font-display italic font-normal">Hablamos</span><span className="text-accent">?</span>
           </p>
-          <p className="mt-4 text-sm text-surface-dark-foreground/50">Deja tu email o agenda 15 minutos.</p>
+          <h2 className="mt-4 text-sm text-surface-dark-foreground/50">
+            Pide tu diagnóstico financiero o agenda 15 minutos para hablar de tu empresa.
+          </h2>
           <div className="mt-8 max-w-md mx-auto">
             <EmailCaptureForm buttonText="Envíame info" microcopy="Sin humo. Con números." variant="stacked" dark />
           </div>
@@ -186,6 +186,17 @@ const Servicios = () => (
               Agendar una llamada →
             </Link>
           </p>
+          <div className="mt-8 flex flex-wrap gap-4 justify-center">
+            {[
+              { label: "Casos reales", path: "/casos-de-exito" },
+              { label: "Diagnóstico gratis", path: "/diagnostico-financiero" },
+              { label: "Recursos", path: "/recursos" },
+            ].map((l) => (
+              <Link key={l.path} to={l.path} className="text-[11px] font-mono uppercase tracking-[0.1em] text-surface-dark-foreground/30 hover:text-accent transition-colors border-b border-surface-dark-foreground/10 pb-0.5">
+                {l.label} →
+              </Link>
+            ))}
+          </div>
         </div>
       </FadeIn>
     </Section>

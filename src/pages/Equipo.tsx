@@ -14,20 +14,19 @@ const Equipo = () => (
       <div className="container-wide">
         <FadeIn>
           <div className="grid md:grid-cols-12 gap-12 items-start">
-            <div className="md:col-span-7">
-              <h1 className="tag-label mb-6 block">Asesor financiero para PYMEs y Startups</h1>
+             <div className="md:col-span-7">
+              <span className="tag-label mb-6 block">Quién está detrás</span>
               <p className="text-[clamp(3rem,7vw,6rem)] font-heading font-bold leading-[0.92] tracking-tighter" role="presentation">
                 Pablo <span className="font-display italic font-normal">Prado</span>
                 <br />
                 Marrón<span className="text-accent">.</span>
               </p>
               <p className="mt-2 text-sm font-mono text-muted-foreground uppercase tracking-[0.15em]">
-                Pablo CFOnomic
+                CFOnomic
               </p>
-              <p className="mt-8 max-w-md text-base text-muted-foreground leading-relaxed">
-                Dirijo las finanzas de PYMEs y Startups que quieren dejar de improvisar.
-                Les monto el departamento financiero que necesitan, sin contratar a un equipo entero.
-              </p>
+              <h1 className="mt-8 max-w-md text-base text-muted-foreground leading-relaxed font-body font-normal">
+                Asesor financiero para PYMEs y Startups. Dirijo las finanzas de empresas que quieren dejar de improvisar — les monto el departamento financiero que necesitan, sin contratar a un equipo entero.
+              </h1>
             </div>
             <div className="md:col-span-5">
               <div className="aspect-[3/4] bg-surface-paper border border-foreground/5 flex items-center justify-center">
@@ -48,14 +47,11 @@ const Equipo = () => (
         <div className="max-w-2xl space-y-5 text-base text-surface-dark-foreground/70 leading-relaxed">
           <p>
             Porque he visto demasiadas empresas buenas tomar decisiones malas. No por falta de talento.
-            Sino porque no tenían información financiera útil, a tiempo y que sirviera para decidir.
+            Sino porque no tenían la asesoría financiera que necesitaban: información útil, a tiempo y que sirviera para decidir.
           </p>
           <p>
-            La contabilidad obligatoria te dice "qué pasó" tres meses después. Tú necesitas saber
-            "qué hago ahora" y "qué viene".
-          </p>
-          <p>
-            Por eso creé CFOnomic.
+            La contabilidad obligatoria te dice "qué pasó" tres meses después. Tú necesitas control financiero real:
+            "qué hago ahora" y "qué viene". Por eso creé CFOnomic.
           </p>
         </div>
       </FadeIn>
@@ -95,10 +91,12 @@ const Equipo = () => (
     <Section paper>
       <FadeIn>
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="sr-only">Contacta para asesoría financiera</h2>
           <p className="text-[clamp(2rem,5vw,4rem)] font-heading font-bold tracking-tighter" role="presentation">
             ¿<span className="font-display italic font-normal">Hablamos</span><span className="text-accent">?</span>
           </p>
+          <h2 className="mt-4 text-sm text-muted-foreground">
+            Pide tu diagnóstico financiero gratuito o agenda una llamada para hablar de tu empresa.
+          </h2>
           <div className="mt-8 max-w-md mx-auto">
             <EmailCaptureForm buttonText="Quiero el diagnóstico" microcopy="Sin compromiso." variant="stacked" />
           </div>
@@ -107,6 +105,17 @@ const Equipo = () => (
               Agendar una llamada →
             </Link>
           </p>
+          <div className="mt-6 flex flex-wrap gap-4 justify-center">
+            {[
+              { label: "Servicios", path: "/servicios" },
+              { label: "Casos reales", path: "/casos-de-exito" },
+              { label: "Recursos", path: "/recursos" },
+            ].map((l) => (
+              <Link key={l.path} to={l.path} className="text-[11px] font-mono uppercase tracking-[0.1em] text-foreground/30 hover:text-foreground transition-colors border-b border-foreground/10 pb-0.5">
+                {l.label} →
+              </Link>
+            ))}
+          </div>
         </div>
       </FadeIn>
     </Section>

@@ -44,13 +44,15 @@ const CiudadPage = ({ city }: CityPageProps) => {
       <section className="py-24 md:py-36">
         <div className="container-wide">
           <FadeIn>
-            <h1 className="tag-label mb-6 block">Asesoría financiera en {city} para PYMEs</h1>
+            <span className="tag-label mb-6 block">{city}</span>
             <p className="text-[clamp(2rem,5vw,4rem)] font-heading font-bold leading-[0.95] tracking-tighter max-w-5xl" role="presentation">
               CFO externo en {city}<span className="text-accent">.</span>
               <br />
               <span className="text-muted-foreground">Para PYMEs que quieren control y caja.</span>
             </p>
-            <p className="mt-6 max-w-lg text-base text-muted-foreground leading-relaxed">{data.intro}</p>
+            <h1 className="mt-6 max-w-lg text-base text-muted-foreground leading-relaxed font-body font-normal">
+              Asesoría financiera en {city} para PYMEs. {data.intro} Control de caja, márgenes y decisiones con datos para tu empresa.
+            </h1>
           </FadeIn>
         </div>
       </section>
@@ -84,7 +86,7 @@ const CiudadPage = ({ city }: CityPageProps) => {
         <FadeIn>
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-heading font-bold tracking-tighter">
-              ¿PYME en {city}<span className="text-accent">?</span>
+              ¿Necesitas asesoría financiera en {city}<span className="text-accent">?</span>
             </h2>
             <div className="mt-8 max-w-md mx-auto">
               <EmailCaptureForm buttonText="Diagnóstico gratis" microcopy={`CFO externo en ${city}. Sin humo.`} variant="stacked" dark />

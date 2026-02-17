@@ -17,15 +17,15 @@ const DiagnosticoFinanciero = () => {
       <section className="py-24 md:py-36">
         <div className="container-wide">
           <FadeIn>
-            <h1 className="tag-label mb-6 block">Diagnóstico financiero gratis para empresas</h1>
+            <span className="tag-label mb-6 block">Diagnóstico</span>
             <p className="text-[clamp(2.5rem,6vw,5.5rem)] font-heading font-bold leading-[0.95] tracking-tighter max-w-5xl" role="presentation">
               Descubre dónde se te
               <br />
               escapa la <span className="font-display italic font-normal">caja</span><span className="text-accent">.</span>
             </p>
-            <p className="mt-6 max-w-lg text-base text-muted-foreground leading-relaxed">
-              En 5 minutos tienes claridad de por dónde empezar. Sin compromiso. Sin humo.
-            </p>
+            <h1 className="mt-6 max-w-lg text-base text-muted-foreground leading-relaxed font-body font-normal">
+              Diagnóstico financiero gratis para empresas. En 5 minutos tienes claridad de por dónde empezar a mejorar tu control financiero. Sin compromiso.
+            </h1>
           </FadeIn>
         </div>
       </section>
@@ -85,14 +85,27 @@ const DiagnosticoFinanciero = () => {
       <Section dark>
         <FadeIn>
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-[clamp(2rem,5vw,3.5rem)] font-heading font-bold tracking-tighter">
+            <p className="text-[clamp(2rem,5vw,3.5rem)] font-heading font-bold tracking-tighter" role="presentation">
               ¿Prefieres que lo veamos <span className="font-display italic font-normal">juntos</span><span className="text-accent">?</span>
+            </p>
+            <h2 className="mt-3 text-sm text-surface-dark-foreground/50">
+              15 minutos de asesoría financiera personalizada. Tú con tus dudas, yo con tus números.
             </h2>
-            <p className="mt-3 text-sm text-surface-dark-foreground/50">15 minutos. Tú con tus dudas, yo con mis números.</p>
             <div className="mt-6">
               <Link to="/contacto" className="inline-flex bg-accent text-accent-foreground px-6 py-3 text-[12px] font-mono uppercase tracking-[0.1em] font-bold hover:bg-accent/85 transition-colors">
                 Agendar llamada →
               </Link>
+            </div>
+            <div className="mt-6 flex flex-wrap gap-4 justify-center">
+              {[
+                { label: "Servicios", path: "/servicios" },
+                { label: "Casos reales", path: "/casos-de-exito" },
+                { label: "Recursos", path: "/recursos" },
+              ].map((l) => (
+                <Link key={l.path} to={l.path} className="text-[11px] font-mono uppercase tracking-[0.1em] text-surface-dark-foreground/30 hover:text-accent transition-colors border-b border-surface-dark-foreground/10 pb-0.5">
+                  {l.label} →
+                </Link>
+              ))}
             </div>
           </div>
         </FadeIn>

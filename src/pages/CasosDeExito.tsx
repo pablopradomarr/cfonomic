@@ -13,13 +13,13 @@ const CasosDeExito = () => (
     <section className="py-24 md:py-36">
       <div className="container-wide">
         <FadeIn>
-          <h1 className="tag-label mb-4 block">Casos prácticos de gestión financiera</h1>
+          <span className="tag-label mb-6 block">Casos</span>
           <p className="text-[clamp(2.5rem,6vw,5.5rem)] font-heading font-bold leading-[0.95] tracking-tighter max-w-4xl" role="presentation">
             <span className="font-display italic font-normal">Medir</span><span className="text-accent">.</span> Ajustar<span className="text-accent">.</span> <span className="font-display italic font-normal">Repetir</span><span className="text-accent">.</span>
           </p>
-          <p className="mt-6 max-w-lg text-base text-muted-foreground leading-relaxed">
-            Empresas reales que pasaron de decidir por intuición a decidir con datos.
-          </p>
+          <h1 className="mt-6 max-w-lg text-base text-muted-foreground leading-relaxed font-body font-normal">
+            Casos prácticos de gestión financiera: empresas reales que pasaron de decidir por intuición a tener control financiero con datos.
+          </h1>
         </FadeIn>
       </div>
     </section>
@@ -50,12 +50,25 @@ const CasosDeExito = () => (
     <Section dark>
       <FadeIn>
         <div className="max-w-2xl mx-auto text-center">
-            <h2 className="sr-only">Solicita tu diagnóstico financiero</h2>
             <p className="text-[clamp(2rem,5vw,4rem)] font-heading font-bold tracking-tighter" role="presentation">
             ¿Quieres ser el <span className="font-display italic font-normal">próximo</span><span className="text-accent">?</span>
           </p>
+          <h2 className="mt-4 text-sm text-surface-dark-foreground/50">
+            Solicita tu diagnóstico financiero gratuito y descubre las palancas de mejora de tu empresa.
+          </h2>
           <div className="mt-8 max-w-md mx-auto">
             <EmailCaptureForm buttonText="Quiero mi diagnóstico" microcopy="Te mando el diagnóstico y 3 mejoras rápidas." variant="stacked" dark />
+          </div>
+          <div className="mt-6 flex flex-wrap gap-4 justify-center">
+            {[
+              { label: "Servicios", path: "/servicios" },
+              { label: "Diagnóstico gratis", path: "/diagnostico-financiero" },
+              { label: "Recursos", path: "/recursos" },
+            ].map((l) => (
+              <Link key={l.path} to={l.path} className="text-[11px] font-mono uppercase tracking-[0.1em] text-surface-dark-foreground/30 hover:text-accent transition-colors border-b border-surface-dark-foreground/10 pb-0.5">
+                {l.label} →
+              </Link>
+            ))}
           </div>
         </div>
       </FadeIn>
