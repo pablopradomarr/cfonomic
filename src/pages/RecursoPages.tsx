@@ -37,6 +37,7 @@ const RecursoPage = ({
         description={metaDescription}
         canonical={canonical || location.pathname}
         faq={faq}
+        breadcrumbs={[{ name: "Inicio", path: "/" }, { name: "Recursos", path: "/recursos" }, { name: title, path: canonical || location.pathname }]}
       />
       <section className="py-24 md:py-36">
         <div className="container-wide">

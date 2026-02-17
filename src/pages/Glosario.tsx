@@ -35,6 +35,7 @@ const Glosario = () => {
         title="Glosario financiero para empresas — CFOnomic"
         description="EBITDA, cashflow, NOF, CAC, margen bruto y más. Términos financieros explicados sin jerga para CEOs y dueños de PYME."
         canonical="/glosario"
+        breadcrumbs={[{ name: "Inicio", path: "/" }, { name: "Glosario", path: "/glosario" }]}
       />
       <section className="py-24 md:py-36">
         <div className="container-wide">
