@@ -83,11 +83,12 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         <AnimatePresence>
           {mobileOpen && (
             <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.2 }}
-              className="lg:hidden fixed inset-0 top-16 bg-background z-40 flex flex-col"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="lg:hidden fixed inset-0 top-16 z-40 flex flex-col"
+              style={{ backgroundColor: "hsl(var(--surface-dark))" }}
             >
               <div className="flex-1 flex flex-col justify-center px-8">
                 {navItems.map((item, i) => (
@@ -99,10 +100,10 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                   >
                     <Link
                       to={item.path}
-                      className={`block py-4 font-heading text-3xl font-bold border-b border-foreground/5 transition-colors ${
+                      className={`block py-4 font-heading text-3xl font-bold border-b border-white/10 transition-colors ${
                         location.pathname === item.path
-                          ? "text-foreground"
-                          : "text-muted-foreground hover:text-foreground"
+                          ? "text-accent"
+                          : "text-white/60 hover:text-white"
                       }`}
                     >
                       {item.label}
@@ -113,7 +114,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               <div className="px-8 pb-12">
                 <Link
                   to="/diagnostico-financiero"
-                  className="block w-full bg-foreground text-background py-4 text-center text-sm font-mono uppercase tracking-[0.1em] font-bold"
+                  className="block w-full bg-accent text-accent-foreground py-4 text-center text-sm font-mono uppercase tracking-[0.1em] font-bold"
                 >
                   Diagnóstico gratis
                 </Link>
