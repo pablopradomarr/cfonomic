@@ -18,12 +18,14 @@ const CasoTuricleta = () => (
           </Link>
           <div className="mt-8">
             <span className="tag-label mb-4 block">Turismo activo</span>
-            <h1 className="tag-label mb-4 block">Caso Turicleta: control financiero para crecer</h1>
             <p className="text-[clamp(2rem,5vw,4rem)] font-heading font-bold leading-[0.95] tracking-tighter max-w-4xl" role="presentation">
               Turicleta<span className="text-accent">.</span>
               <br />
               <span className="text-muted-foreground">Control para crecer sin caos.</span>
             </p>
+            <h1 className="mt-4 max-w-2xl text-sm text-muted-foreground leading-relaxed font-body font-normal">
+              Caso real de gestión financiera: cómo una empresa de turismo activo pasó de crecer sin control a tener reporting mensual, cashflow y KPIs con asesoría financiera.
+            </h1>
           </div>
         </FadeIn>
       </div>
@@ -78,8 +80,22 @@ const CasoTuricleta = () => (
           <p className="text-2xl md:text-4xl font-heading font-bold leading-[1.05] tracking-tight">
             Ahora saben dónde están, qué viene y qué decidir<span className="text-accent">.</span> Cada mes.
           </p>
+          <p className="mt-4 text-sm text-surface-dark-foreground/50">
+            Esto es lo que consigue una buena asesoría financiera para PYMEs.
+          </p>
           <div className="mt-10">
             <EmailCaptureForm buttonText="Quiero lo mismo" microcopy="Sin compromiso." variant="stacked" dark />
+          </div>
+          <div className="mt-6 flex flex-wrap gap-4">
+            {[
+              { label: "Ver servicios", path: "/servicios" },
+              { label: "Diagnóstico gratis", path: "/diagnostico-financiero" },
+              { label: "Más casos", path: "/casos-de-exito" },
+            ].map((l) => (
+              <Link key={l.path} to={l.path} className="text-[11px] font-mono uppercase tracking-[0.1em] text-surface-dark-foreground/30 hover:text-accent transition-colors border-b border-surface-dark-foreground/10 pb-0.5">
+                {l.label} →
+              </Link>
+            ))}
           </div>
         </div>
       </FadeIn>
@@ -102,12 +118,14 @@ const CasoImpasto = () => (
           </Link>
           <div className="mt-8">
             <span className="tag-label mb-4 block">Restauración</span>
-            <h1 className="tag-label mb-4 block">Caso Impasto: rentabilidad por canal en restauración</h1>
             <p className="text-[clamp(2rem,5vw,4rem)] font-heading font-bold leading-[0.95] tracking-tighter max-w-4xl" role="presentation">
               Impasto<span className="text-accent">.</span>
               <br />
               <span className="text-muted-foreground">Rentabilidad real por canal y menú.</span>
             </p>
+            <h1 className="mt-4 max-w-2xl text-sm text-muted-foreground leading-relaxed font-body font-normal">
+              Caso real de asesoría financiera en restauración: cómo un restaurante descubrió qué canal ganaba y cuál perdía con control financiero por canal.
+            </h1>
           </div>
         </FadeIn>
       </div>
@@ -160,8 +178,22 @@ const CasoImpasto = () => (
           <p className="text-2xl md:text-4xl font-heading font-bold leading-[1.05] tracking-tight">
             Dejaron de adivinar<span className="text-accent">.</span> Ahora saben qué canal, qué plato y qué decisión les da dinero.
           </p>
+          <p className="mt-4 text-sm text-surface-dark-foreground/50">
+            El control financiero que transforma restaurantes.
+          </p>
           <div className="mt-10">
             <EmailCaptureForm buttonText="Quiero analizar así mi negocio" microcopy="Primer diagnóstico gratis." variant="stacked" dark />
+          </div>
+          <div className="mt-6 flex flex-wrap gap-4">
+            {[
+              { label: "Ver servicios", path: "/servicios" },
+              { label: "Diagnóstico gratis", path: "/diagnostico-financiero" },
+              { label: "Más casos", path: "/casos-de-exito" },
+            ].map((l) => (
+              <Link key={l.path} to={l.path} className="text-[11px] font-mono uppercase tracking-[0.1em] text-surface-dark-foreground/30 hover:text-accent transition-colors border-b border-surface-dark-foreground/10 pb-0.5">
+                {l.label} →
+              </Link>
+            ))}
           </div>
         </div>
       </FadeIn>

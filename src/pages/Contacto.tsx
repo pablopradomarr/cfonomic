@@ -67,11 +67,13 @@ const Contacto = () => {
       <section className="py-24 md:py-36">
         <div className="container-wide">
           <FadeIn>
-            <h1 className="tag-label mb-4 block">Contacto — Asesoría financiera para PYMEs</h1>
+            <span className="tag-label mb-6 block">Contacto</span>
             <p className="text-[clamp(2.5rem,6vw,5rem)] font-heading font-bold leading-[0.95] tracking-tighter max-w-3xl" role="presentation">
               Cuéntame qué te <span className="font-display italic font-normal">preocupa</span><span className="text-accent">.</span>
             </p>
-            <p className="mt-4 text-sm text-muted-foreground">Sin formularios de 20 campos ni respuestas automáticas.</p>
+            <h1 className="mt-4 text-sm text-muted-foreground font-body font-normal">
+              Asesoría financiera para PYMEs. Sin formularios de 20 campos ni respuestas automáticas. Hablamos de tu empresa en 15 minutos.
+            </h1>
           </FadeIn>
         </div>
       </section>

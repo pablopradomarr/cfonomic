@@ -44,10 +44,9 @@ const RecursoPage = ({
             <Link to="/recursos" className="text-[11px] font-mono uppercase tracking-[0.1em] text-muted-foreground hover:text-foreground transition-colors border-b border-foreground/10 pb-0.5">
               ← Recursos
             </Link>
-            <h1 className="mt-8 tag-label block">{title}</h1>
-            <p className="mt-4 text-[clamp(2rem,5vw,4rem)] font-heading font-bold leading-[0.95] tracking-tighter max-w-4xl" role="presentation">
+            <h1 className="mt-8 text-[clamp(2rem,5vw,4rem)] font-heading font-bold leading-[0.95] tracking-tighter max-w-4xl">
               {title}<span className="text-accent">.</span>
-            </p>
+            </h1>
             <p className="mt-4 max-w-2xl text-base text-muted-foreground leading-relaxed">{intro}</p>
           </FadeIn>
         </div>
