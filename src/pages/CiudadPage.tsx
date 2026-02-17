@@ -1,6 +1,7 @@
 import { Section, FadeIn, SectionHeading, BulletList } from "@/components/Editorial";
 import EmailCaptureForm from "@/components/EmailCaptureForm";
 import { Link } from "react-router-dom";
+import SEO from "@/components/SEO";
 
 interface CityPageProps {
   city: string;
@@ -21,9 +22,25 @@ const cityData: Record<string, { intro: string; problem: string }> = {
 
 const CiudadPage = ({ city }: CityPageProps) => {
   const data = cityData[city] || cityData["Madrid"];
+  const citySlug = city.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+  const cityFaq = [
+    { q: `¿Necesito asesoría financiera en ${city}?`, a: `Si facturas más de 300K–500K € y no tienes cierre mensual estructurado, probablemente sí.` },
+    { q: "¿Presencial o remoto?", a: "El día a día es remoto. Reuniones presenciales si las necesitas." },
+    { q: "¿Cuánto cuesta?", a: "Depende del alcance. Lo hablamos en 15 minutos." },
+    { q: "¿Sustituye a mi gestoría?", a: "No. Son complementarios." },
+    { q: "¿Cuánto tardo en ver resultados?", a: "En 30–60 días el primer cierre. En 3 meses, sistema completo." },
+    { q: "¿Trabajas con mi sector?", a: "Sí. Servicios, ecommerce, restauración, turismo, industria, startups." },
+  ];
 
   return (
     <>
+      <SEO
+        title={`Asesoría financiera en ${city} para PYMEs — CFOnomic`}
+        description={`${data.intro} Control financiero, caja y decisiones con datos para empresas en ${city}.`}
+        canonical={`/cfo-externo-${citySlug}`}
+        faq={cityFaq}
+      />
       <section className="py-24 md:py-36">
         <div className="container-wide">
           <FadeIn>
@@ -85,14 +102,7 @@ const CiudadPage = ({ city }: CityPageProps) => {
         <FadeIn>
           <SectionHeading tag="FAQ" title={`CFO externo en ${city}`} />
           <div className="max-w-3xl">
-            {[
-              { q: `¿Necesito un CFO externo en ${city}?`, a: `Si facturas más de 300K–500K € y no tienes cierre mensual estructurado, probablemente sí.` },
-              { q: "¿Presencial o remoto?", a: "El día a día es remoto. Reuniones presenciales si las necesitas." },
-              { q: "¿Cuánto cuesta?", a: "Depende del alcance. Lo hablamos en 15 minutos." },
-              { q: "¿Sustituye a mi gestoría?", a: "No. Son complementarios." },
-              { q: "¿Cuánto tardo en ver resultados?", a: "En 30–60 días el primer cierre. En 3 meses, sistema completo." },
-              { q: "¿Trabajas con mi sector?", a: "Sí. Servicios, ecommerce, restauración, turismo, industria, startups." },
-            ].map((faq) => (
+            {cityFaq.map((faq) => (
               <div key={faq.q} className="border-b border-foreground/5 py-6">
                 <h3 className="font-heading font-bold text-sm tracking-tight">{faq.q}</h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{faq.a}</p>

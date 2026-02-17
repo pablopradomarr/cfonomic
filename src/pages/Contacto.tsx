@@ -3,6 +3,7 @@ import { Section, FadeIn, SectionHeading } from "@/components/Editorial";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import SEO from "@/components/SEO";
 
 const Contacto = () => {
   const [formData, setFormData] = useState({
@@ -58,6 +59,11 @@ const Contacto = () => {
 
   return (
     <>
+      <SEO
+        title="Contacto — Asesoría financiera para PYMEs | CFOnomic"
+        description="Hablamos de tu empresa en 15 minutos. Sin compromiso, sin PowerPoint. Asesoría financiera para PYMEs que quieren control y caja."
+        canonical="/contacto"
+      />
       <section className="py-24 md:py-36">
         <div className="container-wide">
           <FadeIn>
