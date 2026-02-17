@@ -30,7 +30,7 @@ const Recursos = () => (
         <FadeIn>
           <span className="tag-label mb-6 block">Recursos</span>
           <h1 className="text-[clamp(2.5rem,6vw,5.5rem)] font-heading font-bold leading-[0.95] tracking-tighter max-w-4xl">
-            Entiende tus números<span className="text-accent">.</span>
+            Entiende tus <span className="font-display italic font-normal">números</span><span className="text-accent">.</span>
             <br />
             <span className="text-muted-foreground">Sin volverte loco.</span>
           </h1>

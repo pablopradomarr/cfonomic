@@ -32,7 +32,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       <header className="sticky top-0 z-50 border-b border-foreground/5 bg-background/90 backdrop-blur-md">
         <nav className="container-wide flex items-center justify-between h-16">
           <Link to="/" className="font-heading text-xl font-bold tracking-tight">
-            CFO<span className="text-accent">nomic</span>
+            CFO<span className="font-display italic font-normal text-accent">nomic</span>
           </Link>
 
           {/* Desktop nav */}
@@ -132,7 +132,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           <div className="grid gap-12 md:grid-cols-12">
             <div className="md:col-span-5">
               <p className="font-heading text-3xl md:text-4xl font-bold text-surface-dark-foreground">
-                CFO<span className="text-accent">nomic</span>
+                CFO<span className="font-display italic font-normal text-accent">nomic</span>
               </p>
               <p className="mt-4 max-w-sm text-sm text-surface-dark-foreground/50 leading-relaxed font-body">
                 Dirección financiera para PYMEs que quieren dejar de improvisar.

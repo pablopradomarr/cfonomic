@@ -24,11 +24,11 @@ const Index = () => {
             transition={{ duration: 0.9, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
             className="max-w-5xl text-[clamp(3rem,8vw,7.5rem)] font-heading font-bold leading-[0.92] tracking-tighter"
           >
-            Ningún viento es favorable
+            Ningún viento es <span className="font-display italic font-normal">favorable</span>
             <br />
             para quien <span className="highlight-text">no sabe</span>
             <br />
-            a dónde va<span className="text-accent">.</span>
+            a dónde <span className="font-display italic font-normal">va</span><span className="text-accent">.</span>
           </motion.h1>
 
           <motion.div
@@ -123,7 +123,7 @@ const Index = () => {
           </FadeIn>
           <FadeIn delay={0.1} className="md:col-span-8">
             <p className="font-heading text-3xl md:text-5xl font-bold leading-[1.05] tracking-tighter">
-              Si tienes una PYME, te pasa una de estas:
+              Si tienes una PYME, te pasa <span className="font-display italic font-normal">una de estas</span>:
             </p>
             <div className="mt-10 space-y-6 text-lg md:text-xl leading-relaxed text-foreground/70 border-l-2 border-accent pl-6">
               <p>Facturas… pero no sabes si ganas.</p>
@@ -132,7 +132,7 @@ const Index = () => {
             </div>
             <Divider accent />
             <p className="font-heading text-xl md:text-2xl font-bold tracking-tight">
-              No es falta de esfuerzo.
+              No es falta de <span className="font-display italic font-normal">esfuerzo</span>.
               <br />
               Es falta de <span className="highlight-text">panel de control</span><span className="text-accent">.</span>
             </p>
@@ -149,9 +149,9 @@ const Index = () => {
                 Historia prestada
               </span>
               <h2 className="mt-6 text-[clamp(2rem,5vw,4.5rem)] font-heading font-bold leading-[1.05] tracking-tighter">
-                Lo que hace Mercadona<span className="text-accent">.</span>
+                Lo que hace <span className="font-display italic font-normal">Mercadona</span><span className="text-accent">.</span>
                 <br />
-                <span className="text-surface-dark-foreground/40">Y tú no.</span>
+                <span className="text-surface-dark-foreground/40">Y tú <span className="font-display italic">no</span>.</span>
               </h2>
             </div>
             <div className="md:col-span-7 space-y-6 text-surface-dark-foreground/70 text-base md:text-lg leading-relaxed">
@@ -265,7 +265,7 @@ const Index = () => {
           <FadeIn className="md:col-span-6">
             <span className="tag-label mb-6 block">Quién soy</span>
             <h2 className="text-[clamp(2.5rem,6vw,5rem)] font-heading font-bold leading-[1] tracking-tighter">
-              Pablo Prado
+              Pablo <span className="font-display italic font-normal">Prado</span>
               <br />
               Marrón<span className="text-accent">.</span>
             </h2>
@@ -613,7 +613,7 @@ const Index = () => {
             <h2 className="text-[clamp(2.5rem,6vw,5.5rem)] font-heading font-bold leading-[1.02] tracking-tighter">
               Si quieres seguir
               <br />
-              a ciegas, no hagas nada<span className="text-accent">.</span>
+              a <span className="font-display italic font-normal">ciegas</span>, no hagas nada<span className="text-accent">.</span>
             </h2>
             <p className="mt-8 text-lg md:text-xl text-surface-dark-foreground/50">
               Si quieres control y dormir mejor, deja tu email.

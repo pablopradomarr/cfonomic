@@ -15,7 +15,7 @@ const DiagnosticoFinanciero = () => {
             <h1 className="text-[clamp(2.5rem,6vw,5.5rem)] font-heading font-bold leading-[0.95] tracking-tighter max-w-5xl">
               Descubre dónde se te
               <br />
-              escapa la caja<span className="text-accent">.</span>
+              escapa la <span className="font-display italic font-normal">caja</span><span className="text-accent">.</span>
             </h1>
             <p className="mt-6 max-w-lg text-base text-muted-foreground leading-relaxed">
               En 5 minutos tienes claridad de por dónde empezar. Sin compromiso. Sin humo.
@@ -78,7 +78,7 @@ const DiagnosticoFinanciero = () => {
         <FadeIn>
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-[clamp(2rem,5vw,3.5rem)] font-heading font-bold tracking-tighter">
-              ¿Prefieres que lo veamos juntos<span className="text-accent">?</span>
+              ¿Prefieres que lo veamos <span className="font-display italic font-normal">juntos</span><span className="text-accent">?</span>
             </h2>
             <p className="mt-3 text-sm text-surface-dark-foreground/50">15 minutos. Tú con tus dudas, yo con mis números.</p>
             <div className="mt-6">
