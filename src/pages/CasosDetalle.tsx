@@ -18,11 +18,12 @@ const CasoTuricleta = () => (
           </Link>
           <div className="mt-8">
             <span className="tag-label mb-4 block">Turismo activo</span>
-            <h1 className="text-[clamp(2rem,5vw,4rem)] font-heading font-bold leading-[0.95] tracking-tighter max-w-4xl">
+            <h1 className="tag-label mb-4 block">Caso Turicleta: control financiero para crecer</h1>
+            <p className="text-[clamp(2rem,5vw,4rem)] font-heading font-bold leading-[0.95] tracking-tighter max-w-4xl" role="presentation">
               Turicleta<span className="text-accent">.</span>
               <br />
               <span className="text-muted-foreground">Control para crecer sin caos.</span>
-            </h1>
+            </p>
           </div>
         </FadeIn>
       </div>
@@ -101,11 +102,12 @@ const CasoImpasto = () => (
           </Link>
           <div className="mt-8">
             <span className="tag-label mb-4 block">Restauración</span>
-            <h1 className="text-[clamp(2rem,5vw,4rem)] font-heading font-bold leading-[0.95] tracking-tighter max-w-4xl">
+            <h1 className="tag-label mb-4 block">Caso Impasto: rentabilidad por canal en restauración</h1>
+            <p className="text-[clamp(2rem,5vw,4rem)] font-heading font-bold leading-[0.95] tracking-tighter max-w-4xl" role="presentation">
               Impasto<span className="text-accent">.</span>
               <br />
               <span className="text-muted-foreground">Rentabilidad real por canal y menú.</span>
-            </h1>
+            </p>
           </div>
         </FadeIn>
       </div>
