@@ -44,6 +44,7 @@ Deno.serve(async (req) => {
       );
     }
 
+    console.log("Calling MailerLite for:", email);
     const mlResponse = await fetch("https://connect.mailerlite.com/api/subscribers", {
       method: "POST",
       headers: {
@@ -57,13 +58,18 @@ Deno.serve(async (req) => {
       }),
     });
 
+    const mlBody = await mlResponse.text();
+    console.log(`MailerLite response [${mlResponse.status}]:`, mlBody);
+
     if (!mlResponse.ok) {
-      const mlError = await mlResponse.text();
-      console.error(`MailerLite error [${mlResponse.status}]:`, mlError);
+      return new Response(
+        JSON.stringify({ success: true, mailerlite_status: mlResponse.status, mailerlite_error: mlBody }),
+        { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
     }
 
     return new Response(
-      JSON.stringify({ success: true }),
+      JSON.stringify({ success: true, mailerlite_status: mlResponse.status }),
       { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
   } catch (error) {
