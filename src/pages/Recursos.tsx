@@ -1,76 +1,67 @@
-import { Section, FadeIn, SectionHeading } from "@/components/Editorial";
+import { Section, FadeIn } from "@/components/Editorial";
 import { Link } from "react-router-dom";
 
 const recursos = [
-  {
-    category: "Valoración",
-    items: [
-      { title: "¿Cuánto vale mi PYME?", desc: "Entiende los múltiplos, el EBITDA y lo que de verdad determina el precio de tu empresa.", path: "/cuanto-vale-mi-pyme" },
-    ],
-  },
-  {
-    category: "Caja",
-    items: [
-      { title: "¿Cuánta caja genera (o pierde) mi negocio?", desc: "Cashflow operativo, inversión, financiación y NOF explicados con ejemplos.", path: "/cuanta-caja-genera-o-pierde-mi-negocio" },
-    ],
-  },
-  {
-    category: "Adquisición",
-    items: [
-      { title: "¿Cuánto me cuesta conseguir un cliente? (CAC)", desc: "CAC, payback, relación con margen y las trampas típicas.", path: "/calcular-cac-cuanto-me-cuesta-conseguir-un-cliente" },
-    ],
-  },
-  {
-    category: "Rentabilidad",
-    items: [
-      { title: "¿Es rentable mi empresa?", desc: "Rentabilidad real con ejemplos de diferentes sectores.", path: "/calcular-rentabilidad-mi-empresa" },
-      { title: "¿Cuánto dinero gano con mi empresa?", desc: "La diferencia entre 'ganar' y 'tener caja'. Con calculadora.", path: "/cuanto-dinero-gano-con-mi-empresa" },
-    ],
-  },
-  {
-    category: "Unit Economics",
-    items: [
-      { title: "Unit Economics para PYMEs", desc: "Cuánto ganas (o pierdes) por unidad de negocio.", path: "/unit-economics" },
-    ],
-  },
-  {
-    category: "Análisis",
-    items: [
-      { title: "Cómo calcular el EBITDA de tu PYME", desc: "Qué es, qué no es y para qué sirve.", path: "/como-calcular-ebitda-pyme" },
-    ],
-  },
+  { category: "Valoración", items: [
+    { title: "¿Cuánto vale mi PYME?", desc: "Múltiplos, EBITDA y precio real.", path: "/cuanto-vale-mi-pyme" },
+  ]},
+  { category: "Caja", items: [
+    { title: "¿Cuánta caja genera mi negocio?", desc: "Cashflow operativo, inversión y NOF.", path: "/cuanta-caja-genera-o-pierde-mi-negocio" },
+  ]},
+  { category: "Adquisición", items: [
+    { title: "¿Cuánto cuesta un cliente? (CAC)", desc: "CAC, payback y trampas típicas.", path: "/calcular-cac-cuanto-me-cuesta-conseguir-un-cliente" },
+  ]},
+  { category: "Rentabilidad", items: [
+    { title: "¿Es rentable mi empresa?", desc: "Rentabilidad real con ejemplos.", path: "/calcular-rentabilidad-mi-empresa" },
+    { title: "¿Cuánto dinero gano?", desc: "'Ganar' vs 'tener caja'.", path: "/cuanto-dinero-gano-con-mi-empresa" },
+  ]},
+  { category: "Unit Economics", items: [
+    { title: "Unit Economics", desc: "Cuánto ganas por unidad de negocio.", path: "/unit-economics" },
+  ]},
+  { category: "Análisis", items: [
+    { title: "Cómo calcular el EBITDA", desc: "Qué es, qué no es, para qué sirve.", path: "/como-calcular-ebitda-pyme" },
+  ]},
 ];
 
 const Recursos = () => (
   <>
-    <Section>
-      <FadeIn>
-        <SectionHeading
-          title="Recursos"
-          subtitle="Aquí tienes recursos para entender tus números sin volverte loco. Cada uno con calculadora, ejemplos y errores típicos."
-        />
-      </FadeIn>
-    </Section>
+    <section className="py-24 md:py-36">
+      <div className="container-wide">
+        <FadeIn>
+          <span className="tag-label mb-6 block">Recursos</span>
+          <h1 className="text-[clamp(2rem,5vw,4.5rem)] font-heading font-bold leading-[0.95] tracking-tighter max-w-4xl">
+            Entiende tus números<span className="text-accent">.</span>
+            <br />
+            <span className="text-muted-foreground">Sin volverte loco.</span>
+          </h1>
+          <p className="mt-6 max-w-lg text-sm text-muted-foreground leading-relaxed">
+            Cada recurso con calculadora, ejemplos y errores típicos.
+          </p>
+        </FadeIn>
+      </div>
+    </section>
 
     {recursos.map((cat, ci) => (
-      <Section key={cat.category} paper={ci % 2 === 1}>
-        <FadeIn>
-          <h3 className="font-heading text-sm font-bold text-muted-foreground uppercase tracking-wider mb-6">
-            {cat.category}
-          </h3>
-          <div className="grid md:grid-cols-2 gap-6">
-            {cat.items.map((item) => (
-              <Link key={item.path} to={item.path} className="card-editorial p-6 block hover:border-accent transition-colors">
-                <h4 className="font-heading text-lg font-bold text-heading">{item.title}</h4>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
-                <span className="mt-3 inline-block text-sm font-heading font-bold text-heading underline decoration-accent underline-offset-4">
-                  Ver recurso →
-                </span>
-              </Link>
-            ))}
-          </div>
-        </FadeIn>
-      </Section>
+      <div key={cat.category} className={`py-12 ${ci % 2 === 0 ? "" : "bg-surface-paper"}`}>
+        <div className="container-wide">
+          <FadeIn>
+            <p className="text-[10px] font-mono uppercase tracking-[0.2em] text-muted-foreground mb-6">{cat.category}</p>
+            <div className="grid md:grid-cols-2 gap-px bg-foreground/10 border border-foreground/10">
+              {cat.items.map((item) => (
+                <Link key={item.path} to={item.path} className="block bg-background p-8 group hover:bg-surface-paper transition-colors">
+                  <h3 className="font-heading text-lg font-bold tracking-tight group-hover:text-accent transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-muted-foreground">{item.desc}</p>
+                  <span className="mt-4 inline-block text-[11px] font-mono uppercase tracking-[0.1em] text-foreground/30 group-hover:text-foreground transition-colors">
+                    Ver recurso →
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </FadeIn>
+        </div>
+      </div>
     ))}
   </>
 );

@@ -6,6 +6,7 @@ interface EmailCaptureFormProps {
   microcopy?: string;
   className?: string;
   variant?: "inline" | "stacked" | "compact";
+  dark?: boolean;
 }
 
 const EmailCaptureForm = ({
@@ -13,6 +14,7 @@ const EmailCaptureForm = ({
   microcopy = "Te lo mando por email. Sin spam. Si no te aporta, te borras.",
   className = "",
   variant = "inline",
+  dark = false,
 }: EmailCaptureFormProps) => {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -30,10 +32,10 @@ const EmailCaptureForm = ({
 
   if (submitted) {
     return (
-      <div className={`rounded-lg bg-surface-paper p-6 text-center ${className}`}>
-        <p className="font-heading text-xl text-heading">✓ Listo. Revisa tu bandeja.</p>
-        <p className="mt-2 text-sm text-muted-foreground">
-          Si no lo ves, mira en spam. Y si no te aporta, te borras con un clic.
+      <div className={`border border-foreground/10 p-6 ${className}`}>
+        <p className="font-heading text-lg font-bold">✓ Listo. Revisa tu bandeja.</p>
+        <p className="mt-2 text-xs text-muted-foreground">
+          Si no lo ves, mira en spam.
         </p>
       </div>
     );
@@ -45,8 +47,6 @@ const EmailCaptureForm = ({
       className={`${className} ${
         variant === "inline"
           ? "flex flex-col sm:flex-row gap-3 items-start"
-          : variant === "compact"
-          ? "flex flex-col gap-2"
           : "flex flex-col gap-3"
       }`}
     >
@@ -59,18 +59,21 @@ const EmailCaptureForm = ({
             setEmail(e.target.value);
             if (error) setError("");
           }}
-          className="w-full rounded-md border border-input bg-background px-4 py-3 font-body text-sm 
-                     placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent
-                     transition-all"
+          className={`w-full border-b-2 bg-transparent px-0 py-3 font-mono text-sm 
+                     placeholder:text-muted-foreground focus:outline-none transition-colors
+                     ${dark
+                       ? "border-surface-dark-foreground/30 focus:border-accent text-surface-dark-foreground"
+                       : "border-foreground/20 focus:border-accent text-foreground"
+                     }`}
           required
         />
-        {error && <p className="mt-1 text-sm text-destructive">{error}</p>}
+        {error && <p className="mt-1 text-xs text-destructive font-mono">{error}</p>}
       </div>
-      <Button type="submit" variant="accent" size="lg" className="w-full sm:w-auto whitespace-nowrap">
+      <Button type="submit" variant="accent" size="lg" className="w-full sm:w-auto whitespace-nowrap text-sm">
         {buttonText}
       </Button>
       {microcopy && (
-        <p className="text-xs text-muted-foreground w-full">
+        <p className={`text-[11px] w-full font-mono ${dark ? "text-surface-dark-foreground/40" : "text-muted-foreground"}`}>
           {microcopy}
         </p>
       )}

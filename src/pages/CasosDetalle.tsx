@@ -1,92 +1,79 @@
-import { Section, FadeIn, SectionHeading, BulletList, PullQuote } from "@/components/Editorial";
+import { Section, FadeIn, SectionHeading, BulletList } from "@/components/Editorial";
 import EmailCaptureForm from "@/components/EmailCaptureForm";
 import { Link } from "react-router-dom";
 
 const CasoTuricleta = () => (
   <>
-    <Section>
+    <section className="py-24 md:py-36">
+      <div className="container-wide">
+        <FadeIn>
+          <Link to="/casos-de-exito" className="text-[11px] font-mono uppercase tracking-[0.1em] text-muted-foreground hover:text-foreground transition-colors border-b border-foreground/10 pb-0.5">
+            ← Casos
+          </Link>
+          <div className="mt-8">
+            <span className="tag-label mb-4 block">Turismo activo</span>
+            <h1 className="text-[clamp(2rem,5vw,4rem)] font-heading font-bold leading-[0.95] tracking-tighter max-w-4xl">
+              Turicleta<span className="text-accent">.</span>
+              <br />
+              <span className="text-muted-foreground">Control para crecer sin caos.</span>
+            </h1>
+          </div>
+        </FadeIn>
+      </div>
+    </section>
+
+    <Section paper>
       <FadeIn>
-        <Link to="/casos-de-exito" className="text-sm text-muted-foreground hover:text-heading transition-colors">
-          ← Volver a casos de éxito
-        </Link>
-        <div className="mt-6">
-          <span className="text-xs font-heading font-bold text-muted-foreground uppercase tracking-wider">
-            Turismo activo
-          </span>
-          <h1 className="mt-2 text-4xl md:text-5xl font-heading font-bold leading-tight">
-            Turicleta: control para crecer sin caos
-          </h1>
+        <div className="grid md:grid-cols-12 gap-12">
+          <div className="md:col-span-4">
+            <span className="tag-label">El problema</span>
+          </div>
+          <div className="md:col-span-8">
+            <p className="text-base text-foreground/70 leading-relaxed max-w-2xl">
+              Turicleta estaba en plena expansión: nueva flota, nuevas rutas, más personal. La inversión crecía, la facturación también… pero la caja no acompañaba. Las decisiones de CAPEX se tomaban sin modelo financiero.
+            </p>
+          </div>
         </div>
       </FadeIn>
     </Section>
 
-    <Section paper>
-      <FadeIn>
-        <SectionHeading tag="El problema" title="Crecimiento sin visibilidad" />
-        <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl">
-          Turicleta estaba en plena expansión: nueva flota, nuevas rutas, más personal. La
-          inversión crecía, la facturación también… pero la caja no acompañaba. Las decisiones de
-          CAPEX se tomaban sin un modelo financiero claro. No había cierre mensual ni reporting
-          estructurado.
-        </p>
-      </FadeIn>
-    </Section>
-
     <Section>
       <FadeIn>
-        <SectionHeading tag="El caos típico" title="Decisiones sin panel" />
-        <BulletList
-          icon="🔴"
-          items={[
-            "No sabían su margen real por ruta/actividad.",
-            "La caja se gestionaba 'mirando el banco'.",
-            "Las decisiones de inversión se tomaban por intuición.",
-            "No había presupuesto ni forecast.",
-            "El equipo no tenía KPIs claros.",
-          ]}
-        />
+        <div className="grid md:grid-cols-2 gap-16">
+          <div>
+            <span className="tag-label block mb-4">El caos</span>
+            <BulletList icon="—" items={[
+              "No sabían su margen real por ruta.",
+              "La caja se gestionaba 'mirando el banco'.",
+              "Decisiones de inversión por intuición.",
+              "Sin presupuesto ni forecast.",
+              "Equipo sin KPIs claros.",
+            ]} />
+          </div>
+          <div>
+            <span className="tag-label block mb-4">Lo que montamos</span>
+            <BulletList icon="→" items={[
+              "Reporting mensual con PyG por actividad.",
+              "Presupuesto anual con revisión trimestral.",
+              "Cashflow con previsión a 12 meses.",
+              "Cuadro de mando con KPIs.",
+              "Modelo para evaluar inversiones.",
+            ]} />
+          </div>
+        </div>
       </FadeIn>
     </Section>
 
-    <Section paper>
+    <Section dark>
       <FadeIn>
-        <SectionHeading tag="Lo que montamos" title="Sistema de control financiero" />
-        <BulletList
-          icon="→"
-          items={[
-            "Reporting mensual con PyG analítica por actividad.",
-            "Presupuesto anual con revisión trimestral.",
-            "Cashflow directo con previsión a 12 meses.",
-            "Cuadro de mando con KPIs operativos y financieros.",
-            "Modelo financiero para evaluar nuevas inversiones.",
-          ]}
-        />
-      </FadeIn>
-    </Section>
-
-    <Section>
-      <FadeIn>
-        <SectionHeading tag="Resultado" title="Claridad para decidir" />
-        <PullQuote>
-          Ahora saben dónde están, qué viene y qué decisiones tomar. Cada mes.
-        </PullQuote>
-        <BulletList
-          icon="✓"
-          items={[
-            "Visibilidad total sobre márgenes y caja.",
-            "Decisiones de inversión con modelo financiero.",
-            "Priorización clara: qué hacer primero y qué esperar.",
-            "Negociación con bancos con datos reales.",
-            "Equipo alineado con KPIs claros.",
-          ]}
-        />
-        <div className="mt-10">
-          <EmailCaptureForm
-            buttonText="Quiero lo mismo para mi empresa"
-            microcopy="Te mando el diagnóstico sin compromiso."
-            variant="stacked"
-            className="max-w-md"
-          />
+        <div className="max-w-3xl">
+          <span className="tag-label border-surface-dark-foreground/20 text-surface-dark-foreground/40 block mb-6">Resultado</span>
+          <p className="text-2xl md:text-4xl font-heading font-bold leading-[1.05] tracking-tight">
+            Ahora saben dónde están, qué viene y qué decidir<span className="text-accent">.</span> Cada mes.
+          </p>
+          <div className="mt-10">
+            <EmailCaptureForm buttonText="Quiero lo mismo" microcopy="Sin compromiso." variant="stacked" dark />
+          </div>
         </div>
       </FadeIn>
     </Section>
@@ -95,87 +82,74 @@ const CasoTuricleta = () => (
 
 const CasoImpasto = () => (
   <>
-    <Section>
+    <section className="py-24 md:py-36">
+      <div className="container-wide">
+        <FadeIn>
+          <Link to="/casos-de-exito" className="text-[11px] font-mono uppercase tracking-[0.1em] text-muted-foreground hover:text-foreground transition-colors border-b border-foreground/10 pb-0.5">
+            ← Casos
+          </Link>
+          <div className="mt-8">
+            <span className="tag-label mb-4 block">Restauración</span>
+            <h1 className="text-[clamp(2rem,5vw,4rem)] font-heading font-bold leading-[0.95] tracking-tighter max-w-4xl">
+              Impasto<span className="text-accent">.</span>
+              <br />
+              <span className="text-muted-foreground">Rentabilidad real por canal y menú.</span>
+            </h1>
+          </div>
+        </FadeIn>
+      </div>
+    </section>
+
+    <Section paper>
       <FadeIn>
-        <Link to="/casos-de-exito" className="text-sm text-muted-foreground hover:text-heading transition-colors">
-          ← Volver a casos de éxito
-        </Link>
-        <div className="mt-6">
-          <span className="text-xs font-heading font-bold text-muted-foreground uppercase tracking-wider">
-            Restauración
-          </span>
-          <h1 className="mt-2 text-4xl md:text-5xl font-heading font-bold leading-tight">
-            Impasto: rentabilidad real por canal y menú
-          </h1>
+        <div className="grid md:grid-cols-12 gap-12">
+          <div className="md:col-span-4"><span className="tag-label">El problema</span></div>
+          <div className="md:col-span-8">
+            <p className="text-base text-foreground/70 leading-relaxed max-w-2xl">
+              Impasto vendía bien. Sala llena, delivery a tope. Pero nadie sabía qué canal era rentable. Costes de delivery, mermas y promociones se comían el margen sin control.
+            </p>
+          </div>
         </div>
       </FadeIn>
     </Section>
 
-    <Section paper>
-      <FadeIn>
-        <SectionHeading tag="El problema" title="Vendes mucho, ¿pero ganas?" />
-        <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl">
-          Impasto vendía bien. Sala llena, delivery a tope, catering creciendo. Pero nadie sabía
-          qué canal era rentable y cuál era un sumidero. Los costes de delivery, las mermas y las
-          promociones se comían el margen sin que nadie lo midiera.
-        </p>
-      </FadeIn>
-    </Section>
-
     <Section>
       <FadeIn>
-        <SectionHeading tag="Lo que nadie veía" title="Costes ocultos" />
-        <BulletList
-          icon="🔴"
-          items={[
-            "Margen por canal: sala, delivery, take away, catering. Cada uno diferente.",
-            "Costes de delivery (comisiones, packaging, mermas) no se imputaban.",
-            "Menú con platos que vendían mucho pero no dejaban margen.",
-            "Promociones sin medir retorno.",
-            "Mermas sin control ni medición.",
-          ]}
-        />
+        <div className="grid md:grid-cols-2 gap-16">
+          <div>
+            <span className="tag-label block mb-4">Lo que nadie veía</span>
+            <BulletList icon="—" items={[
+              "Margen diferente por canal.",
+              "Costes de delivery no imputados.",
+              "Platos vendidos sin margen.",
+              "Promociones sin medir retorno.",
+              "Mermas sin control.",
+            ]} />
+          </div>
+          <div>
+            <span className="tag-label block mb-4">Lo que montamos</span>
+            <BulletList icon="→" items={[
+              "PyG analítica por canal.",
+              "Margen por plato/familia.",
+              "Unit economics por pedido.",
+              "Control de mermas medible.",
+              "Cuadro de mando mensual.",
+            ]} />
+          </div>
+        </div>
       </FadeIn>
     </Section>
 
-    <Section paper>
+    <Section dark>
       <FadeIn>
-        <SectionHeading tag="Lo que montamos" title="PyG analítica + Unit economics" />
-        <BulletList
-          icon="→"
-          items={[
-            "PyG analítica por canal (sala, delivery, catering).",
-            "Análisis de margen por plato / familia.",
-            "Unit economics: coste real de servir un pedido por canal.",
-            "Control de mermas con sistema de medición.",
-            "Cuadro de mando mensual con decisiones claras.",
-          ]}
-        />
-      </FadeIn>
-    </Section>
-
-    <Section>
-      <FadeIn>
-        <SectionHeading tag="Resultado" title="Decisiones con datos" />
-        <PullQuote>
-          Dejaron de adivinar. Ahora saben qué canal, qué plato y qué decisión les da dinero.
-        </PullQuote>
-        <BulletList
-          icon="✓"
-          items={[
-            "Decisiones de menú basadas en margen, no en intuición.",
-            "Renegociación de condiciones de delivery con datos reales.",
-            "Reducción de mermas medible y controlada.",
-            "Foco en los canales que realmente generan valor.",
-          ]}
-        />
-        <div className="mt-10">
-          <EmailCaptureForm
-            buttonText="Quiero analizar mi negocio así"
-            microcopy="Te mando el primer diagnóstico gratis."
-            variant="stacked"
-            className="max-w-md"
-          />
+        <div className="max-w-3xl">
+          <span className="tag-label border-surface-dark-foreground/20 text-surface-dark-foreground/40 block mb-6">Resultado</span>
+          <p className="text-2xl md:text-4xl font-heading font-bold leading-[1.05] tracking-tight">
+            Dejaron de adivinar<span className="text-accent">.</span> Ahora saben qué canal, qué plato y qué decisión les da dinero.
+          </p>
+          <div className="mt-10">
+            <EmailCaptureForm buttonText="Quiero analizar así mi negocio" microcopy="Primer diagnóstico gratis." variant="stacked" dark />
+          </div>
         </div>
       </FadeIn>
     </Section>
