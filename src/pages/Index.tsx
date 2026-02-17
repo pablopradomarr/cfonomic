@@ -12,6 +12,7 @@ const Index = () => {
         title="Asesoría financiera para PYMEs — CFOnomic"
         description="Tu departamento financiero sin contratar a un equipo entero. Control financiero, caja, márgenes y decisiones con datos para PYMEs y Startups."
         canonical="/"
+        breadcrumbs={[{ name: "Inicio", path: "/" }]}
       />
       {/* ═══ A) HERO — MASSIVE TYPOGRAPHY ═══ */}
       <section className="relative min-h-[90vh] flex items-center py-24 md:py-32">

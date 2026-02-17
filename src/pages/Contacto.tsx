@@ -63,6 +63,7 @@ const Contacto = () => {
         title="Contacto — Asesoría financiera para PYMEs | CFOnomic"
         description="Hablamos de tu empresa en 15 minutos. Sin compromiso, sin PowerPoint. Asesoría financiera para PYMEs que quieren control y caja."
         canonical="/contacto"
+        breadcrumbs={[{ name: "Inicio", path: "/" }, { name: "Contacto", path: "/contacto" }]}
       />
       <section className="py-24 md:py-36">
         <div className="container-wide">

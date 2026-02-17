@@ -5,21 +5,30 @@ interface FAQItem {
   a: string;
 }
 
+interface BreadcrumbItem {
+  name: string;
+  path: string;
+}
+
 interface SEOProps {
   title: string;
   description: string;
   canonical?: string;
   ogType?: string;
+  ogImage?: string;
   faq?: FAQItem[];
   jsonLd?: Record<string, unknown>;
+  breadcrumbs?: BreadcrumbItem[];
 }
 
 const SITE_URL = "https://cfonomic.com";
 const SITE_NAME = "CFOnomic";
+const DEFAULT_OG_IMAGE = `${SITE_URL}/og-default.png`;
 
-const SEO = ({ title, description, canonical, ogType = "website", faq, jsonLd }: SEOProps) => {
+const SEO = ({ title, description, canonical, ogType = "website", ogImage, faq, jsonLd, breadcrumbs }: SEOProps) => {
   const fullTitle = title.includes("CFOnomic") ? title : `${title} | ${SITE_NAME}`;
   const canonicalUrl = canonical ? `${SITE_URL}${canonical}` : undefined;
+  const image = ogImage || DEFAULT_OG_IMAGE;
 
   const faqSchema = faq?.length
     ? {
@@ -53,6 +62,19 @@ const SEO = ({ title, description, canonical, ogType = "website", faq, jsonLd }:
     serviceType: "Asesoría financiera para empresas",
   };
 
+  const breadcrumbSchema = breadcrumbs?.length
+    ? {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: breadcrumbs.map((item, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          name: item.name,
+          item: `${SITE_URL}${item.path}`,
+        })),
+      }
+    : null;
+
   return (
     <Helmet>
       <title>{fullTitle}</title>
@@ -66,11 +88,15 @@ const SEO = ({ title, description, canonical, ogType = "website", faq, jsonLd }:
       {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
       <meta property="og:site_name" content={SITE_NAME} />
       <meta property="og:locale" content="es_ES" />
+      <meta property="og:image" content={image} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={image} />
 
       {/* Organization schema (only on pages that don't have custom jsonLd) */}
       {!jsonLd && (
@@ -83,6 +109,11 @@ const SEO = ({ title, description, canonical, ogType = "website", faq, jsonLd }:
       {/* FAQ Schema */}
       {faqSchema && (
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+      )}
+
+      {/* BreadcrumbList Schema */}
+      {breadcrumbSchema && (
+        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
       )}
     </Helmet>
   );

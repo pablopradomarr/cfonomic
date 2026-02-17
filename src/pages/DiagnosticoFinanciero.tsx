@@ -13,6 +13,7 @@ const DiagnosticoFinanciero = () => {
         title="Diagnóstico financiero gratis para empresas — CFOnomic"
         description="Descubre en 5 minutos dónde se escapa la caja de tu empresa. Diagnóstico financiero gratuito con mejoras concretas. Sin compromiso."
         canonical="/diagnostico-financiero"
+        breadcrumbs={[{ name: "Inicio", path: "/" }, { name: "Diagnóstico financiero", path: "/diagnostico-financiero" }]}
       />
       <section className="py-24 md:py-36">
         <div className="container-wide">

@@ -9,6 +9,7 @@ const CasoTuricleta = () => (
       title="Caso Turicleta: control financiero para crecer sin caos — CFOnomic"
       description="Cómo una empresa de turismo activo pasó de crecer sin control a tener reporting mensual, cashflow y KPIs. Caso real de gestión financiera."
       canonical="/casos-de-exito/turicleta"
+      breadcrumbs={[{ name: "Inicio", path: "/" }, { name: "Casos de éxito", path: "/casos-de-exito" }, { name: "Turicleta", path: "/casos-de-exito/turicleta" }]}
     />
     <section className="py-24 md:py-36">
       <div className="container-wide">
@@ -109,6 +110,7 @@ const CasoImpasto = () => (
       title="Caso Impasto: rentabilidad real por canal y menú — CFOnomic"
       description="Cómo un restaurante descubrió qué canal ganaba y cuál perdía. Caso real de asesoría financiera en restauración."
       canonical="/casos-de-exito/impasto"
+      breadcrumbs={[{ name: "Inicio", path: "/" }, { name: "Casos de éxito", path: "/casos-de-exito" }, { name: "Impasto", path: "/casos-de-exito/impasto" }]}
     />
     <section className="py-24 md:py-36">
       <div className="container-wide">

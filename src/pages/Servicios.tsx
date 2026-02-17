@@ -22,6 +22,7 @@ const Servicios = () => (
       description="Departamento financiero externalizado para PYMEs: cierres mensuales, PyG analítica, control de caja, presupuesto y KPIs. Sin contratar equipo."
       canonical="/servicios"
       faq={serviciosFaq}
+      breadcrumbs={[{ name: "Inicio", path: "/" }, { name: "Servicios", path: "/servicios" }]}
     />
     {/* HERO */}
     <section className="py-24 md:py-36">

@@ -40,6 +40,7 @@ const CiudadPage = ({ city }: CityPageProps) => {
         description={`${data.intro} Control financiero, caja y decisiones con datos para empresas en ${city}.`}
         canonical={`/cfo-externo-${citySlug}`}
         faq={cityFaq}
+        breadcrumbs={[{ name: "Inicio", path: "/" }, { name: "Servicios", path: "/servicios" }, { name: `CFO externo ${city}`, path: `/cfo-externo-${citySlug}` }]}
       />
       <section className="py-24 md:py-36">
         <div className="container-wide">

@@ -30,6 +30,7 @@ const Recursos = () => (
       title="Recursos financieros para PYMEs — Calculadoras y guías | CFOnomic"
       description="Calculadoras, guías y recursos para entender tus números: valoración, CAC, caja, rentabilidad, unit economics y EBITDA. Sin jerga."
       canonical="/recursos"
+      breadcrumbs={[{ name: "Inicio", path: "/" }, { name: "Recursos", path: "/recursos" }]}
     />
     <section className="py-24 md:py-36">
       <div className="container-wide">

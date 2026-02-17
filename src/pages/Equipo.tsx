@@ -9,6 +9,7 @@ const Equipo = () => (
       title="Pablo Prado Marrón — Asesor financiero para PYMEs"
       description="Dirijo las finanzas de PYMEs y Startups que quieren dejar de improvisar. Departamento financiero sin contratar equipo."
       canonical="/equipo"
+      breadcrumbs={[{ name: "Inicio", path: "/" }, { name: "Equipo", path: "/equipo" }]}
     />
     <section className="py-24 md:py-36">
       <div className="container-wide">
