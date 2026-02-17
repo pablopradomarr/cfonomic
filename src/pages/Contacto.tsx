@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Section, FadeIn, SectionHeading } from "@/components/Editorial";
+import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -10,7 +11,7 @@ const Contacto = () => {
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const newErrors: Record<string, string> = {};
     if (!formData.nombre.trim()) newErrors.nombre = "Oye, ¿cómo te llamas?";
@@ -18,6 +19,16 @@ const Contacto = () => {
     if (!formData.privacidad) newErrors.privacidad = "Necesito que aceptes la privacidad.";
     if (Object.keys(newErrors).length > 0) { setErrors(newErrors); return; }
     setErrors({});
+
+    // Send to MailerLite via capture-lead
+    try {
+      await supabase.functions.invoke("capture-lead", {
+        body: { email: formData.email, source: "contacto" },
+      });
+    } catch (err) {
+      console.error("capture-lead error:", err);
+    }
+
     setSubmitted(true);
   };
 

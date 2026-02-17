@@ -9,6 +9,7 @@ interface EmailCaptureFormProps {
   variant?: "inline" | "stacked" | "compact";
   dark?: boolean;
   source?: string;
+  onSuccess?: () => void;
 }
 
 const EmailCaptureForm = ({
@@ -18,6 +19,7 @@ const EmailCaptureForm = ({
   variant = "inline",
   dark = false,
   source = "web",
+  onSuccess,
 }: EmailCaptureFormProps) => {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -47,6 +49,7 @@ const EmailCaptureForm = ({
 
     setLoading(false);
     setSubmitted(true);
+    onSuccess?.();
   };
 
   if (submitted) {
