@@ -27,23 +27,24 @@ const RecursoPage = ({
 
   return (
     <>
-      <Section>
-        <FadeIn>
-          <Link to="/recursos" className="text-sm text-muted-foreground hover:text-heading transition-colors">
-            ← Volver a recursos
-          </Link>
-          <h1 className="mt-6 text-3xl md:text-4xl lg:text-5xl font-heading font-bold leading-tight">
-            {title}
-          </h1>
-          <p className="mt-4 max-w-3xl text-lg text-muted-foreground leading-relaxed">{intro}</p>
-        </FadeIn>
-      </Section>
+      <section className="py-24 md:py-36">
+        <div className="container-wide">
+          <FadeIn>
+            <Link to="/recursos" className="text-[11px] font-mono uppercase tracking-[0.1em] text-muted-foreground hover:text-foreground transition-colors border-b border-foreground/10 pb-0.5">
+              ← Recursos
+            </Link>
+            <h1 className="mt-8 text-[clamp(2rem,5vw,4rem)] font-heading font-bold leading-[0.95] tracking-tighter max-w-4xl">
+              {title}<span className="text-accent">.</span>
+            </h1>
+            <p className="mt-4 max-w-2xl text-base text-muted-foreground leading-relaxed">{intro}</p>
+          </FadeIn>
+        </div>
+      </section>
 
       <Section paper>
         <FadeIn>{content}</FadeIn>
       </Section>
 
-      {/* CALCULADORA CON EMAIL GATE */}
       <Section>
         <FadeIn>
           <SectionHeading tag="Calculadora" title="Haz tus números" />

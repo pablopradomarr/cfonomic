@@ -4,57 +4,57 @@
 
 @layer base {
   :root {
-    /* CFOnomic Design System */
+    /* ═══ CFOnomic — B&W Editorial System ═══ */
     --background: 0 0% 100%;
-    --foreground: 0 0% 5%;
+    --foreground: 0 0% 4%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 5%;
+    --card-foreground: 0 0% 4%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 5%;
+    --popover-foreground: 0 0% 4%;
 
-    /* Primary: #394D59 */
+    /* Dark brand: #394D59 → used as primary */
     --primary: 201 22% 29%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary surface: #FCFFEC */
-    --secondary: 69 100% 96%;
-    --secondary-foreground: 0 0% 5%;
+    /* Secondary — very light warm grey */
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 4%;
 
-    /* Muted */
-    --muted: 69 30% 95%;
-    --muted-foreground: 201 10% 40%;
+    --muted: 0 0% 95%;
+    --muted-foreground: 0 0% 45%;
 
-    /* Accent: #EAFF69 (fosforito) */
+    /* Accent: fosforito #EAFF69 — signature accent ONLY */
     --accent: 72 100% 70%;
-    --accent-foreground: 0 0% 5%;
+    --accent-foreground: 0 0% 4%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    /* Separator: #FAFFD9 */
-    --border: 201 15% 88%;
-    --input: 201 15% 88%;
-    --ring: 201 22% 29%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 0% 4%;
 
-    --radius: 0.5rem;
+    --radius: 0px;
 
-    /* Custom tokens */
-    --surface-paper: 69 100% 96%;
+    /* Surface tokens */
+    --surface-paper: 0 0% 97%;
+    --surface-dark: 0 0% 4%;
+    --surface-dark-foreground: 0 0% 96%;
     --highlight: 72 100% 70%;
-    --highlight-foreground: 0 0% 5%;
-    --text-body: 0 0% 5%;
-    --text-heading: 201 22% 29%;
+    --highlight-foreground: 0 0% 4%;
+    --text-body: 0 0% 20%;
+    --text-heading: 0 0% 4%;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 201 22% 29%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 69 100% 96%;
-    --sidebar-accent-foreground: 0 0% 5%;
-    --sidebar-border: 201 15% 88%;
-    --sidebar-ring: 201 22% 29%;
+    --sidebar-background: 0 0% 4%;
+    --sidebar-foreground: 0 0% 96%;
+    --sidebar-primary: 72 100% 70%;
+    --sidebar-primary-foreground: 0 0% 4%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 0 0% 96%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 72 100% 70%;
   }
 }
 
@@ -68,79 +68,131 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading text-heading;
+    @apply font-heading text-heading tracking-tight;
+  }
+
+  ::selection {
+    background: hsl(72 100% 70% / 0.4);
+    color: hsl(0 0% 4%);
   }
 }
 
 @layer components {
-  .section-paper {
-    @apply bg-surface-paper;
-  }
-
+  /* ── Sections ── */
   .section-white {
     @apply bg-background;
   }
 
+  .section-paper {
+    @apply bg-surface-paper;
+  }
+
+  .section-dark {
+    background-color: hsl(var(--surface-dark));
+    color: hsl(var(--surface-dark-foreground));
+  }
+
+  .section-dark h1, .section-dark h2, .section-dark h3, .section-dark h4, .section-dark h5, .section-dark h6 {
+    color: hsl(var(--surface-dark-foreground));
+  }
+
+  .section-dark .text-muted-foreground {
+    color: hsl(0 0% 60%);
+  }
+
+  /* ── Editorial elements ── */
   .pull-quote {
-    @apply font-heading text-2xl md:text-3xl lg:text-4xl leading-tight text-heading 
-           border-l-4 border-accent pl-6 md:pl-8 py-2 my-8 md:my-12;
+    @apply font-heading text-3xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight
+           py-6 my-12 md:my-20;
   }
 
   .highlight-text {
     @apply relative inline;
-    background: linear-gradient(to top, hsl(var(--accent) / 0.35) 0%, hsl(var(--accent) / 0.35) 35%, transparent 35%);
+    background: linear-gradient(
+      to top,
+      hsl(var(--accent) / 0.5) 0%,
+      hsl(var(--accent) / 0.5) 30%,
+      transparent 30%
+    );
   }
 
+  .highlight-dot::after {
+    content: ".";
+    color: hsl(var(--accent));
+  }
+
+  /* ── Cards — no radius, sharp lines ── */
   .card-editorial {
-    @apply bg-card border border-border/60 rounded-lg shadow-sm 
-           hover:shadow-md transition-shadow duration-300;
+    @apply bg-card border border-foreground/10 p-6 md:p-8
+           transition-all duration-300;
   }
 
-  .cta-sticky {
-    @apply fixed bottom-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm 
-           border-t border-border py-3 px-4 md:hidden;
+  .card-editorial:hover {
+    @apply border-foreground/30;
   }
 
+  /* ── Containers ── */
   .container-narrow {
-    @apply max-w-3xl mx-auto px-4 sm:px-6;
+    @apply max-w-3xl mx-auto px-5 sm:px-6;
   }
 
   .container-wide {
-    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-7xl mx-auto px-5 sm:px-6 lg:px-8;
   }
 
+  /* ── Bullet groups ── */
   .bullet-group {
     @apply space-y-3;
   }
 
   .bullet-item {
-    @apply flex items-start gap-3 text-foreground leading-relaxed;
+    @apply flex items-start gap-3 text-foreground/80 leading-relaxed;
   }
 
-  .fade-in {
-    @apply opacity-0 translate-y-4;
-    animation: fadeInUp 0.6s ease-out forwards;
+  /* ── Tag / label style ── */
+  .tag-label {
+    @apply inline-block text-[10px] font-mono font-bold uppercase tracking-[0.2em]
+           text-muted-foreground border border-foreground/15 px-3 py-1;
   }
 
-  @keyframes fadeInUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  /* ── Divider line ── */
+  .divider {
+    @apply w-12 h-px bg-foreground/20 my-8;
+  }
+
+  .divider-accent {
+    @apply w-16 h-[3px] my-8;
+    background-color: hsl(var(--accent));
+  }
+
+  /* ── Number display ── */
+  .number-display {
+    @apply font-heading text-7xl md:text-9xl font-bold leading-none tracking-tighter;
+    color: hsl(var(--accent));
+  }
+
+  /* ── Mobile sticky CTA ── */
+  .cta-sticky {
+    @apply fixed bottom-0 left-0 right-0 z-50 
+           border-t border-foreground/10 py-3 px-5 md:hidden;
+    background-color: hsl(var(--surface-dark));
+  }
+
+  .cta-sticky a {
+    color: hsl(var(--surface-dark));
   }
 }
 
-/* Smooth scroll */
+/* ── Smooth scroll ── */
 html {
   scroll-behavior: smooth;
 }
 
-/* iframe responsive */
+/* ── Iframe ── */
 .iframe-container {
   position: relative;
   width: 100%;
   overflow: hidden;
-  border-radius: 0.5rem;
   border: 1px solid hsl(var(--border));
 }
 
@@ -148,4 +200,20 @@ html {
   width: 100%;
   border: none;
   min-height: 600px;
+}
+
+/* ── Marquee ── */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
 }

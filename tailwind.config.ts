@@ -21,6 +21,7 @@ export default {
       fontFamily: {
         heading: ['"League Spartan"', "sans-serif"],
         body: ['"Open Sans"', "sans-serif"],
+        mono: ['"JetBrains Mono"', '"SF Mono"', '"Fira Code"', "monospace"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -58,6 +59,8 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         "surface-paper": "hsl(var(--surface-paper))",
+        "surface-dark": "hsl(var(--surface-dark))",
+        "surface-dark-foreground": "hsl(var(--surface-dark-foreground))",
         highlight: "hsl(var(--highlight))",
         "highlight-foreground": "hsl(var(--highlight-foreground))",
         sidebar: {

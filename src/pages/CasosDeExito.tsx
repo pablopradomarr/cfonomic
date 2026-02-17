@@ -1,76 +1,54 @@
-import { Section, FadeIn, SectionHeading, BulletList } from "@/components/Editorial";
+import { Section, FadeIn, SectionHeading } from "@/components/Editorial";
 import EmailCaptureForm from "@/components/EmailCaptureForm";
 import { Link } from "react-router-dom";
 
 const CasosDeExito = () => (
   <>
-    <Section>
-      <FadeIn>
-        <SectionHeading
-          title="Casos de éxito"
-          subtitle="Empresas reales que pasaron de decidir por intuición a decidir con datos."
-        />
-      </FadeIn>
-
-      <div className="grid md:grid-cols-2 gap-6">
+    <section className="py-24 md:py-36">
+      <div className="container-wide">
         <FadeIn>
-          <div className="card-editorial p-6 md:p-8 h-full flex flex-col">
-            <span className="text-xs font-heading font-bold text-muted-foreground uppercase tracking-wider">
-              Turismo activo
-            </span>
-            <h3 className="mt-2 text-2xl font-heading font-bold text-heading">Turicleta</h3>
-            <p className="mt-1 text-sm font-heading font-semibold text-accent-foreground bg-accent/20 inline-block px-2 py-0.5 rounded w-fit">
-              Control para crecer sin caos
-            </p>
-            <p className="mt-4 text-muted-foreground leading-relaxed flex-1">
-              Empresa en expansión con inversión fuerte (CAPEX), crecimiento rápido y caja
-              comprometida. Necesitaban visibilidad total para tomar decisiones de inversión y
-              financiación.
-            </p>
-            <Link
-              to="/casos-de-exito/turicleta"
-              className="mt-5 inline-block text-sm font-heading font-bold text-heading underline decoration-accent decoration-2 underline-offset-4"
-            >
-              Ver caso completo →
-            </Link>
-          </div>
-        </FadeIn>
-        <FadeIn delay={0.1}>
-          <div className="card-editorial p-6 md:p-8 h-full flex flex-col">
-            <span className="text-xs font-heading font-bold text-muted-foreground uppercase tracking-wider">
-              Restauración
-            </span>
-            <h3 className="mt-2 text-2xl font-heading font-bold text-heading">Impasto</h3>
-            <p className="mt-1 text-sm font-heading font-semibold text-accent-foreground bg-accent/20 inline-block px-2 py-0.5 rounded w-fit">
-              Rentabilidad real por canal y menú
-            </p>
-            <p className="mt-4 text-muted-foreground leading-relaxed flex-1">
-              Vendían mucho pero no sabían por qué canal ganaban y por cuál perdían. Costes ocultos
-              en delivery, mermas y promociones sin control.
-            </p>
-            <Link
-              to="/casos-de-exito/impasto"
-              className="mt-5 inline-block text-sm font-heading font-bold text-heading underline decoration-accent decoration-2 underline-offset-4"
-            >
-              Ver caso completo →
-            </Link>
-          </div>
+          <span className="tag-label mb-6 block">Casos</span>
+          <h1 className="text-[clamp(2rem,5vw,4.5rem)] font-heading font-bold leading-[0.95] tracking-tighter max-w-4xl">
+            Medir<span className="text-accent">.</span> Ajustar<span className="text-accent">.</span> Repetir<span className="text-accent">.</span>
+          </h1>
+          <p className="mt-6 max-w-lg text-base text-muted-foreground leading-relaxed">
+            Empresas reales que pasaron de decidir por intuición a decidir con datos.
+          </p>
         </FadeIn>
       </div>
-    </Section>
+    </section>
 
-    <Section paper>
+    <div className="container-wide">
+      <div className="grid md:grid-cols-2 gap-px bg-foreground/10 border border-foreground/10">
+        {[
+          { tag: "Turismo activo", name: "Turicleta", line: "Control para crecer sin caos", desc: "Empresa en expansión con inversión fuerte, crecimiento rápido y caja comprometida.", path: "/casos-de-exito/turicleta" },
+          { tag: "Restauración", name: "Impasto", line: "Rentabilidad real por canal y menú", desc: "Vendían mucho pero no sabían por qué canal ganaban y por cuál perdían.", path: "/casos-de-exito/impasto" },
+        ].map((c, i) => (
+          <FadeIn key={c.name} delay={i * 0.1}>
+            <Link to={c.path} className="block bg-background p-10 md:p-16 group h-full">
+              <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-muted-foreground">{c.tag}</span>
+              <h2 className="mt-4 text-3xl md:text-4xl font-heading font-bold tracking-tighter group-hover:text-accent transition-colors">
+                {c.name}<span className="text-accent">.</span>
+              </h2>
+              <p className="mt-1 text-sm font-heading font-semibold text-foreground/50">{c.line}</p>
+              <p className="mt-4 text-sm text-muted-foreground leading-relaxed max-w-sm">{c.desc}</p>
+              <span className="mt-8 inline-block text-[11px] font-mono uppercase tracking-[0.1em] text-foreground/30 group-hover:text-foreground transition-colors border-b border-foreground/10 pb-0.5">
+                Ver caso →
+              </span>
+            </Link>
+          </FadeIn>
+        ))}
+      </div>
+    </div>
+
+    <Section dark>
       <FadeIn>
-        <div className="container-narrow mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-heading font-bold">
-            ¿Quieres ser el próximo caso de éxito?
+        <div className="max-w-2xl mx-auto text-center">
+          <h2 className="text-2xl md:text-3xl font-heading font-bold tracking-tighter">
+            ¿Quieres ser el próximo<span className="text-accent">?</span>
           </h2>
           <div className="mt-8 max-w-md mx-auto">
-            <EmailCaptureForm
-              buttonText="Quiero mi diagnóstico"
-              microcopy="Te mando el diagnóstico y 3 mejoras rápidas."
-              variant="stacked"
-            />
+            <EmailCaptureForm buttonText="Quiero mi diagnóstico" microcopy="Te mando el diagnóstico y 3 mejoras rápidas." variant="stacked" dark />
           </div>
         </div>
       </FadeIn>
