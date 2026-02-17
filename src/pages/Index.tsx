@@ -21,21 +21,22 @@ const Index = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
           >
-            <span className="tag-label mb-8 block">CFOnomic</span>
+            <h1 className="tag-label mb-8 block">Asesoría financiera para PYMEs</h1>
           </motion.div>
 
-          <motion.h1
+          <motion.p
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
             className="max-w-5xl text-[clamp(3rem,8vw,7.5rem)] font-heading font-bold leading-[0.92] tracking-tighter"
+            role="presentation"
           >
             Ningún viento es <span className="font-display italic font-normal">favorable</span>
             <br />
             para quien <span className="highlight-text">no sabe</span>
             <br />
             a dónde <span className="font-display italic font-normal">va</span><span className="text-accent">.</span>
-          </motion.h1>
+          </motion.p>
 
           <motion.div
             initial={{ opacity: 0 }}
@@ -154,11 +155,12 @@ const Index = () => {
               <span className="tag-label border-surface-dark-foreground/20 text-surface-dark-foreground/40">
                 Historia prestada
               </span>
-              <h2 className="mt-6 text-[clamp(2rem,5vw,4.5rem)] font-heading font-bold leading-[1.05] tracking-tighter">
+              <h2 className="sr-only">Control financiero para PYMEs: lo que hacen las grandes empresas</h2>
+              <p className="mt-6 text-[clamp(2rem,5vw,4.5rem)] font-heading font-bold leading-[1.05] tracking-tighter" role="presentation">
                 Lo que hace <span className="font-display italic font-normal">Mercadona</span><span className="text-accent">.</span>
                 <br />
                 <span className="text-surface-dark-foreground/40">Y tú <span className="font-display italic">no</span>.</span>
-              </h2>
+              </p>
             </div>
             <div className="md:col-span-7 space-y-6 text-surface-dark-foreground/70 text-base md:text-lg leading-relaxed">
               <p>
@@ -192,9 +194,10 @@ const Index = () => {
           <div className="grid md:grid-cols-12 gap-12">
             <div className="md:col-span-5">
               <span className="number-display">03</span>
-              <h2 className="mt-4 text-[clamp(1.8rem,4vw,3rem)] font-heading font-bold leading-tight tracking-tighter">
+              <h2 className="sr-only">Indicadores financieros clave para tu PYME</h2>
+              <p className="mt-4 text-[clamp(1.8rem,4vw,3rem)] font-heading font-bold leading-tight tracking-tighter" role="presentation">
                 La servilleta que te cambia la cabeza<span className="text-accent">.</span>
-              </h2>
+              </p>
               <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
                 No necesitas un MBA. Necesitas estos 5 números cada mes.
               </p>
@@ -270,11 +273,12 @@ const Index = () => {
         <div className="grid md:grid-cols-12 gap-12 md:gap-16">
           <FadeIn className="md:col-span-6">
             <span className="tag-label mb-6 block">Quién soy</span>
-            <h2 className="text-[clamp(2.5rem,6vw,5rem)] font-heading font-bold leading-[1] tracking-tighter">
+            <h2 className="sr-only">Asesor financiero para PYMEs y Startups</h2>
+            <p className="text-[clamp(2.5rem,6vw,5rem)] font-heading font-bold leading-[1] tracking-tighter" role="presentation">
               Pablo <span className="font-display italic font-normal">Prado</span>
               <br />
               Marrón<span className="text-accent">.</span>
-            </h2>
+            </p>
             <p className="mt-2 text-sm font-mono text-muted-foreground uppercase tracking-[0.15em]">
               Pablo CFOnomic
             </p>
@@ -328,9 +332,10 @@ const Index = () => {
             <div className="md:col-span-4">
               <span className="number-display text-foreground/5">04</span>
               <span className="tag-label block mt-4">Dolor</span>
-              <h2 className="mt-4 text-[clamp(2rem,4vw,3.5rem)] font-heading font-bold leading-tight tracking-tighter">
+              <h2 className="sr-only">Problemas financieros comunes en PYMEs</h2>
+              <p className="mt-4 text-[clamp(2rem,4vw,3.5rem)] font-heading font-bold leading-tight tracking-tighter" role="presentation">
                 ¿Te suena?
-              </h2>
+              </p>
             </div>
             <div className="md:col-span-8">
               <div className="grid sm:grid-cols-2 gap-x-8 gap-y-4 text-sm text-foreground/70 leading-relaxed">
@@ -616,11 +621,12 @@ const Index = () => {
       <Section dark>
         <FadeIn>
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-[clamp(2.5rem,6vw,5.5rem)] font-heading font-bold leading-[1.02] tracking-tighter">
+            <h2 className="sr-only">Solicita tu diagnóstico financiero gratuito</h2>
+            <p className="text-[clamp(2.5rem,6vw,5.5rem)] font-heading font-bold leading-[1.02] tracking-tighter" role="presentation">
               Si quieres seguir
               <br />
               a <span className="font-display italic font-normal">ciegas</span>, no hagas nada<span className="text-accent">.</span>
-            </h2>
+            </p>
             <p className="mt-8 text-lg md:text-xl text-surface-dark-foreground/50">
               Si quieres control y dormir mejor, deja tu email.
             </p>

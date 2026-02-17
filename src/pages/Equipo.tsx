@@ -15,12 +15,12 @@ const Equipo = () => (
         <FadeIn>
           <div className="grid md:grid-cols-12 gap-12 items-start">
             <div className="md:col-span-7">
-              <span className="tag-label mb-6 block">Quién está detrás</span>
-              <h1 className="text-[clamp(3rem,7vw,6rem)] font-heading font-bold leading-[0.92] tracking-tighter">
+              <h1 className="tag-label mb-6 block">Asesor financiero para PYMEs y Startups</h1>
+              <p className="text-[clamp(3rem,7vw,6rem)] font-heading font-bold leading-[0.92] tracking-tighter" role="presentation">
                 Pablo <span className="font-display italic font-normal">Prado</span>
                 <br />
                 Marrón<span className="text-accent">.</span>
-              </h1>
+              </p>
               <p className="mt-2 text-sm font-mono text-muted-foreground uppercase tracking-[0.15em]">
                 Pablo CFOnomic
               </p>
@@ -95,9 +95,10 @@ const Equipo = () => (
     <Section paper>
       <FadeIn>
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-[clamp(2rem,5vw,4rem)] font-heading font-bold tracking-tighter">
+          <h2 className="sr-only">Contacta para asesoría financiera</h2>
+          <p className="text-[clamp(2rem,5vw,4rem)] font-heading font-bold tracking-tighter" role="presentation">
             ¿<span className="font-display italic font-normal">Hablamos</span><span className="text-accent">?</span>
-          </h2>
+          </p>
           <div className="mt-8 max-w-md mx-auto">
             <EmailCaptureForm buttonText="Quiero el diagnóstico" microcopy="Sin compromiso." variant="stacked" />
           </div>

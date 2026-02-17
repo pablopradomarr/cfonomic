@@ -17,12 +17,12 @@ const DiagnosticoFinanciero = () => {
       <section className="py-24 md:py-36">
         <div className="container-wide">
           <FadeIn>
-            <span className="tag-label mb-6 block">Diagnóstico</span>
-            <h1 className="text-[clamp(2.5rem,6vw,5.5rem)] font-heading font-bold leading-[0.95] tracking-tighter max-w-5xl">
+            <h1 className="tag-label mb-6 block">Diagnóstico financiero gratis para empresas</h1>
+            <p className="text-[clamp(2.5rem,6vw,5.5rem)] font-heading font-bold leading-[0.95] tracking-tighter max-w-5xl" role="presentation">
               Descubre dónde se te
               <br />
               escapa la <span className="font-display italic font-normal">caja</span><span className="text-accent">.</span>
-            </h1>
+            </p>
             <p className="mt-6 max-w-lg text-base text-muted-foreground leading-relaxed">
               En 5 minutos tienes claridad de por dónde empezar. Sin compromiso. Sin humo.
             </p>

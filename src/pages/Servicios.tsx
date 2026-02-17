@@ -27,12 +27,12 @@ const Servicios = () => (
     <section className="py-24 md:py-36">
       <div className="container-wide">
         <FadeIn>
-          <span className="tag-label mb-6 block">Servicios</span>
-          <h1 className="text-[clamp(2.5rem,6vw,5.5rem)] font-heading font-bold leading-[0.95] tracking-tighter max-w-4xl">
+          <h1 className="tag-label mb-4 block">Asesoría financiera para empresas</h1>
+          <p className="text-[clamp(2.5rem,6vw,5.5rem)] font-heading font-bold leading-[0.95] tracking-tighter max-w-4xl" role="presentation">
             Tu departamento <span className="font-display italic font-normal">financiero</span><span className="text-accent">.</span>
             <br />
             <span className="text-muted-foreground">El de <span className="font-display italic">verdad</span>.</span>
-          </h1>
+          </p>
           <p className="mt-6 max-w-xl text-base text-muted-foreground leading-relaxed">
             Lo que una multinacional tiene con un equipo de 10, tú lo tienes con uno.
             Sin contratar, sin complicaciones, sin humo.
@@ -173,9 +173,10 @@ const Servicios = () => (
     <Section dark>
       <FadeIn>
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-[clamp(2rem,5vw,4rem)] font-heading font-bold tracking-tighter">
+          <h2 className="sr-only">Contacta para asesoría financiera</h2>
+          <p className="text-[clamp(2rem,5vw,4rem)] font-heading font-bold tracking-tighter" role="presentation">
             ¿<span className="font-display italic font-normal">Hablamos</span><span className="text-accent">?</span>
-          </h2>
+          </p>
           <p className="mt-4 text-sm text-surface-dark-foreground/50">Deja tu email o agenda 15 minutos.</p>
           <div className="mt-8 max-w-md mx-auto">
             <EmailCaptureForm buttonText="Envíame info" microcopy="Sin humo. Con números." variant="stacked" dark />

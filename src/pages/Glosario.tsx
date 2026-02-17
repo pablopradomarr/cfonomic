@@ -39,12 +39,12 @@ const Glosario = () => {
       <section className="py-24 md:py-36">
         <div className="container-wide">
           <FadeIn>
-            <span className="tag-label mb-6 block">Glosario</span>
-            <h1 className="text-[clamp(2.5rem,6vw,5.5rem)] font-heading font-bold leading-[0.95] tracking-tighter max-w-4xl">
+            <h1 className="tag-label mb-4 block">Glosario financiero para empresas</h1>
+            <p className="text-[clamp(2.5rem,6vw,5.5rem)] font-heading font-bold leading-[0.95] tracking-tighter max-w-4xl" role="presentation">
               Términos que <span className="font-display italic font-normal">necesitas</span><span className="text-accent">.</span>
               <br />
               <span className="text-muted-foreground">Sin jerga.</span>
-            </h1>
+            </p>
             <div className="mt-8 max-w-sm">
               <input
                 type="text"
