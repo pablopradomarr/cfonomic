@@ -12,7 +12,7 @@ const DiagnosticoFinanciero = () => {
         <div className="container-wide">
           <FadeIn>
             <span className="tag-label mb-6 block">Diagnóstico</span>
-            <h1 className="text-[clamp(2rem,5vw,4.5rem)] font-heading font-bold leading-[0.95] tracking-tighter max-w-5xl">
+            <h1 className="text-[clamp(2.5rem,6vw,5.5rem)] font-heading font-bold leading-[0.95] tracking-tighter max-w-5xl">
               Descubre dónde se te
               <br />
               escapa la caja<span className="text-accent">.</span>
@@ -77,7 +77,7 @@ const DiagnosticoFinanciero = () => {
       <Section dark>
         <FadeIn>
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-heading font-bold tracking-tighter">
+            <h2 className="text-[clamp(2rem,5vw,3.5rem)] font-heading font-bold tracking-tighter">
               ¿Prefieres que lo veamos juntos<span className="text-accent">?</span>
             </h2>
             <p className="mt-3 text-sm text-surface-dark-foreground/50">15 minutos. Tú con tus dudas, yo con mis números.</p>

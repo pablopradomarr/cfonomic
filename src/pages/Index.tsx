@@ -22,7 +22,7 @@ const Index = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="max-w-5xl text-[clamp(2.5rem,7vw,6rem)] font-heading font-bold leading-[0.95] tracking-tighter"
+            className="max-w-5xl text-[clamp(3rem,8vw,7.5rem)] font-heading font-bold leading-[0.92] tracking-tighter"
           >
             Ningún viento es favorable
             <br />
@@ -122,7 +122,7 @@ const Index = () => {
             <span className="number-display">02</span>
           </FadeIn>
           <FadeIn delay={0.1} className="md:col-span-8">
-            <p className="font-heading text-2xl md:text-4xl font-bold leading-[1.1] tracking-tight">
+            <p className="font-heading text-3xl md:text-5xl font-bold leading-[1.05] tracking-tighter">
               Si tienes una PYME, te pasa una de estas:
             </p>
             <div className="mt-10 space-y-6 text-lg md:text-xl leading-relaxed text-foreground/70 border-l-2 border-accent pl-6">
@@ -148,7 +148,7 @@ const Index = () => {
               <span className="tag-label border-surface-dark-foreground/20 text-surface-dark-foreground/40">
                 Historia prestada
               </span>
-              <h2 className="mt-6 text-3xl md:text-5xl font-heading font-bold leading-[1.05] tracking-tight">
+              <h2 className="mt-6 text-[clamp(2rem,5vw,4.5rem)] font-heading font-bold leading-[1.05] tracking-tighter">
                 Lo que hace Mercadona<span className="text-accent">.</span>
                 <br />
                 <span className="text-surface-dark-foreground/40">Y tú no.</span>
@@ -186,7 +186,7 @@ const Index = () => {
           <div className="grid md:grid-cols-12 gap-12">
             <div className="md:col-span-5">
               <span className="number-display">03</span>
-              <h2 className="mt-4 text-2xl md:text-3xl font-heading font-bold leading-tight tracking-tight">
+              <h2 className="mt-4 text-[clamp(1.8rem,4vw,3rem)] font-heading font-bold leading-tight tracking-tighter">
                 La servilleta que te cambia la cabeza<span className="text-accent">.</span>
               </h2>
               <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
@@ -264,7 +264,7 @@ const Index = () => {
         <div className="grid md:grid-cols-12 gap-12 md:gap-16">
           <FadeIn className="md:col-span-6">
             <span className="tag-label mb-6 block">Quién soy</span>
-            <h2 className="text-3xl md:text-5xl font-heading font-bold leading-[1.05] tracking-tight">
+            <h2 className="text-[clamp(2.5rem,6vw,5rem)] font-heading font-bold leading-[1] tracking-tighter">
               Pablo Prado
               <br />
               Marrón<span className="text-accent">.</span>
@@ -322,7 +322,7 @@ const Index = () => {
             <div className="md:col-span-4">
               <span className="number-display text-foreground/5">04</span>
               <span className="tag-label block mt-4">Dolor</span>
-              <h2 className="mt-4 text-2xl md:text-3xl font-heading font-bold leading-tight tracking-tight">
+              <h2 className="mt-4 text-[clamp(2rem,4vw,3.5rem)] font-heading font-bold leading-tight tracking-tighter">
                 ¿Te suena?
               </h2>
             </div>
@@ -361,7 +361,7 @@ const Index = () => {
             <span className="tag-label border-surface-dark-foreground/20 text-surface-dark-foreground/40">
               Información
             </span>
-            <h3 className="mt-4 text-xl md:text-2xl font-heading font-bold leading-tight">
+            <h3 className="mt-4 text-2xl md:text-3xl font-heading font-bold leading-tight tracking-tighter">
               Lo que necesitas saber<span className="text-accent">.</span>
             </h3>
             <div className="mt-8 space-y-4 text-sm text-surface-dark-foreground/60 leading-relaxed">
@@ -386,7 +386,7 @@ const Index = () => {
             <span className="tag-label border-surface-dark-foreground/20 text-surface-dark-foreground/40">
               Curiosidad
             </span>
-            <h3 className="mt-4 text-xl md:text-2xl font-heading font-bold leading-tight">
+            <h3 className="mt-4 text-2xl md:text-3xl font-heading font-bold leading-tight tracking-tighter">
               Preguntas incómodas<span className="text-accent">.</span>
             </h3>
             <div className="mt-8 space-y-4 text-sm text-surface-dark-foreground/60 leading-relaxed">
@@ -414,7 +414,7 @@ const Index = () => {
         <div className="grid md:grid-cols-2 gap-16 md:gap-24">
           <FadeIn>
             <span className="tag-label">Beneficios</span>
-            <h3 className="mt-4 text-xl md:text-2xl font-heading font-bold leading-tight tracking-tight">
+            <h3 className="mt-4 text-2xl md:text-3xl font-heading font-bold leading-tight tracking-tighter">
               Lo que consigues<span className="text-accent">.</span>
             </h3>
             <div className="mt-8 space-y-3 text-sm text-foreground/70">
@@ -440,7 +440,7 @@ const Index = () => {
 
           <FadeIn delay={0.1}>
             <span className="tag-label">Errores</span>
-            <h3 className="mt-4 text-xl md:text-2xl font-heading font-bold leading-tight tracking-tight">
+            <h3 className="mt-4 text-2xl md:text-3xl font-heading font-bold leading-tight tracking-tighter">
               Lo que te cuesta dinero<span className="text-accent">.</span>
             </h3>
             <div className="mt-8 space-y-3 text-sm text-foreground/70">
@@ -610,7 +610,7 @@ const Index = () => {
       <Section dark>
         <FadeIn>
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold leading-[1.05] tracking-tighter">
+            <h2 className="text-[clamp(2.5rem,6vw,5.5rem)] font-heading font-bold leading-[1.02] tracking-tighter">
               Si quieres seguir
               <br />
               a ciegas, no hagas nada<span className="text-accent">.</span>
