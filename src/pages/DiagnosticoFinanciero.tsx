@@ -56,7 +56,7 @@ const DiagnosticoFinanciero = () => {
     if (window.innerWidth < 768 && formRef.current) {
       setTimeout(() => {
         formRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
-      }, 300);
+      }, 900);
     }
   }, []);
 
