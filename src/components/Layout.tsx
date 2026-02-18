@@ -195,13 +195,26 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             </div>
           </div>
 
-          <div className="mt-16 pt-8 border-t border-surface-dark-foreground/10 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-            <p className="text-[11px] font-mono text-surface-dark-foreground/25">
-              © {new Date().getFullYear()} CFOnomic — Pablo Prado Marrón
-            </p>
-            <p className="text-[11px] font-mono text-surface-dark-foreground/25">
-              No vendo tu email. Lo odio tanto como tú.
-            </p>
+          <div className="mt-12 pt-8 border-t border-surface-dark-foreground/10">
+            <div className="flex flex-wrap gap-x-6 gap-y-2 mb-4">
+              <Link to="/aviso-legal" className="text-[10px] font-mono text-surface-dark-foreground/30 hover:text-surface-dark-foreground/60 transition-colors">
+                Aviso legal
+              </Link>
+              <Link to="/politica-de-privacidad" className="text-[10px] font-mono text-surface-dark-foreground/30 hover:text-surface-dark-foreground/60 transition-colors">
+                Política de privacidad
+              </Link>
+              <Link to="/politica-de-cookies" className="text-[10px] font-mono text-surface-dark-foreground/30 hover:text-surface-dark-foreground/60 transition-colors">
+                Política de cookies
+              </Link>
+            </div>
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-2">
+              <p className="text-[11px] font-mono text-surface-dark-foreground/25">
+                © {new Date().getFullYear()} CFOnomic — GREAT REAL FOOD SL · CIF B02859189
+              </p>
+              <p className="text-[11px] font-mono text-surface-dark-foreground/25">
+                No vendo tu email. Lo odio tanto como tú.
+              </p>
+            </div>
           </div>
         </div>
       </footer>

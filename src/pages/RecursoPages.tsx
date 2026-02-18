@@ -135,13 +135,13 @@ const RecursoPage = ({
             <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
               <Link
                 to="/diagnostico-financiero"
-                className="inline-flex items-center justify-center rounded-md bg-accent px-6 py-3 font-heading font-bold text-accent-foreground hover:bg-accent/85 transition-all"
+                className="inline-flex items-center justify-center bg-accent px-6 py-3 font-heading font-bold text-accent-foreground hover:bg-accent/85 transition-all"
               >
                 Diagnóstico gratis
               </Link>
               <Link
                 to="/contacto"
-                className="inline-flex items-center justify-center rounded-md border-2 border-border px-6 py-3 font-heading font-semibold text-heading hover:bg-surface-paper transition-all"
+                className="inline-flex items-center justify-center border-2 border-border px-6 py-3 font-heading font-semibold text-heading hover:bg-surface-paper transition-all"
               >
                 Agendar llamada
               </Link>
