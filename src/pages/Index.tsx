@@ -100,25 +100,25 @@ const Index = () => {
       </section>
 
       {/* ═══ MARQUEE DIVIDER ═══ */}
-      <div className="border-y border-foreground/10 py-4 overflow-hidden">
+      <div className="border-y-2 border-foreground/20 bg-surface-dark py-5 overflow-hidden">
         <div className="marquee-track">
           {[...Array(2)].map((_, j) => (
-            <div key={j} className="flex items-center gap-8 px-4">
+            <div key={j} className="flex items-center gap-10 px-4">
               {[
-                "Control financiero",
-                "Caja",
-                "Márgenes",
-                "Reporting",
-                "Presupuesto",
-                "KPIs",
-                "Decisiones con datos",
-                "CFO externo",
+                "Dirección Financiera",
+                "Tu Departamento Financiero",
+                "Control de negocio",
+                "Control de Caja",
+                "Planificación y Presupuestos",
+                "Análisis de negocio y operativo",
+                "Métricas y KPIs",
+                "Reporting de valor",
               ].map((w, i) => (
                 <span
                   key={`${j}-${i}`}
-                  className="whitespace-nowrap text-[11px] font-mono uppercase tracking-[0.2em] text-muted-foreground/50"
+                  className="whitespace-nowrap text-xs font-heading font-bold uppercase tracking-[0.15em] text-surface-dark-foreground"
                 >
-                  {w} <span className="text-accent ml-8">●</span>
+                  {w} <span className="text-accent ml-10">●</span>
                 </span>
               ))}
             </div>
