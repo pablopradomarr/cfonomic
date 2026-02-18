@@ -34,7 +34,7 @@ const Servicios = () => (
             <br />
             <span className="text-muted-foreground">El de <span className="font-display italic">verdad</span>.</span>
           </p>
-          <h1 className="mt-6 max-w-xl text-base text-muted-foreground leading-relaxed font-body font-normal">
+          <h1 className="mt-6 max-w-full text-base text-muted-foreground leading-relaxed font-body font-normal">
             Asesoría financiera para empresas que quieren dejar de improvisar. Lo que una multinacional tiene con un equipo de 10, tú lo tienes con uno. Sin contratar, sin complicaciones.
           </h1>
         </FadeIn>
@@ -158,7 +158,7 @@ const Servicios = () => (
     <Section>
       <FadeIn>
         <SectionHeading tag="FAQ" title="Preguntas frecuentes" />
-        <div className="max-w-3xl">
+        <div className="max-w-full">
           {serviciosFaq.map((faq) => (
             <div key={faq.q} className="border-b border-foreground/5 py-6">
               <h3 className="font-heading font-bold text-sm tracking-tight">{faq.q}</h3>

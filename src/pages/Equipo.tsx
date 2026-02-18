@@ -27,7 +27,7 @@ const Equipo = () => (
               <p className="mt-2 text-sm font-mono text-muted-foreground uppercase tracking-[0.15em]">
                 CFOnomic
               </p>
-              <h1 className="mt-8 max-w-md text-base text-muted-foreground leading-relaxed font-body font-normal">
+              <h1 className="mt-8 max-w-full text-base text-muted-foreground leading-relaxed font-body font-normal">
                 Asesor financiero para PYMEs y Startups. Dirijo las finanzas de empresas que quieren dejar de improvisar — les monto el departamento financiero que necesitan, sin contratar a un equipo entero.
               </h1>
             </div>
@@ -49,7 +49,7 @@ const Equipo = () => (
     <Section dark>
       <FadeIn>
         <SectionHeading tag="Por qué" title="Por qué hago esto" />
-        <div className="max-w-2xl space-y-5 text-base text-surface-dark-foreground/70 leading-relaxed">
+        <div className="max-w-full space-y-5 text-base text-surface-dark-foreground/70 leading-relaxed">
           <p>
             Porque he visto demasiadas empresas buenas tomar decisiones malas. No por falta de talento.
             Sino porque no tenían la asesoría financiera que necesitaban: información útil, a tiempo y que sirviera para decidir.

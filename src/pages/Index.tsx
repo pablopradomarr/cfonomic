@@ -47,7 +47,7 @@ const Index = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="mt-8 max-w-lg">
+            className="mt-8 max-w-2xl">
 
             <h1 className="text-base md:text-lg text-muted-foreground leading-relaxed font-body font-normal">
               Asesoría Financiera para PYMEs que quieren tomar decisiones con instinto analítico.  Somos el equipo financiero d para Control de caja, márgenes reales y decisiones con datos — sin contratar un equipo entero.
@@ -693,7 +693,7 @@ const Index = () => {
           </div>
         </FadeIn>
         <FadeIn delay={0.1}>
-          <div className="max-w-3xl mx-auto mt-12">
+          <div className="max-w-4xl mx-auto mt-12">
             <Accordion type="single" collapsible className="w-full">
               {[
               {

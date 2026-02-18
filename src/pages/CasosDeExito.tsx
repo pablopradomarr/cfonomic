@@ -18,7 +18,7 @@ const CasosDeExito = () => (
           <p className="text-[clamp(2.5rem,6vw,5.5rem)] font-heading font-bold leading-[0.95] tracking-tighter max-w-4xl" role="presentation">
             <span className="font-display italic font-normal">Medir</span><span className="text-accent">.</span> Ajustar<span className="text-accent">.</span> <span className="font-display italic font-normal">Repetir</span><span className="text-accent">.</span>
           </p>
-          <h1 className="mt-6 max-w-lg text-base text-muted-foreground leading-relaxed font-body font-normal">
+          <h1 className="mt-6 max-w-full text-base text-muted-foreground leading-relaxed font-body font-normal">
             Casos prácticos de gestión financiera: empresas reales que pasaron de decidir por intuición a tener control financiero con datos.
           </h1>
         </FadeIn>

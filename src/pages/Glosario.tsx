@@ -60,7 +60,7 @@ Sin jerga.<span className="font-display italic font-normal">necesitas</span><spa
       </section>
 
       <Section>
-        <div className="max-w-4xl space-y-0">
+        <div className="max-w-full space-y-0">
           {(search ? filtered : glossaryTerms).map((t) =>
           <FadeIn key={t.term}>
               <div className="border-b border-foreground/5 py-8 grid md:grid-cols-12 gap-6">
