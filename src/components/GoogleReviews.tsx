@@ -1,6 +1,6 @@
 import { FadeIn } from "@/components/Editorial";
 
-const GOOGLE_MAPS_URL = "https://www.google.com/maps/search/CFOnomic+asesor%C3%ADa+financiera";
+const GOOGLE_MAPS_URL = "https://www.google.com/search?q=Asesor%C3%ADa+financiera+CFOnomic+Jerez+de+la+Frontera";
 
 const reviews = [
   {
@@ -14,6 +14,18 @@ const reviews = [
     badge: "Local Guide · 85 reseñas",
     stars: 5,
     text: "Llevamos trabajando con Pablo en CFOnomic más de un año. Lo recomiendo 100%. Además de ayudarnos a entender los números de nuestra empresa, nos ha abierto los ojos con la rentabilidad real de nuestros servicios. Entre Pablo y nuestra gestoría, estamos al día y con total control de nuestro negocio.",
+  },
+  {
+    name: "Joaquín Rivas",
+    badge: "6 reseñas",
+    stars: 5,
+    text: "Muy recomendable. Pablo es un gran profesional: cercano, claro y muy comprometido. Me ayuda a entender mejor la parte financiera de mi proyecto y a tomar decisiones con confianza. Su apoyo ha sido clave para avanzar con seguridad.",
+  },
+  {
+    name: "Jesús Sánchez Alcaide",
+    badge: "5 reseñas",
+    stars: 5,
+    text: "Servicio y calidad inmejorables, atienden tu consulta (si es importante) hasta en fin de semana. Tienen un gran compromiso con sus clientes. Respecto a la calidad, poco que decir. Gracias a ellos controlo hasta el último céntimo que entra y sale de mi negocio de restauración. Si lo que quieres es controlar tus finanzas, sin duda recomiendo esta empresa.",
   },
 ];
 
