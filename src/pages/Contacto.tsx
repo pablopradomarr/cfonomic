@@ -115,7 +115,10 @@ const Contacto = () => {
               <div className="flex items-start gap-3">
                 <input type="checkbox" checked={formData.privacidad} onChange={(e) => handleChange("privacidad", e.target.checked)} className="mt-1 h-4 w-4 accent-accent" id="privacidad" />
                 <label htmlFor="privacidad" className="text-[11px] text-muted-foreground leading-relaxed">
-                  Acepto la política de privacidad. No vendo tu email. Lo odio tanto como tú.
+                  Acepto la{" "}
+                  <Link to="/politica-de-privacidad" className="border-b border-foreground/20 hover:border-foreground transition-colors">
+                    política de privacidad
+                  </Link>. No vendo tu email. Lo odio tanto como tú.
                 </label>
               </div>
               {errors.privacidad && <p className="text-xs text-destructive font-mono">{errors.privacidad}</p>}

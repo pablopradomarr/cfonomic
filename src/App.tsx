@@ -17,6 +17,10 @@ import Equipo from "./pages/Equipo";
 import Contacto from "./pages/Contacto";
 import CiudadPage from "./pages/CiudadPage";
 import NotFound from "./pages/NotFound";
+import PoliticaPrivacidad from "./pages/PoliticaPrivacidad";
+import PoliticaCookies from "./pages/PoliticaCookies";
+import AvisoLegal from "./pages/AvisoLegal";
+import CookieBanner from "./components/CookieBanner";
 
 const queryClient = new QueryClient();
 
@@ -56,9 +60,13 @@ const App = () => (
             <Route path="/cfo-externo-valladolid" element={<CiudadPage city="Valladolid" />} />
             <Route path="/cfo-externo-alicante" element={<CiudadPage city="Alicante" />} />
             <Route path="/cfo-externo-murcia" element={<CiudadPage city="Murcia" />} />
+            <Route path="/politica-de-privacidad" element={<PoliticaPrivacidad />} />
+            <Route path="/politica-de-cookies" element={<PoliticaCookies />} />
+            <Route path="/aviso-legal" element={<AvisoLegal />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>
+        <CookieBanner />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
