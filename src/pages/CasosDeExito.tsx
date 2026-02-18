@@ -63,7 +63,7 @@ const CasosDeExito = () => (
           <div className="mt-6 flex flex-wrap gap-4 justify-center">
             {[
               { label: "Servicios", path: "/servicios" },
-              { label: "Diagnóstico gratis", path: "/diagnostico-financiero" },
+              { label: "Diagnóstico Financiero", path: "/diagnostico-financiero" },
               { label: "Recursos", path: "/recursos" },
             ].map((l) => (
               <Link key={l.path} to={l.path} className="text-[11px] font-mono uppercase tracking-[0.1em] text-surface-dark-foreground/30 hover:text-accent transition-colors border-b border-surface-dark-foreground/10 pb-0.5">

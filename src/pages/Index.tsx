@@ -39,7 +39,8 @@ const Index = () => {
             <br />
             para quien <span className="highlight-text">no sabe</span>
             <br />
-            a dónde <span className="font-display italic font-normal">va</span><span className="text-accent">.</span>
+            a <span className="font-display italic font-normal">dónde va</span><span className="text-accent">.</span>
+
           </motion.p>
 
           <motion.div

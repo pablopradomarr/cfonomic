@@ -110,7 +110,7 @@ const Glosario = () => {
               {[
                 { label: "Servicios", path: "/servicios" },
                 { label: "Recursos y calculadoras", path: "/recursos" },
-                { label: "Diagnóstico gratis", path: "/diagnostico-financiero" },
+                { label: "Diagnóstico Financiero", path: "/diagnostico-financiero" },
               ].map((l) => (
                 <Link key={l.path} to={l.path} className="text-[11px] font-mono uppercase tracking-[0.1em] text-surface-dark-foreground/30 hover:text-accent transition-colors border-b border-surface-dark-foreground/10 pb-0.5">
                   {l.label} →

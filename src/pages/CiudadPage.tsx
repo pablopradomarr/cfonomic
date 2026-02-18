@@ -101,12 +101,12 @@ const CiudadPage = ({ city }: CityPageProps) => {
               ¿Necesitas un director financiero externo en {city}<span className="text-accent">?</span>
             </h2>
             <div className="mt-8 max-w-md mx-auto">
-              <EmailCaptureForm buttonText="Diagnóstico gratis" microcopy={`Director financiero externo en ${city}. Sin humo.`} variant="stacked" dark />
+              <EmailCaptureForm buttonText="Diagnóstico Financiero" microcopy={`Director financiero externo en ${city}. Sin humo.`} variant="stacked" dark />
             </div>
             <p className="mt-4">
-              <Link to="/contacto" className="text-[11px] font-mono uppercase tracking-[0.1em] text-surface-dark-foreground/40 hover:text-accent transition-colors border-b border-surface-dark-foreground/20 pb-0.5">
-                Agendar llamada →
-              </Link>
+              <a href="https://tidycal.com/pablocfonomic/nosconocemos" target="_blank" rel="noopener noreferrer" className="text-[11px] font-mono uppercase tracking-[0.1em] text-surface-dark-foreground/40 hover:text-accent transition-colors border-b border-surface-dark-foreground/20 pb-0.5">
+                Hablar con un Director Financiero →
+              </a>
             </p>
           </div>
         </FadeIn>

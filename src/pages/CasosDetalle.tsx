@@ -90,7 +90,7 @@ const CasoTuricleta = () => (
           <div className="mt-6 flex flex-wrap gap-4">
             {[
               { label: "Ver servicios", path: "/servicios" },
-              { label: "Diagnóstico gratis", path: "/diagnostico-financiero" },
+              { label: "Diagnóstico Financiero", path: "/diagnostico-financiero" },
               { label: "Más casos", path: "/casos-de-exito" },
             ].map((l) => (
               <Link key={l.path} to={l.path} className="text-[11px] font-mono uppercase tracking-[0.1em] text-surface-dark-foreground/30 hover:text-accent transition-colors border-b border-surface-dark-foreground/10 pb-0.5">
@@ -189,7 +189,7 @@ const CasoImpasto = () => (
           <div className="mt-6 flex flex-wrap gap-4">
             {[
               { label: "Ver servicios", path: "/servicios" },
-              { label: "Diagnóstico gratis", path: "/diagnostico-financiero" },
+              { label: "Diagnóstico Financiero", path: "/diagnostico-financiero" },
               { label: "Más casos", path: "/casos-de-exito" },
             ].map((l) => (
               <Link key={l.path} to={l.path} className="text-[11px] font-mono uppercase tracking-[0.1em] text-surface-dark-foreground/30 hover:text-accent transition-colors border-b border-surface-dark-foreground/10 pb-0.5">
