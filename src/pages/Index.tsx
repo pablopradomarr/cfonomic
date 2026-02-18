@@ -5,6 +5,7 @@ import EmailCaptureForm from "@/components/EmailCaptureForm";
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/SEO";
 import GoogleReviews from "@/components/GoogleReviews";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import pabloBurbuja from "@/assets/pablo-burbuja.png";
 
 const Index = () => {
@@ -74,18 +75,23 @@ const Index = () => {
             transition={{ duration: 0.6, delay: 0.8 }}
             className="mt-12 max-w-lg"
           >
-            <EmailCaptureForm
-              buttonText="Envíame el diagnóstico"
-              microcopy="Te lo mando por email. Sin spam. Si no te aporta, te borras."
-            />
-            <p className="mt-5">
-              <Link
-                to="/contacto"
-                className="text-[12px] font-mono uppercase tracking-[0.1em] text-muted-foreground hover:text-foreground transition-colors border-b border-foreground/20 pb-0.5"
-              >
-                Prefiero hablar 15 min →
-              </Link>
-            </p>
+            <div className="border border-foreground/10 bg-background p-6 md:p-8">
+              <p className="font-heading text-lg md:text-xl font-bold tracking-tight leading-snug">
+                Cada semana mando un email con un consejo financiero 
+                que puedes aplicar <span className="font-display italic font-normal">ese mismo día</span> en tu PYME<span className="text-accent">.</span>
+              </p>
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+                Sin teoría. Sin humo. Sin «agenda una call». Solo una idea clara 
+                para que controles mejor tu caja, tus márgenes y tu cabeza.
+              </p>
+              <div className="mt-5">
+                <EmailCaptureForm
+                  buttonText="Quiero esos emails"
+                  microcopy="Te apuntas hoy. Si mañana no te aporta, te borras en un clic. Sin resentimientos."
+                  source="home-hero"
+                />
+              </div>
+            </div>
           </motion.div>
         </div>
 
@@ -379,6 +385,33 @@ const Index = () => {
         </FadeIn>
       </Section>
 
+      {/* ═══ EMAIL CAPTURE — POST DOLOR ═══ */}
+      <Section paper>
+        <FadeIn>
+          <div className="max-w-2xl mx-auto">
+            <div className="border border-foreground/10 bg-background p-8 md:p-12">
+              <span className="tag-label mb-4 block">Gratis · Cada semana</span>
+              <p className="font-heading text-2xl md:text-3xl font-bold tracking-tight leading-tight">
+                Si has llegado hasta aquí, es porque algo de esto te <span className="font-display italic font-normal">suena</span><span className="text-accent">.</span>
+              </p>
+              <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
+                Mando un email semanal con un consejo financiero corto, directo y aplicable. 
+                El tipo de cosas que nadie te cuenta porque no le interesa que las sepas.
+                Sin vender cursos, sin webinars de 3 horas, sin PDF de 47 páginas.
+              </p>
+              <div className="mt-6">
+                <EmailCaptureForm
+                  buttonText="Apúntame"
+                  microcopy="Un email. Una idea. Si no te gusta, te das de baja y aquí no ha pasado nada."
+                  source="home-post-dolor"
+                  variant="stacked"
+                />
+              </div>
+            </div>
+          </div>
+        </FadeIn>
+      </Section>
+
       {/* INFORMACIÓN + CURIOSIDAD */}
       <Section dark>
         <div className="grid md:grid-cols-2 gap-16 md:gap-24">
@@ -621,12 +654,23 @@ const Index = () => {
         </div>
 
         <FadeIn delay={0.15}>
-          <div className="mt-16 max-w-md">
-            <EmailCaptureForm
-              buttonText="Quiero mi diagnóstico"
-              microcopy="Sin humo. Con números."
-              variant="stacked"
-            />
+          <div className="mt-16 max-w-lg mx-auto">
+            <div className="border border-foreground/10 p-6 md:p-8">
+              <p className="font-heading text-lg font-bold tracking-tight">
+                ¿Quieres consejos así cada semana en tu bandeja?
+              </p>
+              <p className="mt-2 text-xs text-muted-foreground">
+                Sin teoría de MBA. Solo lo que funciona en PYMEs de verdad.
+              </p>
+              <div className="mt-4">
+                <EmailCaptureForm
+                  buttonText="Me apunto"
+                  microcopy="Un email semanal. Sin compromisos. Sin dramas."
+                  variant="stacked"
+                  source="home-post-casos"
+                />
+              </div>
+            </div>
           </div>
         </FadeIn>
       </Section>
@@ -639,25 +683,81 @@ const Index = () => {
         <GoogleReviews />
       </Section>
 
+      {/* ═══ FAQs ═══ */}
+      <Section>
+        <FadeIn>
+          <SectionHeading
+            tag="FAQs"
+            title="Algunas dudas frecuentes que quizá tengas."
+          />
+        </FadeIn>
+        <FadeIn delay={0.1}>
+          <div className="max-w-3xl mx-auto mt-12">
+            <Accordion type="single" collapsible className="w-full">
+              {[
+                {
+                  q: "¿Esto es una gestoría?",
+                  a: "No. Tu gestoría hace impuestos. Yo hago que entiendas tus números y tomes decisiones con datos. Son cosas muy distintas. Una te dice lo que pasó; yo te digo qué hacer con lo que viene.",
+                },
+                {
+                  q: "¿Cuánto cuesta?",
+                  a: "Depende de lo que necesites. No es lo mismo montar un cierre mensual desde cero que acompañarte como CFO externo. Hablamos 15 minutos, entiendo tu situación y te digo un precio cerrado. Sin sorpresas.",
+                },
+                {
+                  q: "Ya tengo contable, ¿para qué necesito esto?",
+                  a: "Tu contable registra. Yo interpreto. Tu contable te dice que has facturado 80.000 €. Yo te digo que el 40% de esa facturación te está costando dinero y que tienes un problema de caja en 45 días si no haces nada.",
+                },
+                {
+                  q: "¿Funciona para mi sector?",
+                  a: "Si tienes una PYME que factura, tiene costes y necesita tomar decisiones… sí. He trabajado con hostelería, turismo, alimentación, servicios, ecommerce, industria. Los números hablan el mismo idioma en todos los sectores.",
+                },
+                {
+                  q: "¿Cuánto tardo en ver resultados?",
+                  a: "En 30-60 días tienes tu primer cierre mensual y empiezas a ver con claridad. No es magia: es método. A los 3 meses ya estás tomando decisiones que antes no podías.",
+                },
+                {
+                  q: "¿Y si mi empresa es muy pequeña?",
+                  a: "Precisamente las empresas pequeñas son las que más lo necesitan. Una multinacional se puede permitir perder 50.000 € por un error de pricing. Tú no. Cuanto más pequeño eres, más necesitas controlar cada euro.",
+                },
+                {
+                  q: "¿Qué pasa con los emails que mandas?",
+                  a: "Un email a la semana. Un consejo financiero corto y aplicable. Sin vender humo, sin webinars de 3 horas, sin PDFs interminables. Si no te aporta, te das de baja en un clic y aquí paz y después gloria.",
+                },
+              ].map((faq, i) => (
+                <AccordionItem key={i} value={`faq-${i}`}>
+                  <AccordionTrigger className="text-left font-heading text-base md:text-lg font-bold tracking-tight">
+                    {faq.q}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-sm text-muted-foreground leading-relaxed">
+                    {faq.a}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </FadeIn>
+      </Section>
+
       {/* ═══ I) CIERRE ═══ */}
       <Section dark>
         <FadeIn>
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="sr-only">Diagnóstico financiero gratuito para tu empresa</h2>
+            <h2 className="sr-only">Recibe consejos financieros semanales para tu PYME</h2>
             <p className="text-[clamp(2.5rem,6vw,5.5rem)] font-heading font-bold leading-[1.02] tracking-tighter" role="presentation">
               Si quieres seguir
               <br />
               a <span className="font-display italic font-normal">ciegas</span>, no hagas nada<span className="text-accent">.</span>
             </p>
             <p className="mt-8 text-lg md:text-xl text-surface-dark-foreground/50">
-              Si quieres control financiero de verdad y dormir mejor, deja tu email.
+              Pero si prefieres abrir el email cada semana y pensar «joder, esto lo aplico hoy»… déjame tu correo.
             </p>
             <div className="mt-10 max-w-md mx-auto">
               <EmailCaptureForm
-                buttonText="Quiero ver mis números"
-                microcopy="Te lo dejo claro en tu bandeja de entrada."
+                buttonText="Quiero esos consejos"
+                microcopy="Un email semanal. Sin compromiso. Te borras cuando quieras."
                 variant="stacked"
                 dark
+                source="home-cierre"
               />
             </div>
           </div>
