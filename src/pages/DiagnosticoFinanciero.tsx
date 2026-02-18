@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Section, FadeIn, SectionHeading } from "@/components/Editorial";
 import EmailCaptureForm from "@/components/EmailCaptureForm";
 import { Link } from "react-router-dom";
@@ -50,6 +50,15 @@ const diagnosticoFaq = [
 
 const DiagnosticoFinanciero = () => {
   const [emailGiven, setEmailGiven] = useState(false);
+  const formRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (window.innerWidth < 768 && formRef.current) {
+      setTimeout(() => {
+        formRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+      }, 300);
+    }
+  }, []);
 
   return (
     <>
@@ -74,7 +83,7 @@ const DiagnosticoFinanciero = () => {
             </h1>
 
             {/* CTA prominente */}
-            <div className="mt-10">
+            <div className="mt-10" ref={formRef}>
               {!emailGiven ?
               <div className="max-w-lg">
                   <EmailCaptureForm
