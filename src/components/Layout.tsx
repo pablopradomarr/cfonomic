@@ -168,29 +168,44 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               </p>
               <ul className="space-y-2">
                 <li>
-                  <Link
-                    to="/diagnostico-financiero"
-                    className="text-sm text-surface-dark-foreground/60 hover:text-accent transition-colors font-body"
-                  >
+                  <Link to="/diagnostico-financiero" className="text-sm text-surface-dark-foreground/60 hover:text-accent transition-colors font-body">
                     Diagnóstico financiero
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    to="/equipo"
-                    className="text-sm text-surface-dark-foreground/60 hover:text-surface-dark-foreground transition-colors font-body"
-                  >
+                  <Link to="/equipo" className="text-sm text-surface-dark-foreground/60 hover:text-surface-dark-foreground transition-colors font-body">
                     Quién soy
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    to="/contacto"
-                    className="text-sm text-surface-dark-foreground/60 hover:text-surface-dark-foreground transition-colors font-body"
-                  >
+                  <Link to="/contacto" className="text-sm text-surface-dark-foreground/60 hover:text-surface-dark-foreground transition-colors font-body">
                     Contacto
                   </Link>
                 </li>
+              </ul>
+
+              <p className="text-[10px] font-mono uppercase tracking-[0.2em] text-surface-dark-foreground/30 mb-4 mt-8">
+                CFO externo por ciudad
+              </p>
+              <ul className="grid grid-cols-2 gap-x-4 gap-y-1.5">
+                {[
+                  { label: "Madrid", path: "/cfo-externo-madrid" },
+                  { label: "Barcelona", path: "/cfo-externo-barcelona" },
+                  { label: "Valencia", path: "/cfo-externo-valencia" },
+                  { label: "Sevilla", path: "/cfo-externo-sevilla" },
+                  { label: "Málaga", path: "/cfo-externo-malaga" },
+                  { label: "Bilbao", path: "/cfo-externo-bilbao" },
+                  { label: "Zaragoza", path: "/cfo-externo-zaragoza" },
+                  { label: "Valladolid", path: "/cfo-externo-valladolid" },
+                  { label: "Alicante", path: "/cfo-externo-alicante" },
+                  { label: "Murcia", path: "/cfo-externo-murcia" },
+                ].map((c) => (
+                  <li key={c.path}>
+                    <Link to={c.path} className="text-sm text-surface-dark-foreground/60 hover:text-surface-dark-foreground transition-colors font-body">
+                      {c.label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
