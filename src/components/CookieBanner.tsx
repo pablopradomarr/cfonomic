@@ -4,25 +4,46 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const COOKIE_KEY = "cfonomic_cookies_consent";
 
+export type CookieConsent = "all" | "necessary" | null;
+
+/** Returns current cookie consent status */
+export const getCookieConsent = (): CookieConsent => {
+  const value = localStorage.getItem(COOKIE_KEY);
+  if (value === "all" || value === "necessary") return value;
+  return null;
+};
+
+/** Check if analytics cookies are allowed */
+export const analyticsAllowed = (): boolean => getCookieConsent() === "all";
+
 const CookieBanner = () => {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const consent = localStorage.getItem(COOKIE_KEY);
+    const consent = getCookieConsent();
     if (!consent) {
-      // Small delay so it doesn't flash on load
       const timer = setTimeout(() => setVisible(true), 1500);
       return () => clearTimeout(timer);
     }
   }, []);
 
+  // Listen for consent reset (from cookie settings link)
+  useEffect(() => {
+    const handler = () => {
+      const consent = getCookieConsent();
+      if (!consent) setVisible(true);
+    };
+    window.addEventListener("storage", handler);
+    return () => window.removeEventListener("storage", handler);
+  }, []);
+
   const handleAccept = () => {
-    localStorage.setItem(COOKIE_KEY, "accepted");
+    localStorage.setItem(COOKIE_KEY, "all");
     setVisible(false);
   };
 
-  const handleReject = () => {
-    localStorage.setItem(COOKIE_KEY, "rejected");
+  const handleNecessaryOnly = () => {
+    localStorage.setItem(COOKIE_KEY, "necessary");
     setVisible(false);
   };
 
@@ -38,8 +59,9 @@ const CookieBanner = () => {
         >
           <div className="bg-foreground text-background p-5 md:p-6 border border-foreground/20 shadow-2xl">
             <p className="text-xs font-body leading-relaxed">
-              Utilizamos cookies técnicas y analíticas para mejorar tu experiencia.
-              Puedes aceptarlas, rechazarlas o consultar nuestra{" "}
+              Utilizamos cookies técnicas (necesarias) y, con tu consentimiento, cookies analíticas
+              para mejorar el sitio. Las analíticas están <strong>desactivadas por defecto</strong>.
+              Puedes aceptar todas, solo las necesarias o consultar nuestra{" "}
               <Link
                 to="/politica-de-cookies"
                 className="border-b border-background/40 hover:border-background transition-colors"
@@ -52,13 +74,13 @@ const CookieBanner = () => {
                 onClick={handleAccept}
                 className="flex-1 bg-accent text-accent-foreground py-2 text-[11px] font-mono uppercase tracking-[0.1em] font-bold hover:bg-accent/85 transition-colors"
               >
-                Aceptar
+                Aceptar todas
               </button>
               <button
-                onClick={handleReject}
+                onClick={handleNecessaryOnly}
                 className="flex-1 border border-background/30 text-background py-2 text-[11px] font-mono uppercase tracking-[0.1em] font-bold hover:bg-background/10 transition-colors"
               >
-                Rechazar
+                Solo necesarias
               </button>
             </div>
           </div>
