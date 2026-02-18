@@ -1,6 +1,6 @@
 import { FadeIn } from "@/components/Editorial";
 
-const GOOGLE_MAPS_URL = "https://www.google.com/maps/place/Asesor%C3%ADa+financiera+CFOnomic/data=!4m7!3m6!1s0x76d02f4c0f6567:0x41e40a791acefbd0!8m2!3d36.700967!4d-6.1168469!16s%2Fg%2F11wh606_4k";
+const GOOGLE_MAPS_URL = "https://www.google.com/maps/search/CFOnomic+asesor%C3%ADa+financiera";
 
 const reviews = [
   {

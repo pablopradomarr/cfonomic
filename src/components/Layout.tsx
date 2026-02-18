@@ -33,7 +33,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       <header className={`sticky top-0 z-50 border-b border-foreground/5 backdrop-blur-md ${mobileOpen ? 'bg-[hsl(var(--surface-dark))]' : 'bg-background/90'}`}>
         <nav className="container-wide flex items-center justify-between h-16">
           <Link to="/" className="flex items-center">
-            <img src={logoCfonomic} alt="CFOnomic" className={`h-6 ${mobileOpen ? 'brightness-0 invert' : ''}`} />
+            <img src={logoCfonomic} alt="CFOnomic" className={`h-8 md:h-9 w-auto ${mobileOpen ? 'brightness-0 invert' : ''}`} />
           </Link>
 
           {/* Desktop nav */}
