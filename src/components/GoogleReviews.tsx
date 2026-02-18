@@ -1,11 +1,9 @@
 import { FadeIn } from "@/components/Editorial";
-import { useRef, useState, useEffect } from "react";
+import useEmblaCarousel from "embla-carousel-react";
+import AutoScroll from "embla-carousel-auto-scroll";
+import { useCallback, useEffect, useState } from "react";
 
-const GOOGLE_MAPS_URL = "https://maps.app.goo.gl/CFOnomic";
-const GOOGLE_SEARCH_URL = "https://www.google.com/maps/place/CFOnomic/@36.6816,-6.1268,15z/data=!4m6!3m5!1s0xdd1a6c9e3bcc28d:0x5a2c1f0a0e6c0f0a!8m2!3d36.6816!4d-6.1268!16s";
-
-// Fallback: direct search that reliably resolves
-const REVIEW_URL = "https://www.google.com/maps/search/CFOnomic+Jerez+de+la+Frontera";
+const GOOGLE_MAPS_URL = "https://maps.app.goo.gl/6hwKbMEXCXxiRsLa7";
 
 const reviews = [
   {
@@ -18,19 +16,19 @@ const reviews = [
     name: "Daniel R",
     badge: "Local Guide · 85 reseñas",
     stars: 5,
-    text: "Llevamos trabajando con Pablo en CFOnomic más de un año. Lo recomiendo 100%. Además de ayudarnos a entender los números de nuestra empresa, nos ha abierto los ojos con la rentabilidad real de nuestros servicios.",
+    text: "Llevamos trabajando con Pablo en CFOnomic más de un año. Lo recomiendo 100%. Nos ha abierto los ojos con la rentabilidad real de nuestros servicios.",
   },
   {
     name: "Joaquín Rivas",
     badge: "6 reseñas",
     stars: 5,
-    text: "Muy recomendable. Pablo es un gran profesional: cercano, claro y muy comprometido. Me ayuda a entender mejor la parte financiera de mi proyecto y a tomar decisiones con confianza.",
+    text: "Muy recomendable. Pablo es un gran profesional: cercano, claro y muy comprometido. Su apoyo ha sido clave para avanzar con seguridad.",
   },
   {
     name: "Jesús Sánchez Alcaide",
     badge: "5 reseñas",
     stars: 5,
-    text: "Servicio y calidad inmejorables, atienden tu consulta hasta en fin de semana. Gracias a ellos controlo hasta el último céntimo que entra y sale de mi negocio de restauración.",
+    text: "Servicio y calidad inmejorables. Gracias a ellos controlo hasta el último céntimo que entra y sale de mi negocio de restauración.",
   },
 ];
 
@@ -59,39 +57,35 @@ const GoogleReviews = ({ dark = false }: { dark?: boolean }) => {
   const borderColor = dark ? "border-surface-dark-foreground/10" : "border-foreground/10";
   const cardBg = dark ? "bg-surface-dark-foreground/5" : "bg-background";
 
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    { loop: true, align: "start", dragFree: true },
+    [AutoScroll({ speed: 0.8, stopOnInteraction: false, stopOnMouseEnter: true })]
+  );
 
-  const checkScroll = () => {
-    const el = scrollRef.current;
-    if (!el) return;
-    setCanScrollLeft(el.scrollLeft > 2);
-    setCanScrollRight(el.scrollLeft < el.scrollWidth - el.clientWidth - 2);
-  };
+  const [canScrollPrev, setCanScrollPrev] = useState(false);
+  const [canScrollNext, setCanScrollNext] = useState(false);
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setCanScrollPrev(emblaApi.canScrollPrev());
+    setCanScrollNext(emblaApi.canScrollNext());
+  }, [emblaApi]);
 
   useEffect(() => {
-    checkScroll();
-    const el = scrollRef.current;
-    el?.addEventListener("scroll", checkScroll, { passive: true });
-    window.addEventListener("resize", checkScroll);
-    return () => {
-      el?.removeEventListener("scroll", checkScroll);
-      window.removeEventListener("resize", checkScroll);
-    };
-  }, []);
-
-  const scroll = (dir: number) => {
-    scrollRef.current?.scrollBy({ left: dir * 320, behavior: "smooth" });
-  };
+    if (!emblaApi) return;
+    onSelect();
+    emblaApi.on("select", onSelect);
+    emblaApi.on("reInit", onSelect);
+    return () => { emblaApi.off("select", onSelect); };
+  }, [emblaApi, onSelect]);
 
   return (
     <FadeIn>
       <div className="max-w-4xl mx-auto">
-        {/* Header row */}
+        {/* Header */}
         <div className="flex items-center justify-between mb-6">
           <a
-            href={REVIEW_URL}
+            href={GOOGLE_MAPS_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 group"
@@ -106,19 +100,18 @@ const GoogleReviews = ({ dark = false }: { dark?: boolean }) => {
             </span>
           </a>
 
-          {/* Arrows */}
           <div className="hidden md:flex gap-1">
             <button
-              onClick={() => scroll(-1)}
-              disabled={!canScrollLeft}
+              onClick={() => emblaApi?.scrollPrev()}
+              disabled={!canScrollPrev}
               className={`w-8 h-8 flex items-center justify-center border ${borderColor} ${textColor} disabled:opacity-20 hover:border-accent/40 transition-colors`}
               aria-label="Anterior"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg>
             </button>
             <button
-              onClick={() => scroll(1)}
-              disabled={!canScrollRight}
+              onClick={() => emblaApi?.scrollNext()}
+              disabled={!canScrollNext}
               className={`w-8 h-8 flex items-center justify-center border ${borderColor} ${textColor} disabled:opacity-20 hover:border-accent/40 transition-colors`}
               aria-label="Siguiente"
             >
@@ -127,35 +120,33 @@ const GoogleReviews = ({ dark = false }: { dark?: boolean }) => {
           </div>
         </div>
 
-        {/* Horizontal scroll */}
-        <div
-          ref={scrollRef}
-          className="flex gap-4 overflow-x-auto scrollbar-hide snap-x snap-mandatory -mx-1 px-1 pb-2"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-        >
-          {reviews.map((review) => (
-            <a
-              key={review.name}
-              href={REVIEW_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`shrink-0 w-[280px] md:w-[300px] snap-start border ${borderColor} ${cardBg} p-5 hover:border-accent/30 transition-colors block`}
-            >
-              <div className="flex items-center gap-2.5 mb-3">
-                <div className={`w-7 h-7 rounded-full bg-accent/20 flex items-center justify-center text-[11px] font-heading font-bold ${textColor}`}>
-                  {review.name[0]}
+        {/* Carousel */}
+        <div className="overflow-hidden" ref={emblaRef}>
+          <div className="flex gap-4">
+            {reviews.map((review) => (
+              <a
+                key={review.name}
+                href={GOOGLE_MAPS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`shrink-0 w-[260px] md:w-[280px] border ${borderColor} ${cardBg} p-5 hover:border-accent/30 transition-colors block`}
+              >
+                <div className="flex items-center gap-2.5 mb-3">
+                  <div className={`w-7 h-7 rounded-full bg-accent/20 flex items-center justify-center text-[11px] font-heading font-bold ${textColor}`}>
+                    {review.name[0]}
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <p className={`text-xs font-heading font-bold ${textColor} truncate`}>{review.name}</p>
+                    <p className={`text-[9px] font-mono ${mutedColor}`}>{review.badge}</p>
+                  </div>
                 </div>
-                <div className="min-w-0">
-                  <p className={`text-xs font-heading font-bold ${textColor} truncate`}>{review.name}</p>
-                  <p className={`text-[9px] font-mono ${mutedColor}`}>{review.badge}</p>
-                </div>
-                <div className="ml-auto shrink-0"><Stars count={review.stars} /></div>
-              </div>
-              <p className={`text-xs leading-relaxed line-clamp-4 ${dark ? 'text-surface-dark-foreground/70' : 'text-foreground/70'}`}>
-                "{review.text}"
-              </p>
-            </a>
-          ))}
+                <Stars count={review.stars} />
+                <p className={`mt-2 text-xs leading-relaxed line-clamp-3 ${dark ? 'text-surface-dark-foreground/70' : 'text-foreground/70'}`}>
+                  "{review.text}"
+                </p>
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </FadeIn>
