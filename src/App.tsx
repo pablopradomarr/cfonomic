@@ -50,16 +50,16 @@ const App = () => (
             <Route path="/glosario" element={<Glosario />} />
             <Route path="/equipo" element={<Equipo />} />
             <Route path="/contacto" element={<Contacto />} />
-            <Route path="/cfo-externo-madrid" element={<CiudadPage city="Madrid" />} />
-            <Route path="/cfo-externo-barcelona" element={<CiudadPage city="Barcelona" />} />
-            <Route path="/cfo-externo-valencia" element={<CiudadPage city="Valencia" />} />
-            <Route path="/cfo-externo-sevilla" element={<CiudadPage city="Sevilla" />} />
-            <Route path="/cfo-externo-malaga" element={<CiudadPage city="Málaga" />} />
-            <Route path="/cfo-externo-bilbao" element={<CiudadPage city="Bilbao" />} />
-            <Route path="/cfo-externo-zaragoza" element={<CiudadPage city="Zaragoza" />} />
-            <Route path="/cfo-externo-valladolid" element={<CiudadPage city="Valladolid" />} />
-            <Route path="/cfo-externo-alicante" element={<CiudadPage city="Alicante" />} />
-            <Route path="/cfo-externo-murcia" element={<CiudadPage city="Murcia" />} />
+            <Route path="/director-financiero-externo-madrid" element={<CiudadPage city="Madrid" />} />
+            <Route path="/director-financiero-externo-barcelona" element={<CiudadPage city="Barcelona" />} />
+            <Route path="/director-financiero-externo-valencia" element={<CiudadPage city="Valencia" />} />
+            <Route path="/director-financiero-externo-sevilla" element={<CiudadPage city="Sevilla" />} />
+            <Route path="/director-financiero-externo-malaga" element={<CiudadPage city="Málaga" />} />
+            <Route path="/director-financiero-externo-bilbao" element={<CiudadPage city="Bilbao" />} />
+            <Route path="/director-financiero-externo-zaragoza" element={<CiudadPage city="Zaragoza" />} />
+            <Route path="/director-financiero-externo-valladolid" element={<CiudadPage city="Valladolid" />} />
+            <Route path="/director-financiero-externo-alicante" element={<CiudadPage city="Alicante" />} />
+            <Route path="/director-financiero-externo-murcia" element={<CiudadPage city="Murcia" />} />
             <Route path="/politica-de-privacidad" element={<PoliticaPrivacidad />} />
             <Route path="/politica-de-cookies" element={<PoliticaCookies />} />
             <Route path="/aviso-legal" element={<AvisoLegal />} />

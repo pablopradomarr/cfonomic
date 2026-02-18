@@ -17,14 +17,17 @@
   <url><loc>https://cfonomic.com/glosario</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://cfonomic.com/equipo</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://cfonomic.com/contacto</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://cfonomic.com/cfo-externo-madrid</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://cfonomic.com/cfo-externo-barcelona</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://cfonomic.com/cfo-externo-valencia</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://cfonomic.com/cfo-externo-sevilla</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://cfonomic.com/cfo-externo-malaga</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://cfonomic.com/cfo-externo-bilbao</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://cfonomic.com/cfo-externo-zaragoza</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://cfonomic.com/cfo-externo-valladolid</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://cfonomic.com/cfo-externo-alicante</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://cfonomic.com/cfo-externo-murcia</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://cfonomic.com/director-financiero-externo-madrid</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://cfonomic.com/director-financiero-externo-barcelona</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://cfonomic.com/director-financiero-externo-valencia</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://cfonomic.com/director-financiero-externo-sevilla</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://cfonomic.com/director-financiero-externo-malaga</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://cfonomic.com/director-financiero-externo-bilbao</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://cfonomic.com/director-financiero-externo-zaragoza</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://cfonomic.com/director-financiero-externo-valladolid</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://cfonomic.com/director-financiero-externo-alicante</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://cfonomic.com/director-financiero-externo-murcia</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://cfonomic.com/aviso-legal</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://cfonomic.com/politica-de-privacidad</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://cfonomic.com/politica-de-cookies</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>
