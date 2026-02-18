@@ -84,7 +84,7 @@ const Index = () => {
               <div className="mt-6 max-w-lg">
                 <EmailCaptureForm
                   buttonText="Quiero esos emails"
-                  microcopy="Te apuntas hoy. Si mañana no te aporta, te borras en un clic. Sin resentimientos."
+                  microcopy="Te apuntas hoy. Si mañana no te aporta, te borras en un clic. Sin rencores."
                   source="home-hero" />
 
               </div>
