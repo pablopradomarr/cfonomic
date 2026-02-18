@@ -65,7 +65,7 @@ const DiagnosticoFinanciero = () => {
           <FadeIn>
             <span className="tag-label mb-6 block">Diagnóstico</span>
             <p className="text-[clamp(2.5rem,6vw,5.5rem)] font-heading font-bold leading-[0.95] tracking-tighter max-w-5xl" role="presentation">
-              ¿Tienes <span className="underline decoration-accent decoration-[6px] underline-offset-4">Control de negocio</span>
+              ¿Tienes <span className="highlight-text">Control de negocio</span>
               <br />
               y <span className="font-display italic font-normal">Dirección Financiera</span><span className="text-accent">?</span>
             </p>
