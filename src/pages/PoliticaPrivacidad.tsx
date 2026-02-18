@@ -1,4 +1,5 @@
 import { Section, FadeIn } from "@/components/Editorial";
+import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
 
 const PoliticaPrivacidad = () => (
@@ -15,7 +16,7 @@ const PoliticaPrivacidad = () => (
           <h1 className="text-[clamp(2rem,5vw,4rem)] font-heading font-bold leading-[0.95] tracking-tighter max-w-4xl">
             Política de Privacidad<span className="text-accent">.</span>
           </h1>
-          <p className="mt-4 text-sm text-muted-foreground">Última actualización: febrero 2026</p>
+          <p className="mt-4 text-sm text-muted-foreground">Última actualización: febrero de 2026</p>
         </FadeIn>
       </div>
     </section>
@@ -28,78 +29,109 @@ const PoliticaPrivacidad = () => (
             <h2 className="font-heading text-xl font-bold tracking-tight mb-4">1. Responsable del tratamiento</h2>
             <ul className="space-y-1">
               <li><strong>Razón social:</strong> GREAT REAL FOOD SL</li>
-              <li><strong>CIF:</strong> B02859189</li>
-              <li><strong>Domicilio:</strong> Avenida El Altillo, P.L. Proxinave nave 6, 11405, Jerez de la Frontera, Cádiz</li>
+              <li><strong>NIF:</strong> B02859189</li>
+              <li><strong>Domicilio:</strong> Avenida El Altillo, Polígono Industrial Proxinave, nave 6, 11405, Jerez de la Frontera (Cádiz), España</li>
               <li><strong>Email de contacto:</strong> hola@cfonomic.com</li>
             </ul>
           </div>
 
           <div>
-            <h2 className="font-heading text-xl font-bold tracking-tight mb-4">2. Datos que recogemos</h2>
-            <p>Recogemos únicamente los datos que nos facilitas voluntariamente:</p>
-            <ul className="mt-3 space-y-2 list-disc list-inside">
-              <li><strong>Formulario de contacto:</strong> nombre, email, empresa, facturación y mensaje.</li>
-              <li><strong>Captación de email (diagnóstico/recursos):</strong> dirección de correo electrónico.</li>
-            </ul>
-          </div>
+            <h2 className="font-heading text-xl font-bold tracking-tight mb-4">2. Datos personales que tratamos</h2>
+            <p>Tratamos únicamente los datos que nos facilitas de forma voluntaria a través de los medios habilitados en el sitio web, así como, en su caso, datos técnicos de navegación:</p>
 
-          <div>
-            <h2 className="font-heading text-xl font-bold tracking-tight mb-4">3. Finalidad del tratamiento</h2>
-            <ul className="space-y-2 list-disc list-inside">
-              <li>Responder a tus consultas y solicitudes.</li>
-              <li>Enviarte el diagnóstico financiero o recurso solicitado.</li>
-              <li>Enviarte comunicaciones comerciales relacionadas con nuestros servicios (solo si lo has solicitado).</li>
-              <li>Gestionar la relación contractual, si se formaliza.</li>
+            <h3 className="font-heading font-bold text-sm tracking-tight mt-5 mb-2">a) Formulario de contacto / solicitud de información</h3>
+            <ul className="space-y-1 list-disc list-inside">
+              <li>Nombre</li>
+              <li>Email</li>
+              <li>Empresa</li>
+              <li>Facturación (si se solicita, se utilizará únicamente para dimensionar y personalizar la respuesta/diagnóstico)</li>
+              <li>Mensaje</li>
             </ul>
-          </div>
 
-          <div>
-            <h2 className="font-heading text-xl font-bold tracking-tight mb-4">4. Base jurídica</h2>
-            <ul className="space-y-2 list-disc list-inside">
-              <li><strong>Consentimiento:</strong> al enviarnos tus datos a través de nuestros formularios.</li>
-              <li><strong>Interés legítimo:</strong> para la gestión de consultas y la relación comercial.</li>
-              <li><strong>Ejecución de contrato:</strong> si se formaliza una relación de servicio.</li>
+            <h3 className="font-heading font-bold text-sm tracking-tight mt-5 mb-2">b) Captación de email (diagnóstico/recursos)</h3>
+            <ul className="space-y-1 list-disc list-inside">
+              <li>Dirección de correo electrónico</li>
+              <li>Y, si procede, datos mínimos necesarios para enviarte el recurso solicitado</li>
             </ul>
-          </div>
 
-          <div>
-            <h2 className="font-heading text-xl font-bold tracking-tight mb-4">5. Conservación de datos</h2>
+            <h3 className="font-heading font-bold text-sm tracking-tight mt-5 mb-2">c) Datos de navegación (si aplica)</h3>
             <p>
-              Conservamos tus datos mientras sean necesarios para la finalidad para la que fueron recogidos
-              y mientras no ejerzas tu derecho de supresión. Los datos de clientes se conservan durante el
-              plazo legal exigido (mínimo 5 años según la normativa fiscal y mercantil).
+              Dirección IP, identificadores del dispositivo y datos de uso del sitio (por ejemplo, mediante cookies/tecnologías similares), conforme a lo indicado en la{" "}
+              <Link to="/politica-de-cookies" className="border-b border-foreground/20 hover:border-foreground transition-colors">
+                Política de Cookies
+              </Link>.
             </p>
           </div>
 
           <div>
-            <h2 className="font-heading text-xl font-bold tracking-tight mb-4">6. Cesión de datos</h2>
-            <p>
-              No cedemos tus datos a terceros salvo obligación legal. Utilizamos los siguientes encargados
-              de tratamiento:
-            </p>
+            <h2 className="font-heading text-xl font-bold tracking-tight mb-4">3. Finalidades del tratamiento</h2>
+            <p>Tratamos tus datos con las siguientes finalidades:</p>
             <ul className="mt-3 space-y-2 list-disc list-inside">
-              <li><strong>Proveedor de email marketing:</strong> para el envío de comunicaciones (servidores en la UE o con garantías adecuadas).</li>
-              <li><strong>Proveedor de hosting/infraestructura:</strong> para el alojamiento de la web y la base de datos.</li>
+              <li>Atender consultas y solicitudes realizadas a través de formularios o correo electrónico.</li>
+              <li>Enviarte el diagnóstico financiero o recurso solicitado y gestionar la entrega del contenido.</li>
+              <li>Enviarte comunicaciones comerciales relacionadas con nuestros servicios solo si lo has solicitado o consentido (por ejemplo, newsletter o emails informativos).</li>
+              <li>Gestionar la relación precontractual o contractual, en caso de que se formalice la prestación de servicios, incluyendo gestiones administrativas, facturación y cumplimiento de obligaciones legales.</li>
+              <li>Mejorar el sitio web y medir su uso, cuando lo permitas a través de cookies no necesarias (si aplica).</li>
             </ul>
           </div>
 
           <div>
-            <h2 className="font-heading text-xl font-bold tracking-tight mb-4">7. Tus derechos</h2>
-            <p>Puedes ejercer en cualquier momento los siguientes derechos:</p>
+            <h2 className="font-heading text-xl font-bold tracking-tight mb-4">4. Base jurídica del tratamiento</h2>
+            <p>La base legal depende del tipo de tratamiento:</p>
             <ul className="mt-3 space-y-2 list-disc list-inside">
-              <li><strong>Acceso:</strong> saber qué datos tenemos sobre ti.</li>
-              <li><strong>Rectificación:</strong> corregir datos inexactos.</li>
-              <li><strong>Supresión:</strong> solicitar que borremos tus datos.</li>
-              <li><strong>Oposición:</strong> oponerte al tratamiento.</li>
-              <li><strong>Limitación:</strong> restringir el tratamiento.</li>
-              <li><strong>Portabilidad:</strong> recibir tus datos en formato estructurado.</li>
+              <li><strong>Medidas precontractuales y/o ejecución de un contrato (art. 6.1.b RGPD):</strong> gestión de solicitudes, preparación de propuestas y prestación de servicios cuando proceda.</li>
+              <li><strong>Consentimiento (art. 6.1.a RGPD):</strong> envío de comunicaciones comerciales/newsletter y uso de cookies no necesarias, cuando corresponda. Puedes retirarlo en cualquier momento.</li>
+              <li><strong>Obligación legal (art. 6.1.c RGPD):</strong> cumplimiento de obligaciones fiscales, contables o administrativas derivadas de una relación contractual.</li>
+              <li><strong>Interés legítimo (art. 6.1.f RGPD):</strong> seguridad del sitio web, prevención del fraude y atención básica de comunicaciones cuando sea necesario, siempre con la debida ponderación de tus derechos.</li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 className="font-heading text-xl font-bold tracking-tight mb-4">5. Plazos de conservación</h2>
+            <p>Conservaremos los datos:</p>
+            <ul className="mt-3 space-y-2 list-disc list-inside">
+              <li><strong>Consultas y solicitudes:</strong> durante el tiempo necesario para atenderlas y realizar el seguimiento, y posteriormente durante los plazos de prescripción aplicables en caso de posibles responsabilidades.</li>
+              <li><strong>Envío de recursos/diagnósticos:</strong> mientras sea necesario para gestionar la entrega y el soporte asociado.</li>
+              <li><strong>Comunicaciones comerciales:</strong> hasta que solicites la baja o retires tu consentimiento.</li>
+              <li><strong>Datos de clientes:</strong> durante la relación contractual y, tras su finalización, durante los plazos legalmente exigibles en materia fiscal, mercantil y/o administrativa.</li>
+              <li>
+                <strong>Cookies:</strong> según los plazos indicados en la{" "}
+                <Link to="/politica-de-cookies" className="border-b border-foreground/20 hover:border-foreground transition-colors">
+                  Política de Cookies
+                </Link>.
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 className="font-heading text-xl font-bold tracking-tight mb-4">6. Destinatarios y encargados del tratamiento</h2>
+            <p>
+              No cedemos tus datos personales a terceros salvo obligación legal.
+            </p>
+            <p className="mt-3">
+              Para poder prestar el servicio, podemos utilizar proveedores que actúan como encargados del tratamiento (por ejemplo, hosting/infraestructura y herramientas de email marketing), con los que se formalizan los correspondientes contratos y garantías exigidas por el RGPD.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="font-heading text-xl font-bold tracking-tight mb-4">7. Transferencias internacionales</h2>
+            <p>
+              En caso de que alguno de nuestros proveedores trate datos fuera del Espacio Económico Europeo, se adoptarán las garantías adecuadas exigidas por el RGPD (por ejemplo, Cláusulas Contractuales Tipo u otros mecanismos válidos), informando cuando sea aplicable.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="font-heading text-xl font-bold tracking-tight mb-4">8. Derechos de las personas usuarias</h2>
+            <p>Puedes ejercer los derechos de:</p>
+            <ul className="mt-3 space-y-2 list-disc list-inside">
+              <li>Acceso, rectificación, supresión, oposición, limitación y portabilidad.</li>
+              <li>Retirar el consentimiento en cualquier momento cuando el tratamiento se base en él (sin que ello afecte a la licitud del tratamiento previo).</li>
             </ul>
             <p className="mt-3">
-              Para ejercer estos derechos, escríbenos a <strong>hola@cfonomic.com</strong> con el asunto
-              "Protección de datos" e indicando tu nombre y el derecho que deseas ejercer.
+              Para ejercerlos, envía un email a <strong>hola@cfonomic.com</strong> con el asunto "Protección de datos", indicando tu nombre, el derecho que deseas ejercer y la información necesaria para gestionar tu solicitud. En caso necesario, podremos solicitarte información adicional para verificar tu identidad.
             </p>
             <p className="mt-3">
-              También puedes presentar una reclamación ante la{" "}
+              Asimismo, puedes presentar una reclamación ante la{" "}
               <a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer" className="border-b border-foreground/20 hover:border-foreground transition-colors">
                 Agencia Española de Protección de Datos (AEPD)
               </a>.
@@ -107,10 +139,16 @@ const PoliticaPrivacidad = () => (
           </div>
 
           <div>
-            <h2 className="font-heading text-xl font-bold tracking-tight mb-4">8. Seguridad</h2>
+            <h2 className="font-heading text-xl font-bold tracking-tight mb-4">9. Seguridad</h2>
             <p>
-              Adoptamos las medidas técnicas y organizativas necesarias para garantizar la seguridad
-              de tus datos personales y evitar su alteración, pérdida, tratamiento o acceso no autorizado.
+              Adoptamos medidas técnicas y organizativas razonables para garantizar la seguridad de los datos personales y evitar su alteración, pérdida, tratamiento o acceso no autorizado.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="font-heading text-xl font-bold tracking-tight mb-4">10. Menores</h2>
+            <p>
+              Este sitio web no está dirigido a menores de edad. Si eres menor, no envíes datos personales a través de este sitio web.
             </p>
           </div>
         </div>
