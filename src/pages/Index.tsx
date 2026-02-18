@@ -78,7 +78,7 @@ const Index = () => {
 
             <div className="border border-foreground/10 bg-background p-6 md:p-10">
               <p className="font-heading text-lg md:text-xl font-bold tracking-tight leading-snug max-w-2xl">
-                Cada semana mando un email con un consejo financiero 
+                Cada semana mando <span className="font-display italic font-normal">un email con un consejo financiero</span>{" "} 
                 que puedes aplicar <span className="font-display italic font-normal">ese mismo día</span> en tu PYME<span className="text-accent">.</span>
               </p>
               <div className="mt-6 max-w-lg">
