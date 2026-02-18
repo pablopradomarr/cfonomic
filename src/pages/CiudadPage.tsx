@@ -18,6 +18,10 @@ const cityData: Record<string, { intro: string; problem: string }> = {
   Valladolid: { intro: "Industria del automóvil, agroalimentación y servicios.", problem: "Márgenes industriales: cada punto porcentual cuenta." },
   Alicante: { intro: "Turismo, comercio y servicios con estacionalidad fuerte.", problem: "Sin prever los meses flojos, los problemas llegan en invierno." },
   Murcia: { intro: "Agroalimentación, logística y servicios. Márgenes estrechos.", problem: "Un error de pricing puede borrar el beneficio de un trimestre." },
+  Oviedo: { intro: "Industria, servicios y comercio en una plaza con costes contenidos pero márgenes ajustados.", problem: "Costes fijos que crecen más rápido que los ingresos. Sin control mensual, te enteras tarde." },
+  "Jerez de la Frontera": { intro: "Bodegas, turismo, hostelería y agroalimentación. Estacionalidad y márgenes variables.", problem: "Facturación estacional sin previsión de caja = sustos cada trimestre." },
+  Cádiz: { intro: "Turismo, comercio y servicios con fuerte estacionalidad y competencia.", problem: "Temporada alta enmascara problemas. Sin cierre mensual, el invierno duele." },
+  León: { intro: "Agroalimentación, industria y servicios. Tejido PYME sólido con márgenes estrechos.", problem: "Márgenes industriales finos: cada decisión de coste cuenta." },
 };
 
 const getCitySlug = (city: string) =>

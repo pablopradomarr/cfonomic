@@ -199,6 +199,10 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                   { label: "Valladolid", path: "/director-financiero-externo-valladolid" },
                   { label: "Alicante", path: "/director-financiero-externo-alicante" },
                   { label: "Murcia", path: "/director-financiero-externo-murcia" },
+                  { label: "Oviedo", path: "/director-financiero-externo-oviedo" },
+                  { label: "Jerez", path: "/director-financiero-externo-jerez-de-la-frontera" },
+                  { label: "Cádiz", path: "/director-financiero-externo-cadiz" },
+                  { label: "León", path: "/director-financiero-externo-leon" },
                 ].map((c) => (
                   <li key={c.path}>
                     <Link to={c.path} className="text-sm text-surface-dark-foreground/60 hover:text-surface-dark-foreground transition-colors font-body">

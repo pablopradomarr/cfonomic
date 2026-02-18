@@ -60,6 +60,10 @@ const App = () => (
             <Route path="/director-financiero-externo-valladolid" element={<CiudadPage city="Valladolid" />} />
             <Route path="/director-financiero-externo-alicante" element={<CiudadPage city="Alicante" />} />
             <Route path="/director-financiero-externo-murcia" element={<CiudadPage city="Murcia" />} />
+            <Route path="/director-financiero-externo-oviedo" element={<CiudadPage city="Oviedo" />} />
+            <Route path="/director-financiero-externo-jerez-de-la-frontera" element={<CiudadPage city="Jerez de la Frontera" />} />
+            <Route path="/director-financiero-externo-cadiz" element={<CiudadPage city="Cádiz" />} />
+            <Route path="/director-financiero-externo-leon" element={<CiudadPage city="León" />} />
             <Route path="/politica-de-privacidad" element={<PoliticaPrivacidad />} />
             <Route path="/politica-de-cookies" element={<PoliticaCookies />} />
             <Route path="/aviso-legal" element={<AvisoLegal />} />
