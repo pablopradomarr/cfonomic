@@ -41,7 +41,7 @@ const Recursos = () => (
             <br />
             <span className="text-muted-foreground">Sin volverte loco.</span>
           </p>
-          <h1 className="mt-6 max-w-lg text-sm text-muted-foreground leading-relaxed font-body font-normal">
+          <h1 className="mt-6 max-w-full text-sm text-muted-foreground leading-relaxed font-body font-normal">
             Recursos financieros para PYMEs: calculadoras, guías y ejemplos prácticos para entender tu rentabilidad, caja, CAC, EBITDA y más.
           </h1>
         </FadeIn>

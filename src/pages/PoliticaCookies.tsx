@@ -22,7 +22,7 @@ const PoliticaCookies = () => (
 
     <Section paper>
       <FadeIn>
-        <div className="max-w-3xl space-y-10 text-sm text-foreground/80 leading-relaxed">
+        <div className="max-w-full space-y-10 text-sm text-foreground/80 leading-relaxed">
 
           <div>
             <h2 className="font-heading text-xl font-bold tracking-tight mb-4">1. ¿Qué son las cookies?</h2>

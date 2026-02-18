@@ -62,7 +62,7 @@ const CiudadPage = ({ city }: CityPageProps) => {
               <br />
               <span className="text-muted-foreground">Para PYMEs que quieren control y caja.</span>
             </p>
-            <h1 className="mt-6 max-w-lg text-base text-muted-foreground leading-relaxed font-body font-normal">
+            <h1 className="mt-6 max-w-full text-base text-muted-foreground leading-relaxed font-body font-normal">
               Director financiero externo en {city} para PYMEs. {data.intro} Asesoría financiera con control de caja, márgenes y decisiones con datos.
             </h1>
           </FadeIn>
@@ -74,7 +74,7 @@ const CiudadPage = ({ city }: CityPageProps) => {
           <div className="grid md:grid-cols-12 gap-12">
             <div className="md:col-span-4"><span className="tag-label">El problema</span></div>
             <div className="md:col-span-8">
-              <p className="text-base text-foreground/70 leading-relaxed max-w-2xl">{data.problem}</p>
+              <p className="text-base text-foreground/70 leading-relaxed">{data.problem}</p>
             </div>
           </div>
         </FadeIn>
@@ -115,7 +115,7 @@ const CiudadPage = ({ city }: CityPageProps) => {
       <Section>
         <FadeIn>
           <SectionHeading tag="FAQ" title={`Director financiero externo en ${city}`} />
-          <div className="max-w-3xl">
+          <div className="max-w-full">
             {cityFaq.map((faq) => (
               <div key={faq.q} className="border-b border-foreground/5 py-6">
                 <h3 className="font-heading font-bold text-sm tracking-tight">{faq.q}</h3>

@@ -89,7 +89,7 @@ const DiagnosticoFinanciero = () => {
               <br />
               y <span className="font-display italic font-normal">Dirección Financiera</span><span className="text-accent">?</span>
             </p>
-            <h1 className="mt-6 max-w-2xl text-base md:text-lg text-muted-foreground leading-relaxed font-body font-normal">
+            <h1 className="mt-6 max-w-full text-base md:text-lg text-muted-foreground leading-relaxed font-body font-normal">
               En menos de 5 minutos obtén un diagnóstico sobre el control financiero y de negocio en tu empresa, obtendrás recomendaciones para implementar hoy mismo.
             </h1>
 
@@ -156,7 +156,7 @@ const DiagnosticoFinanciero = () => {
       <Section>
         <FadeIn>
           <SectionHeading tag="FAQ" title="Preguntas frecuentes sobre diagnóstico financiero" />
-          <div className="max-w-3xl">
+          <div className="max-w-full">
             <Accordion type="single" collapsible className="w-full">
               {diagnosticoFaq.map((faq, i) =>
               <AccordionItem key={i} value={`faq-${i}`}>

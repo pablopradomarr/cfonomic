@@ -24,7 +24,7 @@ const CasoTuricleta = () => (
               <br />
               <span className="text-muted-foreground">Control para crecer sin caos.</span>
             </p>
-            <h1 className="mt-4 max-w-2xl text-sm text-muted-foreground leading-relaxed font-body font-normal">
+             <h1 className="mt-4 max-w-full text-sm text-muted-foreground leading-relaxed font-body font-normal">
               Caso real de gestión financiera: cómo una empresa de turismo activo pasó de crecer sin control a tener reporting mensual, cashflow y KPIs con asesoría financiera.
             </h1>
           </div>
@@ -39,7 +39,7 @@ const CasoTuricleta = () => (
             <span className="tag-label">El problema</span>
           </div>
           <div className="md:col-span-8">
-            <p className="text-base text-foreground/70 leading-relaxed max-w-2xl">
+             <p className="text-base text-foreground/70 leading-relaxed">
               Turicleta estaba en plena expansión: nueva flota, nuevas rutas, más personal. La inversión crecía, la facturación también… pero la caja no acompañaba. Las decisiones de CAPEX se tomaban sin modelo financiero.
             </p>
           </div>
@@ -76,7 +76,7 @@ const CasoTuricleta = () => (
 
     <Section dark>
       <FadeIn>
-        <div className="max-w-3xl">
+         <div className="max-w-full">
           <span className="tag-label border-surface-dark-foreground/20 text-surface-dark-foreground/40 block mb-6">Resultado</span>
           <p className="text-2xl md:text-4xl font-heading font-bold leading-[1.05] tracking-tight">
             Ahora saben dónde están, qué viene y qué decidir<span className="text-accent">.</span> Cada mes.
@@ -125,7 +125,7 @@ const CasoImpasto = () => (
               <br />
               <span className="text-muted-foreground">Rentabilidad real por canal y menú.</span>
             </p>
-            <h1 className="mt-4 max-w-2xl text-sm text-muted-foreground leading-relaxed font-body font-normal">
+            <h1 className="mt-4 max-w-full text-sm text-muted-foreground leading-relaxed font-body font-normal">
               Caso real de asesoría financiera en restauración: cómo un restaurante descubrió qué canal ganaba y cuál perdía con control financiero por canal.
             </h1>
           </div>
@@ -138,7 +138,7 @@ const CasoImpasto = () => (
         <div className="grid md:grid-cols-12 gap-12">
           <div className="md:col-span-4"><span className="tag-label">El problema</span></div>
           <div className="md:col-span-8">
-            <p className="text-base text-foreground/70 leading-relaxed max-w-2xl">
+            <p className="text-base text-foreground/70 leading-relaxed">
               Impasto vendía bien. Sala llena, delivery a tope. Pero nadie sabía qué canal era rentable. Costes de delivery, mermas y promociones se comían el margen sin control.
             </p>
           </div>
@@ -175,7 +175,7 @@ const CasoImpasto = () => (
 
     <Section dark>
       <FadeIn>
-        <div className="max-w-3xl">
+        <div className="max-w-full">
           <span className="tag-label border-surface-dark-foreground/20 text-surface-dark-foreground/40 block mb-6">Resultado</span>
           <p className="text-2xl md:text-4xl font-heading font-bold leading-[1.05] tracking-tight">
             Dejaron de adivinar<span className="text-accent">.</span> Ahora saben qué canal, qué plato y qué decisión les da dinero.

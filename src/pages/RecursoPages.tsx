@@ -48,7 +48,7 @@ const RecursoPage = ({
             <h1 className="mt-8 text-[clamp(2rem,5vw,4rem)] font-heading font-bold leading-[0.95] tracking-tighter max-w-4xl">
               {title}<span className="text-accent">.</span>
             </h1>
-            <p className="mt-4 max-w-2xl text-base text-muted-foreground leading-relaxed">{intro}</p>
+            <p className="mt-4 max-w-full text-base text-muted-foreground leading-relaxed">{intro}</p>
           </FadeIn>
         </div>
       </section>
@@ -107,7 +107,7 @@ const RecursoPage = ({
       <Section>
         <FadeIn>
           <SectionHeading tag="FAQ" title="Preguntas frecuentes" />
-          <div className="max-w-3xl space-y-5">
+          <div className="max-w-full space-y-5">
             {faq.map((f) => (
               <div key={f.q} className="border-b border-border pb-4">
                 <h3 className="font-heading font-bold text-heading">{f.q}</h3>
@@ -159,7 +159,7 @@ export const ValoracionPyme = () => (
     intro="La valoración de una empresa no es ciencia exacta. Pero hay métodos probados que te dan un rango realista. Aquí te los explico sin jerga y con una calculadora para que hagas tus números."
     embedUrl="https://valoracion-pyme.lovable.app/"
     content={
-      <div className="space-y-6 max-w-3xl">
+       <div className="space-y-6 max-w-full">
         <h2 className="font-heading text-2xl font-bold text-heading">Valorar tu empresa en 5 minutos</h2>
         <p className="text-muted-foreground leading-relaxed">
           El valor de una PYME depende de 3 cosas: <strong>cuánto beneficio genera</strong> (EBITDA),{" "}
@@ -212,7 +212,7 @@ export const CalcularCAC = () => (
     intro="El CAC (Coste de Adquisición de Cliente) es uno de los números más importantes de tu negocio. Si no lo conoces, estás vendiendo a ciegas."
     embedUrl="https://cfo-calculadora-es.lovable.app/"
     content={
-      <div className="space-y-6 max-w-3xl">
+       <div className="space-y-6 max-w-full">
         <h2 className="font-heading text-2xl font-bold text-heading">CAC: el número que nadie mira</h2>
         <p className="text-muted-foreground leading-relaxed">
           El CAC te dice cuánto dinero gastas para conseguir un cliente. Incluye publicidad, comerciales,
@@ -264,7 +264,7 @@ export const CajaNegogio = () => (
     intro="La caja es la sangre de tu empresa. Puedes tener beneficio y estar seco. Aquí entiendes por qué y cómo controlarlo."
     embedUrl="https://cash-love-calc.lovable.app/"
     content={
-      <div className="space-y-6 max-w-3xl">
+       <div className="space-y-6 max-w-full">
         <h2 className="font-heading text-2xl font-bold text-heading">Beneficio ≠ caja</h2>
         <p className="text-muted-foreground leading-relaxed">
           La confusión más común (y más peligrosa) en una PYME: "Si gano dinero, ¿por qué no tengo caja?"
@@ -313,7 +313,7 @@ export const RentabilidadEmpresa = () => (
     intro="Rentabilidad no es facturación. Muchas empresas venden mucho y ganan poco. Aquí aprendes a medir lo que importa."
     embedUrl="https://cfonomic-rentabilidadporunidadadenegocio-56.lovable.app/"
     content={
-      <div className="space-y-6 max-w-3xl">
+       <div className="space-y-6 max-w-full">
         <h2 className="font-heading text-2xl font-bold text-heading">Medir rentabilidad de verdad</h2>
         <p className="text-muted-foreground leading-relaxed">
           La rentabilidad se mide en capas: margen bruto (lo que queda después de costes directos),
@@ -362,7 +362,7 @@ export const UnitEconomics = () => (
     intro="¿Cuánto ganas (o pierdes) cada vez que vendes algo? Los unit economics te dan la respuesta. Imprescindible antes de escalar."
     embedUrl="https://cfonomic-rentabilidadporunidadadenegocio-56.lovable.app/"
     content={
-      <div className="space-y-6 max-w-3xl">
+       <div className="space-y-6 max-w-full">
         <h2 className="font-heading text-2xl font-bold text-heading">Cada unidad cuenta</h2>
         <p className="text-muted-foreground leading-relaxed">
           Los unit economics analizan tu negocio unidad por unidad: por pedido, por cliente, por proyecto,
@@ -410,7 +410,7 @@ export const CuantoDineroGano = () => (
     intro="Ganar dinero y tener dinero no es lo mismo. Aquí te explico la diferencia con ejemplos reales y una calculadora para que lo veas con tus números."
     embedUrl="https://cfonomic-rentabilidadporunidadadenegocio-56.lovable.app/"
     content={
-      <div className="space-y-6 max-w-3xl">
+       <div className="space-y-6 max-w-full">
         <h2 className="font-heading text-2xl font-bold text-heading">"Gano" vs "Tengo"</h2>
         <p className="text-muted-foreground leading-relaxed">
           Cuando dices "gano 10.000 € al mes", ¿te refieres a la facturación? ¿Al beneficio? ¿A lo que
@@ -461,7 +461,7 @@ export const ComoCalcularEBITDA = () => (
     intro="El EBITDA es el indicador financiero más usado y más mal interpretado. Aquí te explico qué es, qué no es y cuándo fiarte (y cuándo no)."
     embedUrl="https://valoracion-pyme.lovable.app/"
     content={
-      <div className="space-y-6 max-w-3xl">
+      <div className="space-y-6 max-w-full">
         <h2 className="font-heading text-2xl font-bold text-heading">EBITDA sin misterio</h2>
         <p className="text-muted-foreground leading-relaxed">
           EBITDA = Beneficio antes de Intereses, Impuestos, Depreciación y Amortización. Es una medida
