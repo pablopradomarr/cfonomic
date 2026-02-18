@@ -79,6 +79,7 @@ const DiagnosticoFinanciero = () => {
               <div className="max-w-lg">
                   <EmailCaptureForm
                   buttonText="Empezar Diagnóstico Financiero"
+                  buttonClassName="text-base md:text-lg"
                   microcopy="Te enviamos el resultado completo por email. Sin compromiso."
                   variant="stacked"
                   source="diagnostico"
@@ -89,7 +90,7 @@ const DiagnosticoFinanciero = () => {
               <div className="border-2 border-accent p-3 inline-block">
                   <a
                   href="#diagnostico-herramienta"
-                  className="inline-flex bg-accent text-accent-foreground px-10 py-5 text-[14px] font-mono uppercase tracking-[0.1em] font-bold hover:bg-accent/85 transition-colors">
+                  className="inline-flex bg-accent text-accent-foreground px-10 py-5 text-base md:text-lg font-mono uppercase tracking-[0.1em] font-bold hover:bg-accent/85 transition-colors">
 
                     Empezar Diagnóstico Financiero →
                   </a>

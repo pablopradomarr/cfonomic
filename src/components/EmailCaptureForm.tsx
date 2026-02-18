@@ -5,6 +5,7 @@ import { supabase } from "@/integrations/supabase/client";
 
 interface EmailCaptureFormProps {
   buttonText?: string;
+  buttonClassName?: string;
   microcopy?: string;
   className?: string;
   variant?: "inline" | "stacked" | "compact";
@@ -15,6 +16,7 @@ interface EmailCaptureFormProps {
 
 const EmailCaptureForm = ({
   buttonText = "Envíame el diagnóstico",
+  buttonClassName = "",
   microcopy = "Te lo mando por email. Sin spam. Si no te aporta, te borras.",
   className = "",
   variant = "inline",
@@ -133,7 +135,7 @@ const EmailCaptureForm = ({
       </div>
       {privacidadError && <p className="w-full text-xs text-destructive font-mono">{privacidadError}</p>}
 
-      <Button type="submit" variant="accent" size="lg" className="w-full sm:w-auto whitespace-nowrap text-sm" disabled={loading}>
+      <Button type="submit" variant="accent" size="lg" className={`w-full sm:w-auto whitespace-nowrap text-sm ${buttonClassName}`} disabled={loading}>
         {loading ? "Enviando..." : buttonText}
       </Button>
       {microcopy && (
