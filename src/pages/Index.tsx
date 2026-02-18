@@ -50,7 +50,7 @@ const Index = () => {
             className="mt-8 max-w-lg">
 
             <h1 className="text-base md:text-lg text-muted-foreground leading-relaxed font-body font-normal">
-              Asesoría financiera para PYMEs que quieren dejar de improvisar. Control de caja, márgenes reales y decisiones con datos — sin contratar un equipo entero.
+              Asesoría Financiera para PYMEs que quieren tomar decisiones con instinto analítico.  Somos el equipo financiero d para Control de caja, márgenes reales y decisiones con datos — sin contratar un equipo entero.
             </h1>
           </motion.div>
 
