@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Section, FadeIn, SectionHeading } from "@/components/Editorial";
 import EmailCaptureForm from "@/components/EmailCaptureForm";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import SEO from "@/components/SEO";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
@@ -51,14 +51,25 @@ const diagnosticoFaq = [
 const DiagnosticoFinanciero = () => {
   const [emailGiven, setEmailGiven] = useState(false);
   const formRef = useRef<HTMLDivElement>(null);
+  const location = useLocation();
 
-  useEffect(() => {
+  const scrollToForm = () => {
     if (window.innerWidth < 768 && formRef.current) {
       setTimeout(() => {
         formRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
       }, 900);
     }
+  };
+
+  // Scroll on initial mount
+  useEffect(() => {
+    scrollToForm();
   }, []);
+
+  // Scroll when navigating back to this page (e.g. clicking nav button while already here)
+  useEffect(() => {
+    scrollToForm();
+  }, [location.key]);
 
   return (
     <>
@@ -83,7 +94,7 @@ const DiagnosticoFinanciero = () => {
             </h1>
 
             {/* CTA prominente */}
-            <div className="mt-10" ref={formRef}>
+            <div className="mt-10" ref={formRef} id="formulario-diagnostico">
               {!emailGiven ?
               <div className="max-w-lg">
                   <EmailCaptureForm

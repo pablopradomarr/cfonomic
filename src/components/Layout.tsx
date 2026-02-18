@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useState, useEffect, useCallback } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import logoCfonomic from "@/assets/logo-cfonomic.png";
 
@@ -16,6 +16,19 @@ const navItems = [
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleDiagnosticoClick = useCallback((e: React.MouseEvent) => {
+    if (location.pathname === "/diagnostico-financiero") {
+      e.preventDefault();
+      const formEl = document.getElementById("formulario-diagnostico");
+      if (formEl) {
+        formEl.scrollIntoView({ behavior: "smooth", block: "center" });
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    }
+  }, [location.pathname]);
 
   // scroll to top on route change
   useEffect(() => {
@@ -56,6 +69,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
           <Link
             to="/diagnostico-financiero"
+            onClick={handleDiagnosticoClick}
             className="hidden lg:inline-flex bg-foreground text-background px-5 py-2 text-[12px] font-mono uppercase tracking-[0.1em] font-bold hover:bg-foreground/85 transition-colors"
           >
             Diagnóstico Financiero
@@ -117,6 +131,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             <div className="px-8 pb-12">
               <Link
                 to="/diagnostico-financiero"
+                onClick={handleDiagnosticoClick}
                 className="block w-full bg-accent text-accent-foreground py-4 text-center text-sm font-mono uppercase tracking-[0.1em] font-bold"
               >
                 Diagnóstico Financiero
@@ -250,6 +265,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       <div className="cta-sticky">
         <Link
           to="/diagnostico-financiero"
+          onClick={handleDiagnosticoClick}
           className="block w-full bg-accent py-2.5 text-center text-[12px] font-mono uppercase tracking-[0.1em] font-bold text-accent-foreground"
         >
           Diagnóstico Financiero
