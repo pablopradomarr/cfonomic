@@ -73,18 +73,14 @@ const Index = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
-            className="mt-12 max-w-lg"
+            className="mt-12"
           >
-            <div className="border border-foreground/10 bg-background p-6 md:p-8">
-              <p className="font-heading text-lg md:text-xl font-bold tracking-tight leading-snug">
+            <div className="border border-foreground/10 bg-background p-6 md:p-10">
+              <p className="font-heading text-lg md:text-xl font-bold tracking-tight leading-snug max-w-2xl">
                 Cada semana mando un email con un consejo financiero 
                 que puedes aplicar <span className="font-display italic font-normal">ese mismo día</span> en tu PYME<span className="text-accent">.</span>
               </p>
-              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-                Sin teoría. Sin humo. Sin «agenda una call». Solo una idea clara 
-                para que controles mejor tu caja, tus márgenes y tu cabeza.
-              </p>
-              <div className="mt-5">
+              <div className="mt-6 max-w-lg">
                 <EmailCaptureForm
                   buttonText="Quiero esos emails"
                   microcopy="Te apuntas hoy. Si mañana no te aporta, te borras en un clic. Sin resentimientos."

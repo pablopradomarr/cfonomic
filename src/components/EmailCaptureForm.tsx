@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 
@@ -22,17 +23,29 @@ const EmailCaptureForm = ({
   onSuccess,
 }: EmailCaptureFormProps) => {
   const [email, setEmail] = useState("");
+  const [privacidad, setPrivacidad] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
+  const [privacidadError, setPrivacidadError] = useState("");
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    let hasError = false;
     if (!email || !email.includes("@")) {
       setError("Oye, aquí falta un email válido.");
-      return;
+      hasError = true;
+    } else {
+      setError("");
     }
-    setError("");
+    if (!privacidad) {
+      setPrivacidadError("Necesito que aceptes la política de privacidad.");
+      hasError = true;
+    } else {
+      setPrivacidadError("");
+    }
+    if (hasError) return;
+
     setLoading(true);
 
     try {
@@ -63,16 +76,19 @@ const EmailCaptureForm = ({
     );
   }
 
+  const textColor = dark ? "text-surface-dark-foreground" : "text-foreground";
+  const mutedColor = dark ? "text-surface-dark-foreground/40" : "text-muted-foreground";
+
   return (
     <form
       onSubmit={handleSubmit}
       className={`${className} ${
         variant === "inline"
-          ? "flex flex-col sm:flex-row gap-3 items-start"
+          ? "flex flex-col sm:flex-row flex-wrap gap-3 items-start"
           : "flex flex-col gap-3"
       }`}
     >
-      <div className="flex-1 w-full">
+      <div className={variant === "inline" ? "flex-1 w-full sm:w-auto" : "w-full"}>
         <input
           type="email"
           placeholder="tu@email.com"
@@ -92,11 +108,36 @@ const EmailCaptureForm = ({
         />
         {error && <p className="mt-1 text-xs text-destructive font-mono">{error}</p>}
       </div>
+
+      <div className="w-full flex items-start gap-3 mt-1">
+        <input
+          type="checkbox"
+          checked={privacidad}
+          onChange={(e) => {
+            setPrivacidad(e.target.checked);
+            if (privacidadError) setPrivacidadError("");
+          }}
+          className="mt-0.5 h-4 w-4 accent-accent shrink-0"
+          id={`privacidad-${source}`}
+        />
+        <label htmlFor={`privacidad-${source}`} className={`text-[11px] leading-relaxed ${mutedColor}`}>
+          Acepto la{" "}
+          <Link to="/politica-de-privacidad" className={`border-b ${dark ? "border-surface-dark-foreground/20 hover:border-surface-dark-foreground" : "border-foreground/20 hover:border-foreground"} transition-colors`}>
+            política de privacidad
+          </Link>{" "}
+          y la{" "}
+          <Link to="/politica-de-cookies" className={`border-b ${dark ? "border-surface-dark-foreground/20 hover:border-surface-dark-foreground" : "border-foreground/20 hover:border-foreground"} transition-colors`}>
+            política de cookies
+          </Link>.
+        </label>
+      </div>
+      {privacidadError && <p className="w-full text-xs text-destructive font-mono">{privacidadError}</p>}
+
       <Button type="submit" variant="accent" size="lg" className="w-full sm:w-auto whitespace-nowrap text-sm" disabled={loading}>
         {loading ? "Enviando..." : buttonText}
       </Button>
       {microcopy && (
-        <p className={`text-[11px] w-full font-mono ${dark ? "text-surface-dark-foreground/40" : "text-muted-foreground"}`}>
+        <p className={`text-[11px] w-full font-mono ${mutedColor}`}>
           {microcopy}
         </p>
       )}
