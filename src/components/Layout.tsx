@@ -211,7 +211,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           </div>
 
           <div className="mt-12 pt-8 border-t border-surface-dark-foreground/10">
-            <div className="flex flex-wrap gap-x-6 gap-y-2 mb-4">
+          <div className="flex flex-wrap gap-x-6 gap-y-2 mb-4">
               <Link to="/aviso-legal" className="text-[10px] font-mono text-surface-dark-foreground/30 hover:text-surface-dark-foreground/60 transition-colors">
                 Aviso legal
               </Link>
@@ -221,6 +221,15 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               <Link to="/politica-de-cookies" className="text-[10px] font-mono text-surface-dark-foreground/30 hover:text-surface-dark-foreground/60 transition-colors">
                 Política de cookies
               </Link>
+              <button
+                onClick={() => {
+                  localStorage.removeItem("cfonomic_cookies_consent");
+                  window.location.reload();
+                }}
+                className="text-[10px] font-mono text-surface-dark-foreground/30 hover:text-surface-dark-foreground/60 transition-colors cursor-pointer"
+              >
+                Configuración de cookies
+              </button>
             </div>
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-2">
               <p className="text-[11px] font-mono text-surface-dark-foreground/25">
