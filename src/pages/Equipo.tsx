@@ -2,6 +2,8 @@ import { Section, FadeIn, SectionHeading, BulletList } from "@/components/Editor
 import EmailCaptureForm from "@/components/EmailCaptureForm";
 import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
+import pabloCfonomicBg from "@/assets/pablo-cfonomic-bg.jpg";
+import manuelEstevez from "@/assets/manuel-estevez.webp";
 
 const Equipo = () => (
   <>
@@ -30,11 +32,13 @@ const Equipo = () => (
               </h1>
             </div>
             <div className="md:col-span-5">
-              <div className="aspect-[3/4] bg-surface-paper border border-foreground/5 flex items-center justify-center">
-                <div className="text-center text-muted-foreground">
-                  <div className="text-5xl mb-2">📸</div>
-                  <p className="text-[10px] font-mono uppercase tracking-[0.2em]">Foto de Pablo</p>
-                </div>
+              <div className="aspect-[3/4] overflow-hidden">
+                <img
+                  src={pabloCfonomicBg}
+                  alt="Pablo Prado Marrón — Asesor financiero para PYMEs, fundador de CFOnomic"
+                  className="w-full h-full object-cover object-top"
+                  loading="eager"
+                />
               </div>
             </div>
           </div>
@@ -85,6 +89,23 @@ const Equipo = () => (
               "Equipos que necesitan un copiloto financiero.",
             ]} />
           </div>
+        </div>
+      </FadeIn>
+
+      {/* Manuel Estevez — toque editorial */}
+      <FadeIn delay={0.2}>
+        <div className="mt-20 flex items-end gap-6 max-w-md">
+          <img
+            src={manuelEstevez}
+            alt="Manuel Estévez, arqueólogo con casco corintio"
+            className="w-20 h-20 md:w-24 md:h-24 object-cover grayscale"
+            loading="lazy"
+          />
+          <p className="text-[10px] font-mono text-muted-foreground leading-relaxed uppercase tracking-[0.1em]">
+            "Hay que excavar para encontrar lo que importa."
+            <br />
+            <span className="text-foreground/30">— Manuel Estévez, arqueólogo.</span>
+          </p>
         </div>
       </FadeIn>
     </Section>

@@ -4,6 +4,8 @@ import { Section, FadeIn, SectionHeading, PullQuote, BulletList, Divider } from 
 import EmailCaptureForm from "@/components/EmailCaptureForm";
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/SEO";
+import GoogleReviews from "@/components/GoogleReviews";
+import pabloBurbuja from "@/assets/pablo-burbuja.png";
 
 const Index = () => {
   return (
@@ -274,14 +276,24 @@ const Index = () => {
         <div className="grid md:grid-cols-12 gap-12 md:gap-16">
           <FadeIn className="md:col-span-6">
             <span className="tag-label mb-6 block">Quién soy</span>
-            <p className="text-[clamp(2.5rem,6vw,5rem)] font-heading font-bold leading-[1] tracking-tighter" role="presentation">
-              Pablo <span className="font-display italic font-normal">Prado</span>
-              <br />
-              Marrón<span className="text-accent">.</span>
-            </p>
-            <h2 className="mt-2 text-sm font-mono text-muted-foreground uppercase tracking-[0.15em]">
-              Asesor financiero para PYMEs · CFOnomic
-            </h2>
+            <div className="flex items-start gap-6 mb-6">
+              <img
+                src={pabloBurbuja}
+                alt="Pablo Prado Marrón"
+                className="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover shrink-0"
+                loading="lazy"
+              />
+              <div>
+                <p className="text-[clamp(2rem,4vw,3.5rem)] font-heading font-bold leading-[1] tracking-tighter" role="presentation">
+                  Pablo <span className="font-display italic font-normal">Prado</span>
+                  <br />
+                  Marrón<span className="text-accent">.</span>
+                </p>
+                <h2 className="mt-2 text-sm font-mono text-muted-foreground uppercase tracking-[0.15em]">
+                  Asesor financiero para PYMEs · CFOnomic
+                </h2>
+              </div>
+            </div>
             <Divider accent />
             <div className="space-y-4 text-sm text-foreground/80 leading-relaxed">
               <p>→ Te monto el departamento financiero sin contratar a 3 personas.</p>
@@ -617,6 +629,14 @@ const Index = () => {
             />
           </div>
         </FadeIn>
+      </Section>
+
+      {/* ═══ PRUEBA SOCIAL — GOOGLE REVIEWS ═══ */}
+      <Section paper>
+        <FadeIn>
+          <SectionHeading tag="Prueba social" title="Lo que dicen nuestros clientes." />
+        </FadeIn>
+        <GoogleReviews />
       </Section>
 
       {/* ═══ I) CIERRE ═══ */}
