@@ -138,7 +138,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 CFO<span className="font-display italic font-normal text-accent">nomic</span>
               </p>
               <p className="mt-4 max-w-sm text-sm text-surface-dark-foreground/50 leading-relaxed font-body">
-                Dirección financiera y control de negocio para PYMEs que deciden con instinto analítico: datos + olfato.
+                Dirección financiera y control de negocio para PYMEs que deciden con instinto analítico: información relevante + olfato.
               </p>
               <div className="divider-accent mt-6" />
             </div>
