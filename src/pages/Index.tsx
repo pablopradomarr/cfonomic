@@ -682,10 +682,12 @@ const Index = () => {
       {/* ═══ FAQs ═══ */}
       <Section>
         <FadeIn>
-          <SectionHeading
-            tag="FAQs"
-            title="Algunas dudas frecuentes que quizá tengas."
-          />
+          <div className="mb-14 md:mb-20">
+            <span className="sr-only">FAQs</span>
+            <p className="text-[clamp(2rem,5vw,4.5rem)] font-heading font-bold leading-[1.05] tracking-tighter" role="presentation">
+              Algunas dudas frecuentes que quizá tengas<span className="text-accent">.</span>
+            </p>
+          </div>
         </FadeIn>
         <FadeIn delay={0.1}>
           <div className="max-w-3xl mx-auto mt-12">
