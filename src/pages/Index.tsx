@@ -15,17 +15,17 @@ const Index = () => {
         title="Asesoría financiera para PYMEs — CFOnomic"
         description="Tu departamento financiero sin contratar a un equipo entero. Control financiero, caja, márgenes y decisiones con datos para PYMEs y Startups."
         canonical="/"
-        breadcrumbs={[{ name: "Inicio", path: "/" }]}
-      />
+        breadcrumbs={[{ name: "Inicio", path: "/" }]} />
+
       {/* ═══ A) HERO — MASSIVE TYPOGRAPHY ═══ */}
       <section className="relative min-h-[90vh] flex items-center py-24 md:py-32">
         <div className="container-wide">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <span className="tag-label mb-8 block">CFOnomic</span>
+            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}>
+
+            
           </motion.div>
 
           <motion.p
@@ -33,8 +33,8 @@ const Index = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
             className="max-w-5xl text-[clamp(3rem,8vw,7.5rem)] font-heading font-bold leading-[0.92] tracking-tighter"
-            role="presentation"
-          >
+            role="presentation">
+
             Ningún viento es <span className="font-display italic font-normal">favorable</span>
             <br />
             para quien <span className="highlight-text">no sabe</span>
@@ -47,8 +47,8 @@ const Index = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="mt-8 max-w-lg"
-          >
+            className="mt-8 max-w-lg">
+
             <h1 className="text-base md:text-lg text-muted-foreground leading-relaxed font-body font-normal">
               Asesoría financiera para PYMEs que quieren dejar de improvisar. Control de caja, márgenes reales y decisiones con datos — sin contratar un equipo entero.
             </h1>
@@ -58,24 +58,24 @@ const Index = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="mt-6 flex flex-wrap gap-2"
-          >
-            {["Caja", "Márgenes", "Control", "Decisiones", "Tranquilidad"].map((w) => (
-              <span
-                key={w}
-                className="text-[11px] font-mono uppercase tracking-[0.15em] text-muted-foreground border-b border-foreground/10 pb-1"
-              >
+            className="mt-6 flex flex-wrap gap-2">
+
+            {["Caja", "Márgenes", "Control", "Decisiones", "Tranquilidad"].map((w) =>
+            <span
+              key={w}
+              className="text-[11px] font-mono uppercase tracking-[0.15em] text-muted-foreground border-b border-foreground/10 pb-1">
+
                 {w}
               </span>
-            ))}
+            )}
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
-            className="mt-12"
-          >
+            className="mt-12">
+
             <div className="border border-foreground/10 bg-background p-6 md:p-10">
               <p className="font-heading text-lg md:text-xl font-bold tracking-tight leading-snug max-w-2xl">
                 Cada semana mando un email con un consejo financiero 
@@ -85,8 +85,8 @@ const Index = () => {
                 <EmailCaptureForm
                   buttonText="Quiero esos emails"
                   microcopy="Te apuntas hoy. Si mañana no te aporta, te borras en un clic. Sin resentimientos."
-                  source="home-hero"
-                />
+                  source="home-hero" />
+
               </div>
             </div>
           </motion.div>
@@ -103,29 +103,29 @@ const Index = () => {
       {/* ═══ MARQUEE DIVIDER ═══ */}
       <div className="border-y-2 border-foreground/20 bg-surface-dark py-5 overflow-hidden">
         <div className="marquee-track">
-          {[...Array(2)].map((_, j) => (
-            <div key={j} className="flex items-center gap-10 px-4">
+          {[...Array(2)].map((_, j) =>
+          <div key={j} className="flex items-center gap-10 px-4">
               {[
-                "Tu Departamento Financiero",
-                "Dirección Financiera",
-                "Contabilidad & Controlling",
-                "Asesoría fiscal",
-                "Control de negocio",
-                "Planificación y Control de Tesorería",
-                "Planificación y Presupuestos",
-                "Análisis de negocio y operativo",
-                "Métricas y KPIs",
-                "Reporting de valor",
-              ].map((w, i) => (
-                <span
-                  key={`${j}-${i}`}
-                  className="whitespace-nowrap text-xs font-heading font-bold uppercase tracking-[0.15em] text-surface-dark-foreground"
-                >
+            "Tu Departamento Financiero",
+            "Dirección Financiera",
+            "Contabilidad & Controlling",
+            "Asesoría fiscal",
+            "Control de negocio",
+            "Planificación y Control de Tesorería",
+            "Planificación y Presupuestos",
+            "Análisis de negocio y operativo",
+            "Métricas y KPIs",
+            "Reporting de valor"].
+            map((w, i) =>
+            <span
+              key={`${j}-${i}`}
+              className="whitespace-nowrap text-xs font-heading font-bold uppercase tracking-[0.15em] text-surface-dark-foreground">
+
                   {w} <span className="text-accent ml-10">●</span>
                 </span>
-              ))}
+            )}
             </div>
-          ))}
+          )}
         </div>
       </div>
 
@@ -217,18 +217,18 @@ const Index = () => {
                 </p>
                 <div className="space-y-4 font-body text-sm">
                   {[
-                    { label: "Ventas", value: "50.000 €", accent: false },
-                    { label: "Coste directo (40%)", value: "–20.000 €", accent: false },
-                    { label: "Margen bruto", value: "30.000 €", accent: true },
-                    { label: "Costes fijos", value: "–25.000 €", accent: false },
-                    { label: "Beneficio operativo", value: "5.000 €", accent: true },
-                  ].map((row, i) => (
-                    <div
-                      key={i}
-                      className={`flex justify-between items-baseline pb-3 ${
-                        i < 4 ? "border-b border-foreground/5" : ""
-                      }`}
-                    >
+                  { label: "Ventas", value: "50.000 €", accent: false },
+                  { label: "Coste directo (40%)", value: "–20.000 €", accent: false },
+                  { label: "Margen bruto", value: "30.000 €", accent: true },
+                  { label: "Costes fijos", value: "–25.000 €", accent: false },
+                  { label: "Beneficio operativo", value: "5.000 €", accent: true }].
+                  map((row, i) =>
+                  <div
+                    key={i}
+                    className={`flex justify-between items-baseline pb-3 ${
+                    i < 4 ? "border-b border-foreground/5" : ""}`
+                    }>
+
                       <span className={row.accent ? "font-heading font-bold" : "text-muted-foreground"}>
                         {row.label}
                       </span>
@@ -236,7 +236,7 @@ const Index = () => {
                         {row.value}
                       </span>
                     </div>
-                  ))}
+                  )}
                 </div>
                 <div className="mt-8 border-t border-foreground/5 pt-6">
                   <p className="text-sm text-muted-foreground leading-relaxed">
@@ -258,19 +258,19 @@ const Index = () => {
             </p>
             <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
               {[
-                "Caja operativa",
-                "NOF",
-                "Plazos de cobro vs pago",
-                "Inventario inmovilizado",
-                "Costes ocultos",
-                "Retenciones",
-              ].map((item) => (
-                <div key={item} className="border border-foreground/10 px-5 py-4">
+              "Caja operativa",
+              "NOF",
+              "Plazos de cobro vs pago",
+              "Inventario inmovilizado",
+              "Costes ocultos",
+              "Retenciones"].
+              map((item) =>
+              <div key={item} className="border border-foreground/10 px-5 py-4">
                   <span className="text-xs font-mono uppercase tracking-[0.1em] text-muted-foreground">
                     {item}
                   </span>
                 </div>
-              ))}
+              )}
             </div>
           </div>
         </FadeIn>
@@ -286,8 +286,8 @@ const Index = () => {
                 src={pabloBurbuja}
                 alt="Pablo Prado Marrón"
                 className="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover shrink-0"
-                loading="lazy"
-              />
+                loading="lazy" />
+
               <div>
                 <p className="text-[clamp(2rem,4vw,3.5rem)] font-heading font-bold leading-[1] tracking-tighter" role="presentation">
                   Pablo <span className="font-display italic font-normal">Prado</span>
@@ -323,17 +323,17 @@ const Index = () => {
               </p>
               <div className="space-y-5 text-sm text-foreground/70">
                 {[
-                  "No soy gestoría.",
-                  "No te mando un PDF para que lo guardes.",
-                  "No te hablo en jerga para parecer listo.",
-                  "No te digo lo que quieres oír.",
-                  "No te prometo milagros en 7 días.",
-                ].map((item) => (
-                  <p key={item} className="flex items-start gap-3">
+                "No soy gestoría.",
+                "No te mando un PDF para que lo guardes.",
+                "No te hablo en jerga para parecer listo.",
+                "No te digo lo que quieres oír.",
+                "No te prometo milagros en 7 días."].
+                map((item) =>
+                <p key={item} className="flex items-start gap-3">
                     <span className="text-accent font-mono font-bold shrink-0">✕</span>
                     <span>{item}</span>
                   </p>
-                ))}
+                )}
               </div>
             </div>
           </FadeIn>
@@ -359,25 +359,25 @@ const Index = () => {
             <div className="md:col-span-8">
               <div className="grid sm:grid-cols-2 gap-x-8 gap-y-4 text-sm text-foreground/70 leading-relaxed">
                 {[
-                  "Te enteras tarde: cuando ya te ha explotado.",
-                  "La contabilidad te dice 'lo que pasó', pero tú necesitas 'qué hago ahora'.",
-                  "No sabes qué cliente te compensa.",
-                  "No sabes tu margen real por canal.",
-                  "Vas con miedo al día 25.",
-                  "Pagas impuestos a ciegas.",
-                  "Crecer te quita el sueño.",
-                  "El Excel tiene 47 pestañas y ninguna dice la verdad.",
-                  "No sabes cuánto te cuesta servir un pedido.",
-                  "Tu socio y tú no veis lo mismo.",
-                  "No tienes presupuesto. Ni mapa.",
-                  "Tomas decisiones de 50.000 € con la misma info que para pedir una pizza.",
-                  "Cada trimestre es una sorpresa (mala).",
-                  "Quieres delegar pero 'nadie entiende los números'.",
-                ].map((item, i) => (
-                  <p key={i} className="border-l border-foreground/10 pl-4 py-2">
+                "Te enteras tarde: cuando ya te ha explotado.",
+                "La contabilidad te dice 'lo que pasó', pero tú necesitas 'qué hago ahora'.",
+                "No sabes qué cliente te compensa.",
+                "No sabes tu margen real por canal.",
+                "Vas con miedo al día 25.",
+                "Pagas impuestos a ciegas.",
+                "Crecer te quita el sueño.",
+                "El Excel tiene 47 pestañas y ninguna dice la verdad.",
+                "No sabes cuánto te cuesta servir un pedido.",
+                "Tu socio y tú no veis lo mismo.",
+                "No tienes presupuesto. Ni mapa.",
+                "Tomas decisiones de 50.000 € con la misma info que para pedir una pizza.",
+                "Cada trimestre es una sorpresa (mala).",
+                "Quieres delegar pero 'nadie entiende los números'."].
+                map((item, i) =>
+                <p key={i} className="border-l border-foreground/10 pl-4 py-2">
                     {item}
                   </p>
-                ))}
+                )}
               </div>
             </div>
           </div>
@@ -403,8 +403,8 @@ const Index = () => {
                   buttonText="Apúntame"
                   microcopy="Un email. Una idea. Si no te gusta, te das de baja y aquí no ha pasado nada."
                   source="home-post-dolor"
-                  variant="stacked"
-                />
+                  variant="stacked" />
+
               </div>
             </div>
           </div>
@@ -423,19 +423,19 @@ const Index = () => {
             </h3>
             <div className="mt-8 space-y-4 text-sm text-surface-dark-foreground/60 leading-relaxed">
               {[
-                "Facturar no es ganar.",
-                "Beneficio ≠ caja.",
-                "Si no cierras mes, estás jugando sin marcador.",
-                "Un Excel sin método es un diario, no un sistema.",
-                "Sin analítica por línea, decides a ojo.",
-                "El margen bruto engaña si no mides los costes ocultos.",
-                "La caja no miente, pero hay que saber leerla.",
-                "Tu gestor te hace los impuestos, no te dirige las finanzas.",
-              ].map((item, i) => (
-                <p key={i} className="border-l border-surface-dark-foreground/10 pl-4 py-1">
+              "Facturar no es ganar.",
+              "Beneficio ≠ caja.",
+              "Si no cierras mes, estás jugando sin marcador.",
+              "Un Excel sin método es un diario, no un sistema.",
+              "Sin analítica por línea, decides a ojo.",
+              "El margen bruto engaña si no mides los costes ocultos.",
+              "La caja no miente, pero hay que saber leerla.",
+              "Tu gestor te hace los impuestos, no te dirige las finanzas."].
+              map((item, i) =>
+              <p key={i} className="border-l border-surface-dark-foreground/10 pl-4 py-1">
                   {item}
                 </p>
-              ))}
+              )}
             </div>
           </FadeIn>
 
@@ -448,19 +448,19 @@ const Index = () => {
             </h3>
             <div className="mt-8 space-y-4 text-sm text-surface-dark-foreground/60 leading-relaxed">
               {[
-                "¿Qué producto te hace perder dinero sin que lo notes?",
-                "¿Qué pasa si subes precios un 3%?",
-                "¿Qué canal vende mucho pero te deja seco?",
-                "¿Cuánto te cuesta de verdad un cliente?",
-                "¿Cuánto 'paga' tu estructura cada mes?",
-                "¿Cuántos meses de runway tienes?",
-                "¿Cuánto dinero tienes dormido?",
-                "¿Sabrías decir ahora mismo tu margen neto?",
-              ].map((item, i) => (
-                <p key={i} className="border-l border-accent/30 pl-4 py-1">
+              "¿Qué producto te hace perder dinero sin que lo notes?",
+              "¿Qué pasa si subes precios un 3%?",
+              "¿Qué canal vende mucho pero te deja seco?",
+              "¿Cuánto te cuesta de verdad un cliente?",
+              "¿Cuánto 'paga' tu estructura cada mes?",
+              "¿Cuántos meses de runway tienes?",
+              "¿Cuánto dinero tienes dormido?",
+              "¿Sabrías decir ahora mismo tu margen neto?"].
+              map((item, i) =>
+              <p key={i} className="border-l border-accent/30 pl-4 py-1">
                   {item}
                 </p>
-              ))}
+              )}
             </div>
           </FadeIn>
         </div>
@@ -476,22 +476,22 @@ const Index = () => {
             </h3>
             <div className="mt-8 space-y-3 text-sm text-foreground/70">
               {[
-                "Márgenes claros por línea, cliente y canal.",
-                "Caja prevista con escenarios.",
-                "Decisiones con datos, no con corazonadas.",
-                "Presupuesto realista + control mensual.",
-                "Tranquilidad: sabes dónde estás y qué viene.",
-                "Crecimiento rentable (o controlado, pero consciente).",
-                "Reunión mensual con tu 'brújula financiera'.",
-                "Cuadro de mando que entiendes de un vistazo.",
-                "Alertas antes de que sea tarde.",
-                "Dejar de improvisar.",
-              ].map((item, i) => (
-                <p key={i} className="flex items-start gap-3">
+              "Márgenes claros por línea, cliente y canal.",
+              "Caja prevista con escenarios.",
+              "Decisiones con datos, no con corazonadas.",
+              "Presupuesto realista + control mensual.",
+              "Tranquilidad: sabes dónde estás y qué viene.",
+              "Crecimiento rentable (o controlado, pero consciente).",
+              "Reunión mensual con tu 'brújula financiera'.",
+              "Cuadro de mando que entiendes de un vistazo.",
+              "Alertas antes de que sea tarde.",
+              "Dejar de improvisar."].
+              map((item, i) =>
+              <p key={i} className="flex items-start gap-3">
                   <span className="text-accent font-mono text-xs mt-1">✓</span>
                   <span>{item}</span>
                 </p>
-              ))}
+              )}
             </div>
           </FadeIn>
 
@@ -502,22 +502,22 @@ const Index = () => {
             </h3>
             <div className="mt-8 space-y-3 text-sm text-foreground/70">
               {[
-                "Confundir 'mucho trabajo' con 'buen negocio'.",
-                "No tener presupuesto (mapa).",
-                "No medir CAC/LTV.",
-                "No saber qué te cuesta servir un pedido.",
-                "No revisar desviaciones cada mes.",
-                "No tener un cuadro de mando.",
-                "Mezclar caja personal y de empresa.",
-                "Bajar precios para 'vender más' (y ganar menos).",
-                "Contratar sin saber si la estructura lo aguanta.",
-                "Invertir antes de tener visibilidad.",
-              ].map((item, i) => (
-                <p key={i} className="flex items-start gap-3">
+              "Confundir 'mucho trabajo' con 'buen negocio'.",
+              "No tener presupuesto (mapa).",
+              "No medir CAC/LTV.",
+              "No saber qué te cuesta servir un pedido.",
+              "No revisar desviaciones cada mes.",
+              "No tener un cuadro de mando.",
+              "Mezclar caja personal y de empresa.",
+              "Bajar precios para 'vender más' (y ganar menos).",
+              "Contratar sin saber si la estructura lo aguanta.",
+              "Invertir antes de tener visibilidad."].
+              map((item, i) =>
+              <p key={i} className="flex items-start gap-3">
                   <span className="text-foreground/20 font-mono text-xs mt-1">⚠</span>
                   <span>{item}</span>
                 </p>
-              ))}
+              )}
             </div>
           </FadeIn>
         </div>
@@ -530,55 +530,55 @@ const Index = () => {
             tag="Servicios"
             title="Tu departamento financiero."
             subtitle="Lo que una multinacional tiene con 10 personas, tú lo tienes con una."
-            large
-          />
+            large />
+
         </FadeIn>
 
         <div className="grid md:grid-cols-3 gap-px bg-foreground/10 border border-foreground/10 mt-12">
           {[
-            {
-              num: "01",
-              name: "Control y Orden",
-              subtitle: "Fundación",
-              forWhom: "PYMEs que no cierran mes y van a ciegas.",
-              includes: [
-                "Cierre mensual estructurado",
-                "PyG básica vs presupuesto",
-                "Cashflow directo",
-                "Reunión mensual de revisión",
-              ],
-              result: "En 30–60 días empiezas a ver con claridad.",
-            },
-            {
-              num: "02",
-              name: "Rentabilidad",
-              subtitle: "Analítica",
-              forWhom: "PYMEs que facturan pero no saben si ganan por línea.",
-              includes: [
-                "PyG analítica por canal/producto",
-                "Unit economics",
-                "Cuadro de mando con KPIs",
-                "Análisis de desviaciones",
-                "Soporte a decisiones de precio",
-              ],
-              result: "Decisiones con datos, no con intuición.",
-            },
-            {
-              num: "03",
-              name: "CFO Partner",
-              subtitle: "Estrategia",
-              forWhom: "PYMEs en crecimiento que necesitan un copiloto financiero.",
-              includes: [
-                "Todo lo anterior",
-                "Planificación financiera",
-                "Gestión de caja y NOF",
-                "Análisis de inversión",
-                "Interlocución con bancos",
-              ],
-              result: "Director financiero sin el coste fijo de uno.",
-            },
-          ].map((pkg, i) => (
-            <FadeIn key={pkg.name} delay={i * 0.1}>
+          {
+            num: "01",
+            name: "Control y Orden",
+            subtitle: "Fundación",
+            forWhom: "PYMEs que no cierran mes y van a ciegas.",
+            includes: [
+            "Cierre mensual estructurado",
+            "PyG básica vs presupuesto",
+            "Cashflow directo",
+            "Reunión mensual de revisión"],
+
+            result: "En 30–60 días empiezas a ver con claridad."
+          },
+          {
+            num: "02",
+            name: "Rentabilidad",
+            subtitle: "Analítica",
+            forWhom: "PYMEs que facturan pero no saben si ganan por línea.",
+            includes: [
+            "PyG analítica por canal/producto",
+            "Unit economics",
+            "Cuadro de mando con KPIs",
+            "Análisis de desviaciones",
+            "Soporte a decisiones de precio"],
+
+            result: "Decisiones con datos, no con intuición."
+          },
+          {
+            num: "03",
+            name: "CFO Partner",
+            subtitle: "Estrategia",
+            forWhom: "PYMEs en crecimiento que necesitan un copiloto financiero.",
+            includes: [
+            "Todo lo anterior",
+            "Planificación financiera",
+            "Gestión de caja y NOF",
+            "Análisis de inversión",
+            "Interlocución con bancos"],
+
+            result: "Director financiero sin el coste fijo de uno."
+          }].
+          map((pkg, i) =>
+          <FadeIn key={pkg.name} delay={i * 0.1}>
               <div className="bg-background p-8 md:p-10 h-full flex flex-col">
                 <span className="font-heading text-5xl font-bold text-foreground/5">{pkg.num}</span>
                 <span className="mt-4 text-[10px] font-mono uppercase tracking-[0.2em] text-muted-foreground">
@@ -589,19 +589,19 @@ const Index = () => {
                 </h3>
                 <p className="mt-3 text-xs text-muted-foreground">{pkg.forWhom}</p>
                 <div className="mt-6 flex-1 space-y-2">
-                  {pkg.includes.map((item) => (
-                    <p key={item} className="text-sm text-foreground/70 flex items-start gap-2">
+                  {pkg.includes.map((item) =>
+                <p key={item} className="text-sm text-foreground/70 flex items-start gap-2">
                       <span className="text-accent font-mono text-[10px] mt-1">→</span>
                       <span>{item}</span>
                     </p>
-                  ))}
+                )}
                 </div>
                 <div className="mt-8 pt-6 border-t border-foreground/5">
                   <p className="text-xs font-heading font-bold">{pkg.result}</p>
                 </div>
               </div>
             </FadeIn>
-          ))}
+          )}
         </div>
 
         <FadeIn delay={0.3}>
@@ -622,20 +622,20 @@ const Index = () => {
         </FadeIn>
         <div className="grid md:grid-cols-2 gap-px bg-foreground/10 border border-foreground/10">
           {[
-            {
-              tag: "Turismo activo",
-              name: "Turicleta",
-              line: "Control para crecer sin caos.",
-              path: "/casos-de-exito/turicleta",
-            },
-            {
-              tag: "Restauración",
-              name: "Impasto",
-              line: "Rentabilidad real por canal y menú.",
-              path: "/casos-de-exito/impasto",
-            },
-          ].map((c, i) => (
-            <FadeIn key={c.name} delay={i * 0.1}>
+          {
+            tag: "Turismo activo",
+            name: "Turicleta",
+            line: "Control para crecer sin caos.",
+            path: "/casos-de-exito/turicleta"
+          },
+          {
+            tag: "Restauración",
+            name: "Impasto",
+            line: "Rentabilidad real por canal y menú.",
+            path: "/casos-de-exito/impasto"
+          }].
+          map((c, i) =>
+          <FadeIn key={c.name} delay={i * 0.1}>
               <Link to={c.path} className="block bg-background p-8 md:p-12 group h-full">
                 <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-muted-foreground">
                   {c.tag}
@@ -649,7 +649,7 @@ const Index = () => {
                 </span>
               </Link>
             </FadeIn>
-          ))}
+          )}
         </div>
 
         <FadeIn delay={0.15}>
@@ -666,8 +666,8 @@ const Index = () => {
                   buttonText="Me apunto"
                   microcopy="Un email semanal. Sin compromisos. Sin dramas."
                   variant="stacked"
-                  source="home-post-casos"
-                />
+                  source="home-post-casos" />
+
               </div>
             </div>
           </div>
@@ -696,36 +696,36 @@ const Index = () => {
           <div className="max-w-3xl mx-auto mt-12">
             <Accordion type="single" collapsible className="w-full">
               {[
-                {
-                  q: "¿Esto es una gestoría?",
-                  a: "No. Tu gestoría hace impuestos. Yo hago que entiendas tus números y tomes decisiones con datos. Son cosas muy distintas. Una te dice lo que pasó; yo te digo qué hacer con lo que viene.",
-                },
-                {
-                  q: "¿Cuánto cuesta?",
-                  a: "Depende de lo que necesites. No es lo mismo montar un cierre mensual desde cero que acompañarte como CFO externo. Hablamos 15 minutos, entiendo tu situación y te digo un precio cerrado. Sin sorpresas.",
-                },
-                {
-                  q: "Ya tengo contable, ¿para qué necesito esto?",
-                  a: "Tu contable registra. Yo interpreto. Tu contable te dice que has facturado 80.000 €. Yo te digo que el 40% de esa facturación te está costando dinero y que tienes un problema de caja en 45 días si no haces nada.",
-                },
-                {
-                  q: "¿Funciona para mi sector?",
-                  a: "Si tienes una PYME que factura, tiene costes y necesita tomar decisiones… sí. He trabajado con hostelería, turismo, alimentación, servicios, ecommerce, industria. Los números hablan el mismo idioma en todos los sectores.",
-                },
-                {
-                  q: "¿Cuánto tardo en ver resultados?",
-                  a: "En 30-60 días tienes tu primer cierre mensual y empiezas a ver con claridad. No es magia: es método. A los 3 meses ya estás tomando decisiones que antes no podías.",
-                },
-                {
-                  q: "¿Y si mi empresa es muy pequeña?",
-                  a: "Precisamente las empresas pequeñas son las que más lo necesitan. Una multinacional se puede permitir perder 50.000 € por un error de pricing. Tú no. Cuanto más pequeño eres, más necesitas controlar cada euro.",
-                },
-                {
-                  q: "¿Qué pasa con los emails que mandas?",
-                  a: "Un email a la semana. Un consejo financiero corto y aplicable. Sin vender humo, sin webinars de 3 horas, sin PDFs interminables. Si no te aporta, te das de baja en un clic y aquí paz y después gloria.",
-                },
-              ].map((faq, i) => (
-                <AccordionItem key={i} value={`faq-${i}`}>
+              {
+                q: "¿Esto es una gestoría?",
+                a: "No. Tu gestoría hace impuestos. Yo hago que entiendas tus números y tomes decisiones con datos. Son cosas muy distintas. Una te dice lo que pasó; yo te digo qué hacer con lo que viene."
+              },
+              {
+                q: "¿Cuánto cuesta?",
+                a: "Depende de lo que necesites. No es lo mismo montar un cierre mensual desde cero que acompañarte como CFO externo. Hablamos 15 minutos, entiendo tu situación y te digo un precio cerrado. Sin sorpresas."
+              },
+              {
+                q: "Ya tengo contable, ¿para qué necesito esto?",
+                a: "Tu contable registra. Yo interpreto. Tu contable te dice que has facturado 80.000 €. Yo te digo que el 40% de esa facturación te está costando dinero y que tienes un problema de caja en 45 días si no haces nada."
+              },
+              {
+                q: "¿Funciona para mi sector?",
+                a: "Si tienes una PYME que factura, tiene costes y necesita tomar decisiones… sí. He trabajado con hostelería, turismo, alimentación, servicios, ecommerce, industria. Los números hablan el mismo idioma en todos los sectores."
+              },
+              {
+                q: "¿Cuánto tardo en ver resultados?",
+                a: "En 30-60 días tienes tu primer cierre mensual y empiezas a ver con claridad. No es magia: es método. A los 3 meses ya estás tomando decisiones que antes no podías."
+              },
+              {
+                q: "¿Y si mi empresa es muy pequeña?",
+                a: "Precisamente las empresas pequeñas son las que más lo necesitan. Una multinacional se puede permitir perder 50.000 € por un error de pricing. Tú no. Cuanto más pequeño eres, más necesitas controlar cada euro."
+              },
+              {
+                q: "¿Qué pasa con los emails que mandas?",
+                a: "Un email a la semana. Un consejo financiero corto y aplicable. Sin vender humo, sin webinars de 3 horas, sin PDFs interminables. Si no te aporta, te das de baja en un clic y aquí paz y después gloria."
+              }].
+              map((faq, i) =>
+              <AccordionItem key={i} value={`faq-${i}`}>
                   <AccordionTrigger className="text-left font-heading text-base md:text-lg font-bold tracking-tight">
                     {faq.q}
                   </AccordionTrigger>
@@ -733,7 +733,7 @@ const Index = () => {
                     {faq.a}
                   </AccordionContent>
                 </AccordionItem>
-              ))}
+              )}
             </Accordion>
           </div>
         </FadeIn>
@@ -758,14 +758,14 @@ const Index = () => {
                 microcopy="Un email semanal. Sin compromiso. Te borras cuando quieras."
                 variant="stacked"
                 dark
-                source="home-cierre"
-              />
+                source="home-cierre" />
+
             </div>
           </div>
         </FadeIn>
       </Section>
-    </>
-  );
+    </>);
+
 };
 
 export default Index;
