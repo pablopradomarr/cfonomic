@@ -46,10 +46,7 @@ Sin jerga.<span className="font-display italic font-normal">necesitas</span><spa
               <br />
               <span className="text-muted-foreground">Sin jerga.</span>
             </p>
-            <h1 className="mt-6 max-w-lg text-base text-muted-foreground leading-relaxed font-body font-normal">Glosario financiero para PMYEs y Startups:
-En castellano, sin 
-
-EBITDA, cashflow, NOF, CAC, margen bruto y todos los términos que necesitas para dirigir tu PYME con datos.</h1>
+            <h1 className="mt-6 max-w-full text-base md:text-lg text-muted-foreground leading-relaxed font-body font-normal">Glosario financiero para PYMEs y Startups: EBITDA, cashflow, NOF, CAC, margen bruto y todos los términos que necesitas para dirigir tu PYME con datos. En castellano, sin jerga.</h1>
             <div className="mt-8 max-w-sm">
               <input type="text"
               placeholder="Buscar término..."
