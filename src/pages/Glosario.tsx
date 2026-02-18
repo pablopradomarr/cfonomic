@@ -41,8 +41,8 @@ const Glosario = () => {
         <div className="container-wide">
           <FadeIn>
             
-            <p className="text-[clamp(2.5rem,6vw,5.5rem)] font-heading font-bold leading-[0.95] tracking-tighter max-w-4xl" role="presentation">
-              Términos que <span className="font-display italic font-normal">necesitas</span><span className="text-accent">.</span>
+            <p className="text-[clamp(2.5rem,6vw,5.5rem)] font-heading font-bold leading-[0.95] tracking-tighter max-w-4xl" role="presentation">Términos financieras que necesitas.
+Sin jerga.<span className="font-display italic font-normal">necesitas</span><span className="text-accent">.</span>
               <br />
               <span className="text-muted-foreground">Sin jerga.</span>
             </p>
