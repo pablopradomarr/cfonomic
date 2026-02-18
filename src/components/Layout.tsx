@@ -58,7 +58,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             to="/diagnostico-financiero"
             className="hidden lg:inline-flex bg-foreground text-background px-5 py-2 text-[12px] font-mono uppercase tracking-[0.1em] font-bold hover:bg-foreground/85 transition-colors"
           >
-            Diagnóstico gratis
+            Diagnóstico Financiero
           </Link>
 
           {/* Mobile toggle */}
@@ -119,7 +119,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 to="/diagnostico-financiero"
                 className="block w-full bg-accent text-accent-foreground py-4 text-center text-sm font-mono uppercase tracking-[0.1em] font-bold"
               >
-                Diagnóstico gratis
+                Diagnóstico Financiero
               </Link>
             </div>
           </motion.div>
@@ -138,8 +138,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 CFO<span className="font-display italic font-normal text-accent">nomic</span>
               </p>
               <p className="mt-4 max-w-sm text-sm text-surface-dark-foreground/50 leading-relaxed font-body">
-                Dirección financiera para PYMEs que quieren dejar de improvisar.
-                Control. Caja. Decisiones con datos.
+                Dirección financiera y control de negocio para PYMEs que deciden con instinto analítico: datos + olfato.
               </p>
               <div className="divider-accent mt-6" />
             </div>
@@ -253,7 +252,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           to="/diagnostico-financiero"
           className="block w-full bg-accent py-2.5 text-center text-[12px] font-mono uppercase tracking-[0.1em] font-bold text-accent-foreground"
         >
-          Diagnóstico gratis
+          Diagnóstico Financiero
         </Link>
       </div>
     </div>

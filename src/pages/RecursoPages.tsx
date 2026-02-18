@@ -75,12 +75,6 @@ const RecursoPage = ({
                 source="calculadora"
                 onSuccess={() => setEmailGiven(true)}
               />
-              <button
-                onClick={() => setEmailGiven(true)}
-                className="mt-3 text-xs text-muted-foreground underline"
-              >
-                (demo: saltar email)
-              </button>
             </div>
           ) : (
             <div className="iframe-container">
@@ -137,7 +131,7 @@ const RecursoPage = ({
                 to="/diagnostico-financiero"
                 className="inline-flex items-center justify-center bg-accent px-6 py-3 font-heading font-bold text-accent-foreground hover:bg-accent/85 transition-all"
               >
-                Diagnóstico gratis
+                Diagnóstico Financiero
               </Link>
               <a
                 href="https://tidycal.com/pablocfonomic/nosconocemos"
@@ -145,7 +139,7 @@ const RecursoPage = ({
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center border-2 border-border px-6 py-3 font-heading font-semibold text-heading hover:bg-surface-paper transition-all"
               >
-                Agendar llamada
+                Hablar con un Director Financiero
               </a>
             </div>
           </div>

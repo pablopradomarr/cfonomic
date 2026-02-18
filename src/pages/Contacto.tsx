@@ -135,12 +135,12 @@ const Contacto = () => {
                   Hablamos de tu situación. Sin compromiso. Sin PowerPoint.
                 </p>
                 <a href="https://tidycal.com/pablocfonomic/nosconocemos" target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex bg-foreground text-background px-5 py-2 text-[11px] font-mono uppercase tracking-[0.1em] font-bold hover:bg-foreground/85 transition-colors">
-                  Agendar llamada →
+                  Hablar con un Director Financiero →
                 </a>
               </div>
               <div className="border border-foreground/10 p-6 md:p-8">
                 <p className="text-[10px] font-mono uppercase tracking-[0.2em] text-muted-foreground mb-4">No sabes por dónde empezar</p>
-                <h3 className="font-heading text-lg font-bold tracking-tight">Diagnóstico gratis</h3>
+                <h3 className="font-heading text-lg font-bold tracking-tight">Diagnóstico Financiero</h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   5 minutos. Claridad inmediata.
                 </p>
