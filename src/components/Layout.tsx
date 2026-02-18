@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import logoCfonomic from "@/assets/logo-cfonomic.png";
 
 const navItems = [
   { label: "Inicio", path: "/" },
@@ -31,8 +32,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       {/* ═══ NAV ═══ */}
       <header className={`sticky top-0 z-50 border-b border-foreground/5 backdrop-blur-md ${mobileOpen ? 'bg-[hsl(var(--surface-dark))]' : 'bg-background/90'}`}>
         <nav className="container-wide flex items-center justify-between h-16">
-          <Link to="/" className={`font-heading text-xl font-bold tracking-tight ${mobileOpen ? 'text-white' : ''}`}>
-            CFO<span className={`font-display italic font-normal ${mobileOpen ? 'text-accent' : 'text-accent'}`}>nomic</span>
+          <Link to="/" className="flex items-center">
+            <img src={logoCfonomic} alt="CFOnomic" className={`h-6 ${mobileOpen ? 'brightness-0 invert' : ''}`} />
           </Link>
 
           {/* Desktop nav */}
