@@ -60,12 +60,12 @@ const DiagnosticoFinanciero = () => {
         breadcrumbs={[{ name: "Inicio", path: "/" }, { name: "Diagnóstico financiero", path: "/diagnostico-financiero" }]}
         faq={diagnosticoFaq}
       />
-      <section className="py-24 md:py-36">
+      <section className="py-12 md:py-36">
         <div className="container-wide">
           <FadeIn>
             <span className="tag-label mb-6 block">Diagnóstico</span>
             <p className="text-[clamp(2.5rem,6vw,5.5rem)] font-heading font-bold leading-[0.95] tracking-tighter max-w-5xl" role="presentation">
-              ¿Tienes <span className="font-display italic font-normal">Control de negocio</span>
+              ¿Tienes <span className="font-display italic font-normal">Control de Negocio</span>
               <br />
               y <span className="font-display italic font-normal">Dirección Financiera</span><span className="text-accent">?</span>
             </p>
