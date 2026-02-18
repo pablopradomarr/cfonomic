@@ -20,15 +20,18 @@ const cityData: Record<string, { intro: string; problem: string }> = {
   Murcia: { intro: "Agroalimentación, logística y servicios. Márgenes estrechos.", problem: "Un error de pricing puede borrar el beneficio de un trimestre." },
 };
 
+const getCitySlug = (city: string) =>
+  city.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
 const CiudadPage = ({ city }: CityPageProps) => {
   const data = cityData[city] || cityData["Madrid"];
-  const citySlug = city.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  const citySlug = getCitySlug(city);
 
   const cityFaq = [
-    { q: `¿Necesito asesoría financiera en ${city}?`, a: `Si facturas más de 300K–500K € y no tienes cierre mensual estructurado, probablemente sí.` },
+    { q: `¿Necesito un director financiero externo en ${city}?`, a: `Si facturas más de 300K–500K € y no tienes cierre mensual estructurado, probablemente sí. Un director financiero externo te da control sin el coste de un directivo a jornada completa.` },
     { q: "¿Presencial o remoto?", a: "El día a día es remoto. Reuniones presenciales si las necesitas." },
-    { q: "¿Cuánto cuesta?", a: "Depende del alcance. Lo hablamos en 15 minutos." },
-    { q: "¿Sustituye a mi gestoría?", a: "No. Son complementarios." },
+    { q: "¿Cuánto cuesta un director financiero externo?", a: "Depende del alcance. Lo hablamos en 15 minutos." },
+    { q: "¿Sustituye a mi gestoría?", a: "No. Son complementarios. La gestoría cumple obligaciones; el director financiero toma decisiones con datos." },
     { q: "¿Cuánto tardo en ver resultados?", a: "En 30–60 días el primer cierre. En 3 meses, sistema completo." },
     { q: "¿Trabajas con mi sector?", a: "Sí. Servicios, ecommerce, restauración, turismo, industria, startups." },
   ];
@@ -36,23 +39,27 @@ const CiudadPage = ({ city }: CityPageProps) => {
   return (
     <>
       <SEO
-        title={`Asesoría financiera en ${city} para PYMEs — CFOnomic`}
-        description={`${data.intro} Control financiero, caja y decisiones con datos para empresas en ${city}.`}
-        canonical={`/cfo-externo-${citySlug}`}
+        title={`Director financiero externo en ${city} para PYMEs — CFOnomic`}
+        description={`Director financiero externo en ${city}. ${data.intro} Control de caja, márgenes y decisiones con datos para tu PYME.`}
+        canonical={`/director-financiero-externo-${citySlug}`}
         faq={cityFaq}
-        breadcrumbs={[{ name: "Inicio", path: "/" }, { name: "Servicios", path: "/servicios" }, { name: `CFO externo ${city}`, path: `/cfo-externo-${citySlug}` }]}
+        breadcrumbs={[
+          { name: "Inicio", path: "/" },
+          { name: "Servicios", path: "/servicios" },
+          { name: `Director financiero externo ${city}`, path: `/director-financiero-externo-${citySlug}` },
+        ]}
       />
       <section className="py-24 md:py-36">
         <div className="container-wide">
           <FadeIn>
             <span className="tag-label mb-6 block">{city}</span>
             <p className="text-[clamp(2rem,5vw,4rem)] font-heading font-bold leading-[0.95] tracking-tighter max-w-5xl" role="presentation">
-              CFO externo en {city}<span className="text-accent">.</span>
+              Director financiero externo en {city}<span className="text-accent">.</span>
               <br />
               <span className="text-muted-foreground">Para PYMEs que quieren control y caja.</span>
             </p>
             <h1 className="mt-6 max-w-lg text-base text-muted-foreground leading-relaxed font-body font-normal">
-              Asesoría financiera en {city} para PYMEs. {data.intro} Control de caja, márgenes y decisiones con datos para tu empresa.
+              Director financiero externo en {city} para PYMEs. {data.intro} Asesoría financiera con control de caja, márgenes y decisiones con datos.
             </h1>
           </FadeIn>
         </div>
@@ -71,14 +78,14 @@ const CiudadPage = ({ city }: CityPageProps) => {
 
       <Section>
         <FadeIn>
-          <SectionHeading title="Qué soluciono" />
+          <SectionHeading title="Qué soluciono como tu director financiero" />
           <BulletList icon="→" items={[
             "Cierre mensual estructurado con reporting.",
             "PyG analítica por línea, canal, cliente.",
-            "Control de caja y previsión.",
+            "Control de caja y previsión de tesorería.",
             "Presupuesto + desviaciones.",
-            "Cuadro de mando con KPIs.",
-            "Acompañamiento en decisiones.",
+            "Cuadro de mando con KPIs financieros.",
+            "Acompañamiento en decisiones estratégicas.",
           ]} />
         </FadeIn>
       </Section>
@@ -87,10 +94,10 @@ const CiudadPage = ({ city }: CityPageProps) => {
         <FadeIn>
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-heading font-bold tracking-tighter">
-              ¿Necesitas asesoría financiera en {city}<span className="text-accent">?</span>
+              ¿Necesitas un director financiero externo en {city}<span className="text-accent">?</span>
             </h2>
             <div className="mt-8 max-w-md mx-auto">
-              <EmailCaptureForm buttonText="Diagnóstico gratis" microcopy={`CFO externo en ${city}. Sin humo.`} variant="stacked" dark />
+              <EmailCaptureForm buttonText="Diagnóstico gratis" microcopy={`Director financiero externo en ${city}. Sin humo.`} variant="stacked" dark />
             </div>
             <p className="mt-4">
               <Link to="/contacto" className="text-[11px] font-mono uppercase tracking-[0.1em] text-surface-dark-foreground/40 hover:text-accent transition-colors border-b border-surface-dark-foreground/20 pb-0.5">
@@ -103,7 +110,7 @@ const CiudadPage = ({ city }: CityPageProps) => {
 
       <Section>
         <FadeIn>
-          <SectionHeading tag="FAQ" title={`CFO externo en ${city}`} />
+          <SectionHeading tag="FAQ" title={`Director financiero externo en ${city}`} />
           <div className="max-w-3xl">
             {cityFaq.map((faq) => (
               <div key={faq.q} className="border-b border-foreground/5 py-6">
