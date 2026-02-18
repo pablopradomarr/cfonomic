@@ -183,9 +183,9 @@ const Servicios = () => (
             <EmailCaptureForm buttonText="Envíame info" microcopy="Sin humo. Con números." variant="stacked" dark />
           </div>
           <p className="mt-4">
-            <Link to="/contacto" className="text-[11px] font-mono uppercase tracking-[0.1em] text-surface-dark-foreground/40 hover:text-accent transition-colors border-b border-surface-dark-foreground/20 pb-0.5">
+            <a href="https://tidycal.com/pablocfonomic/nosconocemos" target="_blank" rel="noopener noreferrer" className="text-[11px] font-mono uppercase tracking-[0.1em] text-surface-dark-foreground/40 hover:text-accent transition-colors border-b border-surface-dark-foreground/20 pb-0.5">
               Agendar una llamada →
-            </Link>
+            </a>
           </p>
           <div className="mt-8 flex flex-wrap gap-4 justify-center">
             {[

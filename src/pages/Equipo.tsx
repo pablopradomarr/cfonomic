@@ -123,9 +123,9 @@ const Equipo = () => (
             <EmailCaptureForm buttonText="Quiero el diagnóstico" microcopy="Sin compromiso." variant="stacked" />
           </div>
           <p className="mt-4">
-            <Link to="/contacto" className="text-[11px] font-mono uppercase tracking-[0.1em] text-muted-foreground hover:text-foreground transition-colors border-b border-foreground/20 pb-0.5">
+            <a href="https://tidycal.com/pablocfonomic/nosconocemos" target="_blank" rel="noopener noreferrer" className="text-[11px] font-mono uppercase tracking-[0.1em] text-muted-foreground hover:text-foreground transition-colors border-b border-foreground/20 pb-0.5">
               Agendar una llamada →
-            </Link>
+            </a>
           </p>
           <div className="mt-6 flex flex-wrap gap-4 justify-center">
             {[
