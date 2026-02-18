@@ -93,9 +93,9 @@ const DiagnosticoFinanciero = () => {
               15 minutos de asesoría financiera personalizada. Tú con tus dudas, yo con tus números.
             </h2>
             <div className="mt-6">
-              <Link to="/contacto" className="inline-flex bg-accent text-accent-foreground px-6 py-3 text-[12px] font-mono uppercase tracking-[0.1em] font-bold hover:bg-accent/85 transition-colors">
+              <a href="https://tidycal.com/pablocfonomic/nosconocemos" target="_blank" rel="noopener noreferrer" className="inline-flex bg-accent text-accent-foreground px-6 py-3 text-[12px] font-mono uppercase tracking-[0.1em] font-bold hover:bg-accent/85 transition-colors">
                 Agendar llamada →
-              </Link>
+              </a>
             </div>
             <div className="mt-6 flex flex-wrap gap-4 justify-center">
               {[
