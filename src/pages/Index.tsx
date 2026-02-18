@@ -105,10 +105,12 @@ const Index = () => {
           {[...Array(2)].map((_, j) => (
             <div key={j} className="flex items-center gap-10 px-4">
               {[
-                "Dirección Financiera",
                 "Tu Departamento Financiero",
+                "Dirección Financiera",
+                "Contabilidad & Controlling",
+                "Asesoría fiscal",
                 "Control de negocio",
-                "Control de Caja",
+                "Planificación y Control de Tesorería",
                 "Planificación y Presupuestos",
                 "Análisis de negocio y operativo",
                 "Métricas y KPIs",
