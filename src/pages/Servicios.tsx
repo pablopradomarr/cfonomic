@@ -3,6 +3,7 @@ import EmailCaptureForm from "@/components/EmailCaptureForm";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/SEO";
+import GoogleReviews from "@/components/GoogleReviews";
 
 const serviciosFaq = [
   { q: "¿Es lo mismo que una gestoría?", a: "No. Tu gestoría hace impuestos. Nosotros: dirección financiera. Son complementarios." },
@@ -167,6 +168,19 @@ const Servicios = () => (
           ))}
         </div>
       </FadeIn>
+    </Section>
+
+    {/* PRUEBA SOCIAL */}
+    <Section paper>
+      <FadeIn>
+        <div className="mb-14 md:mb-20">
+          <span className="tag-label mb-5 block">Prueba social</span>
+          <p className="text-[clamp(2rem,5vw,4rem)] font-heading font-bold leading-[1.05] tracking-tighter">
+            …Qué te voy a contar yo que no te puedan contar <span className="font-display italic font-normal">mejor</span> nuestros clientes<span className="text-accent">?</span>
+          </p>
+        </div>
+      </FadeIn>
+      <GoogleReviews />
     </Section>
 
     {/* CTA */}

@@ -4,6 +4,7 @@ import EmailCaptureForm from "@/components/EmailCaptureForm";
 import { Link, useLocation } from "react-router-dom";
 import SEO from "@/components/SEO";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import GoogleReviews from "@/components/GoogleReviews";
 
 const diagnosticoFaq = [
 {
@@ -171,6 +172,19 @@ const DiagnosticoFinanciero = () => {
             </Accordion>
           </div>
         </FadeIn>
+      </Section>
+
+      {/* PRUEBA SOCIAL */}
+      <Section paper>
+        <FadeIn>
+          <div className="mb-14 md:mb-20">
+            <span className="tag-label mb-5 block">Prueba social</span>
+            <p className="text-[clamp(2rem,5vw,4rem)] font-heading font-bold leading-[1.05] tracking-tighter">
+              …Qué te voy a contar yo que no te puedan contar <span className="font-display italic font-normal">mejor</span> nuestros clientes<span className="text-accent">?</span>
+            </p>
+          </div>
+        </FadeIn>
+        <GoogleReviews />
       </Section>
 
       <Section dark>
