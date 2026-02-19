@@ -30,8 +30,11 @@ const Equipo = () => (
                 CFOnomic
               </p>
               <h1 className="mt-8 max-w-full text-base text-muted-foreground leading-relaxed font-body font-normal">
-                <span className="font-display italic">Director Financiero</span> externo para PYMEs y Startups. Me encargo de que tu empresa crezca de manera rentable — sin que tengas que contratar un departamento entero.
+                Soy Pablo, fundador de CFOnomic y <span className="font-display italic">Director Financiero</span> externo para PYMEs y Startups. Me encargo de que tu empresa crezca de manera rentable como lo hacen las mejores multinacionales del mundo.
               </h1>
+              <p className="mt-4 max-w-full text-base text-muted-foreground/80 leading-relaxed font-body">
+                Somos tu equipo financiero para que tengas las armas que podría tener <span className="font-semibold text-foreground">Amancio Ortega</span> sin tener que contratar una legión de personas.
+              </p>
             </div>
             <div className="md:col-span-5">
               <div className="aspect-[3/4] overflow-hidden">
@@ -51,7 +54,7 @@ const Equipo = () => (
     {/* ── La historia ── */}
     <Section dark>
       <FadeIn>
-        <SectionHeading tag="La historia" title="Por qué dejé una multinacional para montar CFOnomic" />
+        <SectionHeading tag="La historia" title="Pero antes te cuento la historia…" />
         <div className="max-w-full space-y-6 text-base text-surface-dark-foreground/70 leading-relaxed">
           <p className="text-lg md:text-xl text-surface-dark-foreground/90 font-body">
             Primavera de 2024. Era <span className="text-accent font-semibold">Finance & Controlling Manager</span> en Asturias. 
