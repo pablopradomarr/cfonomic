@@ -30,30 +30,6 @@ const reviews = [
     stars: 5,
     text: "Servicio y calidad inmejorables. Gracias a ellos controlo hasta el último céntimo que entra y sale de mi negocio de restauración.",
   },
-  {
-    name: "María López",
-    badge: "3 reseñas",
-    stars: 5,
-    text: "Pablo nos ha ayudado a profesionalizar toda la parte financiera. Ahora tomamos decisiones con datos, no con intuición. Imprescindible.",
-  },
-  {
-    name: "Carlos Martín",
-    badge: "Local Guide · 42 reseñas",
-    stars: 5,
-    text: "Desde que trabajamos con CFOnomic tenemos visibilidad total sobre márgenes y caja. Ha cambiado la forma en que gestionamos el negocio.",
-  },
-  {
-    name: "Laura García",
-    badge: "8 reseñas",
-    stars: 5,
-    text: "Excelente trato y resultados. Nos ayudaron a detectar fugas de rentabilidad que no veíamos. Totalmente recomendable para cualquier PYME.",
-  },
-  {
-    name: "Sergio Navarro",
-    badge: "12 reseñas",
-    stars: 5,
-    text: "Lo mejor es la claridad con la que te explican las cosas. Por fin entiendo mis números y sé dónde poner el foco cada mes.",
-  },
 ];
 
 const Stars = ({ count }: { count: number }) => (
