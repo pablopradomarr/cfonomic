@@ -79,7 +79,22 @@ const DiagnosticoFinanciero = () => {
         description="¿Tienes control de negocio y dirección financiera? En menos de 5 minutos obtén un diagnóstico financiero con recomendaciones para implementar hoy mismo."
         canonical="/diagnostico-financiero"
         breadcrumbs={[{ name: "Inicio", path: "/" }, { name: "Diagnóstico financiero", path: "/diagnostico-financiero" }]}
-        faq={diagnosticoFaq} />
+        faq={diagnosticoFaq}
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            name: "Cómo hacer un diagnóstico financiero de tu empresa en 5 minutos",
+            description: "Evalúa la salud financiera de tu PYME o Startup: caja, márgenes, estructura de costes y capacidad de generar beneficio. Obtén recomendaciones concretas.",
+            totalTime: "PT5M",
+            tool: { "@type": "HowToTool", name: "Herramienta de diagnóstico financiero CFOnomic" },
+            step: [
+              { "@type": "HowToStep", position: 1, name: "Introduce tu email", text: "Déjanos tu email para enviarte el resultado completo del diagnóstico." },
+              { "@type": "HowToStep", position: 2, name: "Responde las preguntas", text: "Contesta preguntas sobre facturación, márgenes, caja y herramientas de control financiero." },
+              { "@type": "HowToStep", position: 3, name: "Recibe tu diagnóstico", text: "Obtén un resumen con tu situación financiera, palancas de mejora y próximos pasos concretos." },
+            ],
+          },
+        ]} />
 
       <section className="py-12 md:py-36">
         <div className="container-wide">

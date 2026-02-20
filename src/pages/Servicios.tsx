@@ -24,6 +24,29 @@ const Servicios = () => (
       canonical="/servicios"
       faq={serviciosFaq}
       breadcrumbs={[{ name: "Inicio", path: "/" }, { name: "Servicios", path: "/servicios" }]}
+      jsonLd={[
+        {
+          "@context": "https://schema.org",
+          "@type": "Service",
+          name: "Departamento financiero externalizado para PYMEs",
+          description: "Cierres mensuales, PyG analítica por línea/canal/cliente, control de caja, presupuesto con control de desviaciones, KPIs y acompañamiento en decisiones estratégicas.",
+          provider: { "@type": "ProfessionalService", name: "CFOnomic", url: "https://cfonomic.com" },
+          serviceType: "Dirección financiera externa",
+          areaServed: { "@type": "Country", name: "España" },
+          hasOfferCatalog: {
+            "@type": "OfferCatalog",
+            name: "Servicios de dirección financiera",
+            itemListElement: [
+              { "@type": "Offer", itemOffered: { "@type": "Service", name: "Cierres mensuales", description: "Sabes cada mes dónde estás. Sin esperar al trimestre." } },
+              { "@type": "Offer", itemOffered: { "@type": "Service", name: "PyG analítica", description: "Márgenes por línea, canal y cliente." } },
+              { "@type": "Offer", itemOffered: { "@type": "Service", name: "Control de caja", description: "Cashflow operativo, NOF, plazos de cobro/pago." } },
+              { "@type": "Offer", itemOffered: { "@type": "Service", name: "Presupuesto", description: "Tu mapa financiero con control de desviaciones." } },
+              { "@type": "Offer", itemOffered: { "@type": "Service", name: "KPIs y cuadro de mando", description: "Los 5-8 indicadores que de verdad importan." } },
+              { "@type": "Offer", itemOffered: { "@type": "Service", name: "Decisiones estratégicas", description: "Precios, estructura, inversión, financiación. Con números." } },
+            ],
+          },
+        },
+      ]}
     />
     {/* HERO */}
     <section className="py-24 md:py-36">

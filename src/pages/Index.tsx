@@ -23,6 +23,34 @@ const Index = () => {
           { q: "¿Funciona para mi sector?", a: "Si tienes una PYME que factura, tiene costes y necesita tomar decisiones… sí." },
           { q: "¿Cuánto tardo en ver resultados?", a: "En 30-60 días tienes tu primer cierre mensual y empiezas a ver con claridad." },
         ]}
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "Dirección financiera externa para PYMEs",
+            description: "Departamento financiero externalizado para PYMEs y Startups: cierres mensuales, PyG analítica, control de caja, presupuesto, KPIs y acompañamiento en decisiones estratégicas.",
+            provider: {
+              "@type": "ProfessionalService",
+              name: "CFOnomic",
+              url: "https://cfonomic.com",
+              founder: { "@type": "Person", name: "Pablo Prado Marrón" },
+              areaServed: { "@type": "Country", name: "España" },
+            },
+            serviceType: "Asesoría financiera para empresas",
+            areaServed: { "@type": "Country", name: "España" },
+            audience: { "@type": "BusinessAudience", name: "PYMEs y Startups con facturación de 300K a 10M €" },
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: "Pablo Prado Marrón",
+            jobTitle: "Director Financiero Externo",
+            worksFor: { "@type": "Organization", name: "CFOnomic", url: "https://cfonomic.com" },
+            description: "Director financiero externo con +10 años de experiencia en PwC, Schindler, Técnicas Reunidas y Thyssenkrupp. Fundador de CFOnomic.",
+            knowsAbout: ["Dirección financiera", "Control de gestión", "Contabilidad analítica", "FP&A", "Auditoría financiera", "EBITDA", "Unit Economics", "Valoración de empresas"],
+            url: "https://cfonomic.com/equipo",
+          },
+        ]}
       />
 
       {/* ═══ A) HERO — LA CITA ═══ */}

@@ -17,7 +17,7 @@ interface SEOProps {
   ogType?: string;
   ogImage?: string;
   faq?: FAQItem[];
-  jsonLd?: Record<string, unknown>;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
   breadcrumbs?: BreadcrumbItem[];
 }
 
@@ -98,13 +98,13 @@ const SEO = ({ title, description, canonical, ogType = "website", ogImage, faq, 
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
 
-      {/* Organization schema (only on pages that don't have custom jsonLd) */}
-      {!jsonLd && (
-        <script type="application/ld+json">{JSON.stringify(orgSchema)}</script>
-      )}
-      {jsonLd && (
-        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
-      )}
+      {/* Organization schema — always present */}
+      <script type="application/ld+json">{JSON.stringify(orgSchema)}</script>
+
+      {/* Custom JSON-LD schemas */}
+      {jsonLd && (Array.isArray(jsonLd) ? jsonLd : [jsonLd]).map((schema, i) => (
+        <script key={i} type="application/ld+json">{JSON.stringify(schema)}</script>
+      ))}
 
       {/* FAQ Schema */}
       {faqSchema && (
