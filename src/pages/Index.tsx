@@ -54,7 +54,7 @@ const Index = () => {
       />
 
       {/* ═══ A) HERO — LA CITA ═══ */}
-      <section className="relative min-h-[90vh] flex items-center py-24 md:py-32">
+      <section className="relative min-h-[75vh] flex items-center pt-12 pb-16 md:pt-16 md:pb-24">
         <div className="container-wide">
           <motion.div
             initial={{ opacity: 0 }}
