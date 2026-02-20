@@ -12,6 +12,26 @@ const Equipo = () => (
       description="Dirijo las finanzas de PYMEs y Startups que quieren dejar de improvisar. Departamento financiero sin contratar equipo."
       canonical="/equipo"
       breadcrumbs={[{ name: "Inicio", path: "/" }, { name: "Equipo", path: "/equipo" }]}
+      jsonLd={[
+        {
+          "@context": "https://schema.org",
+          "@type": "Person",
+          name: "Pablo Prado Marrón",
+          jobTitle: "Director Financiero Externo",
+          url: "https://cfonomic.com/equipo",
+          image: "https://cfonomic.com/assets/pablo-cfonomic-bg.jpg",
+          description: "Fundador de CFOnomic. +10 años de experiencia en PwC, Schindler, Técnicas Reunidas y Thyssenkrupp. Director financiero externo para PYMEs y Startups en España.",
+          worksFor: { "@type": "Organization", name: "CFOnomic", url: "https://cfonomic.com" },
+          alumniOf: [
+            { "@type": "Organization", name: "PwC" },
+            { "@type": "Organization", name: "Schindler" },
+            { "@type": "Organization", name: "Técnicas Reunidas" },
+            { "@type": "Organization", name: "TK Airport Solutions (Thyssenkrupp)" },
+          ],
+          knowsAbout: ["Dirección financiera", "Control de gestión", "Auditoría financiera", "FP&A", "Contabilidad analítica", "Valoración de empresas", "EBITDA", "Unit Economics"],
+          sameAs: ["https://www.linkedin.com/in/pablopradomarron/"],
+        },
+      ]}
     />
 
     {/* ── Hero ── */}
