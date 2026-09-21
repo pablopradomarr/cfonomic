@@ -20,6 +20,7 @@ import NotFound from "./pages/NotFound";
 import PoliticaPrivacidad from "./pages/PoliticaPrivacidad";
 import PoliticaCookies from "./pages/PoliticaCookies";
 import AvisoLegal from "./pages/AvisoLegal";
+import ResetPassword from "./pages/ResetPassword";
 import CookieBanner from "./components/CookieBanner";
 
 const queryClient = new QueryClient();
@@ -67,6 +68,7 @@ const App = () => (
             <Route path="/politica-de-privacidad" element={<PoliticaPrivacidad />} />
             <Route path="/politica-de-cookies" element={<PoliticaCookies />} />
             <Route path="/aviso-legal" element={<AvisoLegal />} />
+            <Route path="/reset-password" element={<ResetPassword />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>
