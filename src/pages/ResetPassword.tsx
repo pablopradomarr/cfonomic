@@ -10,7 +10,7 @@ const ResetPassword = () => {
     () =>
       createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
         auth: {
-          detectSessionInUrl: true,
+          detectSessionInUrl: false,
           persistSession: false,
           autoRefreshToken: false,
         },
@@ -27,25 +27,59 @@ const ResetPassword = () => {
   const [saving, setSaving] = useState(false);
 
   useEffect(() => {
-    let mounted = true;
+    let cancelled = false;
 
-    const { data: listener } = supabase.auth.onAuthStateChange((_event, nextSession) => {
-      if (!mounted) return;
-      if (nextSession) {
-        setSession(nextSession);
-        setChecking(false);
+    const initRecoverySession = async () => {
+      try {
+        const current = new URL(window.location.href);
+        const code = current.searchParams.get("code");
+
+        if (code) {
+          const { data, error: exchangeError } =
+            await supabase.auth.exchangeCodeForSession(code);
+
+          if (exchangeError) throw exchangeError;
+          if (!cancelled) setSession(data.session);
+
+          window.history.replaceState({}, document.title, current.pathname);
+          return;
+        }
+
+        const hash = new URLSearchParams(window.location.hash.replace(/^#/, ""));
+        const accessToken = hash.get("access_token");
+        const refreshToken = hash.get("refresh_token");
+        const type = hash.get("type");
+
+        if (accessToken && refreshToken && (!type || type === "recovery")) {
+          const { data, error: sessionError } = await supabase.auth.setSession({
+            access_token: accessToken,
+            refresh_token: refreshToken,
+          });
+
+          if (sessionError) throw sessionError;
+          if (!cancelled) setSession(data.session);
+
+          window.history.replaceState({}, document.title, current.pathname);
+          return;
+        }
+
+        const { data, error: getSessionError } = await supabase.auth.getSession();
+        if (getSessionError) throw getSessionError;
+        if (!cancelled) setSession(data.session);
+      } catch {
+        if (!cancelled) {
+          setError("El enlace de recuperación no es válido o ha caducado.");
+          setSession(null);
+        }
+      } finally {
+        if (!cancelled) setChecking(false);
       }
-    });
+    };
 
-    supabase.auth.getSession().then(({ data }) => {
-      if (!mounted) return;
-      setSession(data.session);
-      setChecking(false);
-    });
+    void initRecoverySession();
 
     return () => {
-      mounted = false;
-      listener.subscription.unsubscribe();
+      cancelled = true;
     };
   }, [supabase]);
 
@@ -58,10 +92,12 @@ const ResetPassword = () => {
       setError("La contraseña debe tener al menos 10 caracteres.");
       return;
     }
+
     if (password !== repeat) {
       setError("Las contraseñas no coinciden.");
       return;
     }
+
     if (!session) {
       setError("El enlace de recuperación no es válido o ha caducado.");
       return;
@@ -76,9 +112,10 @@ const ResetPassword = () => {
       return;
     }
 
-    await supabase.auth.signOut();
+    await supabase.auth.signOut({ scope: "local" });
     setPassword("");
     setRepeat("");
+    setSession(null);
     setMessage("Contraseña actualizada correctamente. Ya puedes volver al portal CFOnomic e iniciar sesión.");
   };
 
@@ -102,7 +139,7 @@ const ResetPassword = () => {
             </div>
           ) : !session ? (
             <div className="mt-5 rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-800">
-              Este enlace de recuperación no es válido o ha caducado. Solicita uno nuevo desde el portal.
+              {error || "Este enlace de recuperación no es válido o ha caducado. Solicita uno nuevo desde el portal."}
             </div>
           ) : (
             <form onSubmit={savePassword} className="mt-6 space-y-4">
